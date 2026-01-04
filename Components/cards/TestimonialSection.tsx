@@ -109,7 +109,7 @@ const TestimonialSection = () => {
             <TestimonialCard
               text="I had a very good experience with the counseling. The counselor was supportive, patient, and explained everything clearly. Proper guidance was given according to my goals, and all my doubts were addressed honestly. The session helped me gain clarity and confidence in my decisions."
               name="Devesh Gupta"
-              role="Community Advocate"
+              role=""
               avatar="/userimge.jpeg"
             />
           </SwiperSlide>
@@ -118,7 +118,7 @@ const TestimonialSection = () => {
             <TestimonialCard
               text="The career counseling sessions were absolutely excellent. I went in feeling completely lost, but the counselor's insights provided a clear roadmap for my future career. I now feel confident and motivated about my path."
               name="Anushka Jain"
-              role="Healthcare Director"
+              role=""
               avatar="/userimage1.jpg"
             />
           </SwiperSlide>
