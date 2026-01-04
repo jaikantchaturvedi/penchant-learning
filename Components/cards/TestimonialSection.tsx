@@ -93,7 +93,7 @@ const TestimonialSection = () => {
           slidesPerView={1}
           spaceBetween={24}
           autoplay={{
-            delay: 4000,
+            delay: 6000,
             disableOnInteraction: false,
           }}
           pagination={{ clickable: true }}
