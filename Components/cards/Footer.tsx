@@ -17,7 +17,7 @@ const FooterSection: React.FC = () => {
 
             <div className="mt-4 space-y-1">
               <p>info@listener.com</p>
-              <p>+1 416–555–0198</p>
+              <p><a href="tel:+919468643369">+9468643369</a></p>
             </div>
           </div>
 
