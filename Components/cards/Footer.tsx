@@ -16,13 +16,13 @@ const FooterSection: React.FC = () => {
             </p>
 
             <div className="mt-4 space-y-1">
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2 flex-wrap">
                 
                 <svg className="w-4 h-4 text-[#fcfcfc]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M4 6h16a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z"/>
                 </svg>
 
-                <a href="mailto:penchantlearnings@gmail.com">
+                <a href="mailto:penchantlearnings@gmail.com" className="break-words break-all sm:break-words">
                   penchantlearnings@gmail.com
                 </a>
               </p>
