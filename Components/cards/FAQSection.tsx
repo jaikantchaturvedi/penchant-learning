@@ -41,7 +41,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20 bg-white overflow-x-hidden">
+    <section className="w-full px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20 bg-white overflow-x-hidden" id="faq">
       <div className="max-w-7xl mx-auto w-full">
         {/* Title */}
         <h1 className="text-sm sm:text-base text-[#032e61] mb-3 sm:mb-5 uppercase tracking-wider break-words">

@@ -66,17 +66,17 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="w-full bg-white py-8">
+    <section className="w-full bg-white py-8" id="home">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[60%_40%] gap-10 items-start px-6">
 
         {/* LEFT SECTION */}
         <div className="flex flex-col items-start gap-4 w-full">
           <div className="w-full">
-            <h1 className="text-6xl font-semibold text-[#092a51] leading-tight text-left mt-0">
+            <h1 className="text-4xl md:text-6xl font-semibold text-[#092a51] leading-tight text-left mt-0">
               Start your journey <br /> from learning to leading
             </h1>
 
-            <p className="mt-4 text-gray-500 text-lg font-medium max-w-full">
+            <p className="mt-2 md:mt-4 text-gray-500 text-lg font-medium max-w-full">
             A welcoming space where expert guidance supports your career journey and personal growth. 
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function HeroSection() {
         </div>
 
         {/* RIGHT FORM SECTION */}
-        <div className="relative w-full h-[640px] rounded-[40px] shadow-lg overflow-hidden">
+        <div className="relative w-full h-[500px] md:h-[640px] rounded-[40px] shadow-lg overflow-hidden">
           <Image
             src="/custom-img-106.jpg"
             alt="Background"

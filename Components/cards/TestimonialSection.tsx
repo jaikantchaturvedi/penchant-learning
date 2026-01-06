@@ -65,7 +65,7 @@ const TestimonialCard = ({
 
 const TestimonialSection = () => {
   return (
-    <section className="w-full py-12 sm:py-16 md:py-20 flex justify-center px-4 sm:px-6 overflow-x-hidden">
+    <section className="w-full py-12 sm:py-16 md:py-20 flex justify-center px-4 sm:px-6 overflow-x-hidden" id="testimonial">
       
       {/* Yellow rounded container */}
       <div className="bg-[#F7F6F0] max-w-7xl w-full rounded-2xl sm:rounded-3xl px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40">

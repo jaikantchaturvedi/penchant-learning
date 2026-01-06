@@ -89,7 +89,7 @@ export default function WellnessSection() {
 
   return (
     <>
-      <section className="w-full bg-white py-20">
+      <section className="w-full bg-white py-5 md:py-10" id="services">
         <div className="max-w-7xl mx-auto  w-full">
         {/* TOP TEXT */}
         <div className="text-center max-w-2xl mx-auto px-4">
@@ -103,7 +103,7 @@ export default function WellnessSection() {
         </div>
 
         {/* GRID */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto px-4">
+        <div className="md:mt-15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-10 max-w-7xl mx-auto px-4">
 
           {/* CARD 1 */}
           <div className="bg-[#8B4436] text-white rounded-3xl p-8 flex flex-col justify-between h-[340px]">

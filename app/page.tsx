@@ -8,6 +8,7 @@ import FAQSection from "../Components/cards/FAQSection";
 import TestimonialSection from "../Components/cards/TestimonialSection";
 import TherapyCardList from "../Components/cards/TherapyCardList";  
 import FooterSection from "../Components/cards/Footer";
+import ContactSection from "@/Components/cards/ContactSection";
 
 
 
@@ -25,6 +26,7 @@ export default function Home() {
      <FAQSection />
     <TestimonialSection />
       <TherapyCardList />
+      <ContactSection />
       <FooterSection />
     </main>
   );
