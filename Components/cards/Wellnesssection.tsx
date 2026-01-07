@@ -214,13 +214,13 @@ export default function WellnessSection() {
 
     {/* POPUP */}
 {openModal && activeCard && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
-    <div className="bg-white rounded-3xl max-w-xl w-full p-12 min-h-[400px] relative flex flex-col justify-between">
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4" style={{    zIndex: 9990}}>
+    <div className="bg-white rounded-3xl max-w-xl w-full p-6 md:p-12 min-h-[400px] relative flex flex-col justify-between">
 
       {/* Close */}
       <button
         onClick={() => setOpenModal(false)}
-        className="absolute top-6 right-6 text-gray-500 hover:text-black text-2xl"
+        className="absolute top-[6px] right-[9px] md:top-6 md:right-6 text-gray-500 hover:text-black md:text-2xl"
       >
         ✕
       </button>
@@ -235,6 +235,7 @@ export default function WellnessSection() {
         {popupContent[activeCard].content}
       </div>
 
+      <a href="tel:+916378907469" style={{ backgroundColor: "#8c5a31" }} className="px-4 py-2 rounded-full text-white text-sm font-medium whitespace-nowrap w-[114px] mt-[20px]" aria-label="Call Us">Connect Us</a>
       {/* Optional CTA */}
       {/* 
       <button className="mt-8 bg-[#8B4436] text-white py-3 rounded-xl font-medium">

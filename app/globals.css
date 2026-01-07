@@ -54,7 +54,7 @@ body {
 }
 .swiper-button-prev svg path,
 .swiper-button-next svg path {
-  fill: #d69074;
+  fill: #8c5a31;
 }
 /* Remove default arrow color */
 .swiper-button-prev::after,
@@ -110,3 +110,6 @@ body {
     font-size: 16px;
   }
 }
+
+
+.thank-you-page header{display: none !important;}

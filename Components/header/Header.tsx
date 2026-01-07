@@ -66,13 +66,13 @@ export default function Header() {
                 onClick={() => handleScroll(item.id)}
                 className={`relative transition ${
                   active === item.id
-                    ? "text-[#d69074]"
+                    ? "text-[#8c5a31]"
                     : "hover:text-gray-500"
                 }`}
               >
                 {item.label}
                 {active === item.id && (
-                  <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#d69074]" />
+                  <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#8c5a31]" />
                 )}
               </button>
             ))}
@@ -84,9 +84,9 @@ export default function Header() {
             <button
               onClick={() => handleScroll("contact")}
               className="px-4 py-2 rounded-full text-white text-sm font-medium whitespace-nowrap"
-              style={{ backgroundColor: "#d69074" }}
+              style={{ backgroundColor: "#8c5a31" }}
             >
-              Connect Us
+              Consult Now
             </button>
 
             {/* Hamburger */}
@@ -118,7 +118,7 @@ export default function Header() {
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
                 className={`text-left text-lg ${
-                  active === item.id ? "text-[#d69074]" : ""
+                  active === item.id ? "text-[#8c5a31]" : ""
                 }`}
               >
                 {item.label}
@@ -128,9 +128,9 @@ export default function Header() {
             <button
               onClick={() => handleScroll("contact")}
               className="mt-4 px-5 py-3 rounded-full text-white font-medium"
-              style={{ backgroundColor: "#d69074" }}
+              style={{ backgroundColor: "#8c5a31" }}
             >
-              Connect Us
+              Consult Now
             </button>
           </div>
         </div>

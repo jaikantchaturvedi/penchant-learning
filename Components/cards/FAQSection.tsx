@@ -89,7 +89,7 @@ export default function FAQSection() {
                     </div>
                   </div>
 
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#032e61] text-white flex-shrink-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#8c5a31] text-white flex-shrink-0">
                     {isOpen ? (
                       <Minus size={18} className="sm:w-[22px] sm:h-[22px]" />
                     ) : (

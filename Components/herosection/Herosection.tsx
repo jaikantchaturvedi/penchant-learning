@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { toast } from "react-hot-toast";
 import { API_URL } from "@/app/constant";
+import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
   // Form states
@@ -11,7 +12,7 @@ export default function HeroSection() {
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
   const [location, setLocation] = useState("");
-  const [agree, setAgree] = useState(false);
+  // const [agree, setAgree] = useState(false);
   // -------- VALIDATION -------- //
   const validateForm = () => {
     if (!name.trim()) {
@@ -29,13 +30,14 @@ export default function HeroSection() {
       return false;
     }
 
-    if (!agree) {
-      toast.error("Please accept terms");
-      return false;
-    }
+    // if (!agree) {
+    //   toast.error("Please accept terms");
+    //   return false;
+    // }
 
     return true;
   };
+  const router = useRouter();
 
   // -------- SUBMIT -------- //
   const handleSubmit = async () => {
@@ -55,7 +57,10 @@ export default function HeroSection() {
         setEmail("");
         setTelephone("");
         setLocation("");
-        setAgree(false);
+        setTimeout(() => {
+          router.push("/thank-you");
+        }, 100);
+        // setAgree(false);
       } else {
         toast.error("Something went wrong. Try again.");
       }
@@ -81,7 +86,7 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <div className="relative w-full">
+          <div className="relative w-full hidden md:block">
             <Image
               src="/Journey.jpeg"
               alt="Therapy Session"
@@ -137,11 +142,11 @@ export default function HeroSection() {
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 className="w-full mb-2 rounded-full px-3 py-2 bg-white border border-gray-200 text-sm text-gray-500"
-                placeholder="Location"
+                placeholder="City"
               />
 
               {/* Agreement */}
-              <label className="flex items-start text-xs text-gray-600 mt-1">
+              {/* <label className="flex items-start text-xs text-gray-600 mt-1">
                 <input
                   type="checkbox"
                   checked={agree}
@@ -150,7 +155,7 @@ export default function HeroSection() {
                 />
                 I agree that my data is{" "}
                 <span className="text-red-700 ml-1">collected and stored.</span>
-              </label>
+              </label> */}
 
               {/* Submit Button */}
               <button
@@ -162,6 +167,15 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
+        <div className="relative w-full block md:hidden">
+            <Image
+              src="/Journey.jpeg"
+              alt="Therapy Session"
+              width={1200}
+              height={1200}
+              className="rounded-3xl w-full h-auto"
+            />
+          </div>
 
       </div>
     </section>
