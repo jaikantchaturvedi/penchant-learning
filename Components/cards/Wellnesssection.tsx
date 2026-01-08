@@ -235,7 +235,7 @@ export default function WellnessSection() {
         {popupContent[activeCard].content}
       </div>
 
-      <a href="tel:+916378907469" style={{ backgroundColor: "#8c5a31" }} className="px-4 py-2 rounded-full text-white text-sm font-medium whitespace-nowrap w-[114px] mt-[20px]" aria-label="Call Us">Connect Us</a>
+      <a href="tel:+916378907469" style={{ backgroundColor: "#8c5a31" }} className="px-4 py-2 rounded-full text-white text-sm font-medium whitespace-nowrap w-[114px] mt-[20px]" aria-label="Call Us">Consult Now</a>
       {/* Optional CTA */}
       {/* 
       <button className="mt-8 bg-[#8B4436] text-white py-3 rounded-xl font-medium">
