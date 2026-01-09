@@ -99,13 +99,11 @@ const FooterSection: React.FC = () => {
           <div className="flex flex-col text-left lg:text-right items-start lg:items-end">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[55px] font-semibold leading-tight">
               <span className="block">Supporting your path</span>
-              <span className="block">to wellness</span>
+              <span className="block">to success</span>
             </h1>
 
             <p className="mt-6 text-base sm:text-lg md:text-xl lg:text-[22px] leading-relaxed text-gray-300 max-w-xl">
-              Listener offers caring support to help you heal and grow, with
-              guidance tailored for individuals and families in a safe, trusted,
-              and compassionate way.
+              Counsellors offer caring support to help you lead, learn and grow, with guidance tailored in a safe, trusted, and compassionate way.
             </p>
           </div>
         </div>
