@@ -83,12 +83,11 @@ const ContactSection = () => {
           </p>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#092a51] leading-tight">
-            Let’s talk about <br /> your needs
+           Let’s Shape Your Future
           </h2>
 
           <p className="mt-6 text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl">
-            Have questions or need guidance? Fill out the form and our team will
-            connect with you shortly to assist you with the right solutions.
+           Looking for guidance? Complete the form, and our team will connect with you promptly
           </p>
         </div>
 

@@ -71,18 +71,18 @@ const TestimonialSection = () => {
       <div className="bg-[#F7F6F0] max-w-7xl w-full rounded-2xl sm:rounded-3xl px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40">
         
         {/* Heading Row */}
-        <div className="flex flex-col lg:flex-row justify-between items-start w-full mb-10 sm:mb-12 md:mb-16 gap-4">
+        <div className="flex flex-col lg:flex-row justify-end items-start w-full mb-10 sm:mb-12 md:mb-16 gap-4">
           
-          <p className="text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.25em] text-[#0A2A54] font-medium">
-            EXPLORE LISTENER TODAY
-          </p>
+          {/* <p className="text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.25em] text-[#0A2A54] font-medium">
+            Real Stories. Real Success.
+          </p> */}
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#0A2A54] 
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#0A2A54] 
                          leading-tight break-words 
                          text-left lg:text-right 
                          max-w-3xl">
-            <span className="block">Honest words from</span>
-            <span className="block">happy clients</span>
+            <span className="block">Real Stories. Real Success.</span>
+            <span className="block">Discover Listener Today</span>
           </h1>
 
         </div>

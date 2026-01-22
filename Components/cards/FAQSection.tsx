@@ -14,16 +14,16 @@ const faqs: FAQItem[] = [
   id: "01",
   question: "How we support your journey?",
   answer:
-    "3 simple steps for career enhancement:\n\n" +
-    "STEP 1 – Psychometric assessment\n" +
-    "STEP 2 – Online / In-person counselling\n" +
-    "STEP 3 – From planning to action",
+    "3 Steps to Boost Your Career:\n\n" +
+    "STEP 1 – Assess: Discover your strengths with a psychometric test\n" +
+    "STEP 2 – Explore: Get expert guidance online or in-person\n" +
+    "STEP 3 – Act: Turn your career plan into action",
 },
 
   {
     id: "02",
     question: "How can I contact?",
-    answer: "You can reach out through our email/ phone support or Instagram/linkedin ",
+    answer: "For any queries, please contact us through email or phone, or connect with us on LinkedIn or Instagram ",
   },
   {
     id: "03",
@@ -44,9 +44,9 @@ export default function FAQSection() {
     <section className="w-full px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20 bg-white overflow-x-hidden" id="faq">
       <div className="max-w-7xl mx-auto w-full">
         {/* Title */}
-        <h1 className="text-sm sm:text-base text-[#032e61] mb-3 sm:mb-5 uppercase tracking-wider break-words">
+        {/* <h1 className="text-sm sm:text-base text-[#032e61] mb-3 sm:mb-5 uppercase tracking-wider break-words">
           Your Questions, Answered
-        </h1>
+        </h1> */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#032e61] break-words leading-tight">
           Frequently asked questions
         </h2>

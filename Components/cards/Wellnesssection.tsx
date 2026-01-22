@@ -55,7 +55,7 @@ export default function WellnessSection() {
             <strong>personalized career recommendations</strong>.
           </p>
           <p className="mt-2">
-            Includes <strong>one in-depth, one-hour counselling session</strong>.
+            Includes <strong>one in-depth counselling session</strong>.
           </p>
           <p className="mt-2">
             Dedicated career counselor with <strong>1-year chat support</strong>.
@@ -77,7 +77,7 @@ export default function WellnessSection() {
             <strong>top personalized career recommendations</strong>.
           </p>
           <p className="mt-2">
-            Includes <strong>two one-hour counselling sessions</strong>.
+            Includes <strong>two counselling sessions</strong>.
           </p>
           <p className="mt-2">
             Dedicated counselor with <strong>1-year chat assistance</strong>.
