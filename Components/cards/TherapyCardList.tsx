@@ -31,12 +31,12 @@ export default function TherapyCardList() {
       {/* HEADER */}
       <div className="text-left mb-12 max-w-3xl">
         <h1 className="text-sm tracking-widest uppercase text-[#032e61]">
-          Supporting your mental health path
+          Supporting your career journey
         </h1>
 
-        <p className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#032e61] leading-tight">
-          We provide expert <br /> therapy for all
-        </p>
+        {/* <p className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#032e61] leading-tight">
+          We provide expert <br /> counseling for all
+        </p> */}
       </div>
 
       {/* CARDS GRID */}

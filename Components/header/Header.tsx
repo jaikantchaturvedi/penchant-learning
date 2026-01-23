@@ -76,6 +76,8 @@ export default function Header() {
                 )}
               </button>
             ))}
+
+            <a href="https://penchantlearnings.idreamcareer.com" target="_blank">Start Assessment Now</a>
           </nav>
 
           {/* Right Section */}
