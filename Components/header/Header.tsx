@@ -127,6 +127,7 @@ export default function Header() {
               </button>
             ))}
 
+            <a href="https://penchantlearnings.idreamcareer.com" target="_blank">Start Assessment Now</a>
             <button
               onClick={() => handleScroll("contact")}
               className="mt-4 px-5 py-3 rounded-full text-white font-medium"
