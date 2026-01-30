@@ -44,11 +44,17 @@ export default function HeroSection() {
     if (!validateForm()) return;
 
     try {
-      const res = await fetch(`${API_URL}/leads`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, telephone, location }),
-      });
+      const res =await fetch(`/api/leads`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name, email, telephone, location }),
+});
+
+      if (res.status === 409) {
+        toast.error("You have already submitted your details.");
+        return;
+      }
+
 
       if (res.ok) {
         toast.success("Message sent successfully! 🎉");
@@ -82,7 +88,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="mt-2 md:mt-4 text-gray-500 text-lg font-medium max-w-full">
-            A welcoming space where expert guidance supports your career journey and personal growth. 
+              A welcoming space where expert guidance supports your career journey and personal growth.
             </p>
           </div>
 
@@ -168,14 +174,14 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="relative w-full block md:hidden">
-            <Image
-              src="/Journey.jpeg"
-              alt="Therapy Session"
-              width={1200}
-              height={1200}
-              className="rounded-3xl w-full h-auto"
-            />
-          </div>
+          <Image
+            src="/Journey.jpeg"
+            alt="Therapy Session"
+            width={1200}
+            height={1200}
+            className="rounded-3xl w-full h-auto"
+          />
+        </div>
 
       </div>
     </section>
