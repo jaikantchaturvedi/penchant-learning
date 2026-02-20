@@ -16,13 +16,13 @@ export default function MentalHealthHero() {
 
       {/* LEFT SIDE */}
       <div className="flex-1 bg-[#F7F6F2] rounded-3xl flex flex-col justify-center p-5 md:p-10 text-center">
-        
+
         <h1 className="text-4xl lg:text-5xl font-semibold leading-tight text-[#0A2A47]">
           We guide &  support your career growth
         </h1>
 
         {/* Centered Button */}
-        <button onClick={handleClick} className="mt-5 mx-auto bg-[#8C3A2F] text-white px-8 py-2 rounded-full text-lg font-medium transition hover:bg-[#6f2f26]">
+        <button onClick={handleClick} className="mt-5 mx-auto bg-[#8c5a31] text-white px-8 py-2 rounded-full text-lg font-medium transition hover:brightness-110">
           Book a Session
         </button>
 

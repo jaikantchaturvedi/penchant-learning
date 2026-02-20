@@ -115,12 +115,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
     return (
         <div className="min-h-screen bg-white font-sans text-gray-800">
 
-            {/* Side Sticky Call Button */}
-            <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40">
-                <div className="bg-[#e67e22] p-3 rounded-r-lg text-white cursor-pointer hover:bg-[#d35400] transition-colors shadow-lg">
-                    <FiPhone size={24} />
-                </div>
-            </div>
+
 
             {/* Hero Section */}
             <section className="relative overflow-hidden pt-12 pb-24 px-6 md:px-12 bg-gradient-to-b from-white to-[#fdfaf7]" style={{ backgroundImage: data.hero.backgroundImage ? `url("${data.hero.backgroundImage}")` : undefined, backgroundSize: '50%', backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom right' }}>

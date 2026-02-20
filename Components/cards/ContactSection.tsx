@@ -8,66 +8,66 @@ import { useRouter } from "next/navigation";
 
 const ContactSection = () => {
   const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [telephone, setTelephone] = useState("");
-    const [location, setLocation] = useState("");
-    // const [agree, setAgree] = useState(false);
-    // -------- VALIDATION -------- //
-    const validateForm = () => {
-      if (!name.trim()) {
-        toast.error("Name is required");
-        return false;
+  const [email, setEmail] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [location, setLocation] = useState("");
+  // const [agree, setAgree] = useState(false);
+  // -------- VALIDATION -------- //
+  const validateForm = () => {
+    if (!name.trim()) {
+      toast.error("Name is required");
+      return false;
+    }
+
+    if (!email.trim() || !email.includes("@")) {
+      toast.error("Valid email is required");
+      return false;
+    }
+
+    if (!telephone.trim()) {
+      toast.error("Telephone is required");
+      return false;
+    }
+
+    // if (!agree) {
+    //   toast.error("Please accept terms");
+    //   return false;
+    // }
+
+    return true;
+  };
+  const router = useRouter();
+
+  // -------- SUBMIT -------- //
+  const handleSubmit = async () => {
+    if (!validateForm()) return;
+
+    try {
+      const res = await fetch(`${API_URL}/leads`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, telephone, location }),
+      });
+
+      if (res.ok) {
+        toast.success("Message sent successfully! 🎉");
+
+        setName("");
+        setEmail("");
+        setTelephone("");
+        setLocation("");
+        setTimeout(() => {
+          router.push("/thank-you");
+        }, 100);
+        // setAgree(false);
+      } else {
+        toast.error("Something went wrong. Try again.");
       }
-  
-      if (!email.trim() || !email.includes("@")) {
-        toast.error("Valid email is required");
-        return false;
-      }
-  
-      if (!telephone.trim()) {
-        toast.error("Telephone is required");
-        return false;
-      }
-  
-      // if (!agree) {
-      //   toast.error("Please accept terms");
-      //   return false;
-      // }
-  
-      return true;
-    };
-    const router = useRouter();
-  
-    // -------- SUBMIT -------- //
-    const handleSubmit = async () => {
-      if (!validateForm()) return;
-  
-      try {
-        const res = await fetch(`${API_URL}/leads`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, telephone, location }),
-        });
-  
-        if (res.ok) {
-          toast.success("Message sent successfully! 🎉");
-  
-          setName("");
-          setEmail("");
-          setTelephone("");
-          setLocation("");
-          setTimeout(() => {
-            router.push("/thank-you");
-          }, 100);
-          // setAgree(false);
-        } else {
-          toast.error("Something went wrong. Try again.");
-        }
-      } catch (error) {
-        console.error(error);
-        toast.error("Server error. Try again later.");
-      }
-    };
+    } catch (error) {
+      console.error(error);
+      toast.error("Server error. Try again later.");
+    }
+  };
 
   return (
     <section
@@ -83,11 +83,11 @@ const ContactSection = () => {
           </p>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#092a51] leading-tight">
-           Let’s Shape Your Future
+            Let’s Shape Your Future
           </h2>
 
           <p className="mt-6 text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl">
-           Looking for guidance? Complete the form, and our team will connect with you promptly
+            Looking for guidance? Complete the form, and our team will connect with you promptly
           </p>
         </div>
 
@@ -143,7 +143,7 @@ const ContactSection = () => {
           {/* Submit Button */}
           <button
             onClick={handleSubmit}
-            className="w-full mt-6 py-3 rounded-full bg-[#904437] text-white font-semibold text-base hover:bg-[#7b382d] transition"
+            className="w-full mt-6 py-3 rounded-full bg-[#8c5a31] text-white font-semibold text-base hover:brightness-110 transition"
           >
             Send Message
           </button>

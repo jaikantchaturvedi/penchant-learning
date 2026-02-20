@@ -93,7 +93,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
     successStory: {
         category: "SUCCESS STORY",
         title: "How Nitya Overcame her Inhibitions and Biases to Choose the Stream Best Aligned to her Career Goals",
-        story: "Nitya Gupta was unsure about her streams and subjects for class 11th. Mindler career experts found her perfect fit with humanities, and helped her deal with her misconceptions about the field. She is now acing her class 11 and looks forward to a career in Psychology.",
+        story: "Nitya Gupta was unsure about her streams and subjects for class 11th. Penchant Learning career experts found her perfect fit with humanities, and helped her deal with her misconceptions about the field. She is now acing her class 11 and looks forward to a career in Psychology.",
         ctaText: "Read Full Story",
         ctaLink: "#",
         image: "/userimage3.jpeg",
@@ -115,7 +115,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
                 { title: "Stream Assessment", desc: "4-dimensional stream assessment with top stream recommendations." },
                 { title: "Career Content", desc: "Well-researched Information on hundreds of career options." },
                 { title: "25 Page Stream Report", desc: "Detailed assessment report containing best-fit stream matches and personalized development plans." },
-                { title: "Career Counselling", desc: "Online career counselling session of up to 60 minutes with Mindler's certified and experienced coaches." }
+                { title: "Career Counselling", desc: "Online career counselling session of up to 60 minutes with Penchant Learning's certified and experienced coaches." }
             ],
             hasSessionSelector: true,
             buttonText: "Buy Now",
@@ -166,8 +166,8 @@ const CLASS_8_9_DATA: CounsellingPageData = {
         }
     ],
     comparison: {
-        title: "Why Choose Mindler vs. Other Platforms?",
-        description: "Compare all leading career counselling platforms in India, to see how Mindler tops the charts across all major elements of career guidance.",
+        title: "Why Choose Penchant Learning vs. Other Platforms?",
+        description: "Compare all leading career counselling platforms in India, to see how Penchant Learning tops the charts across all major elements of career guidance.",
         ctaText: "View Full Report",
         ctaLink: "#"
     },
@@ -188,14 +188,14 @@ const CLASS_8_9_DATA: CounsellingPageData = {
         },
         {
             type: "quote",
-            text: "Mindler provided a mentored framework for my son's ambitions to achieve and succeed.",
+            text: "Penchant Learning provided a mentored framework for my son's ambitions to achieve and succeed.",
             author: "Kavita",
             role: "Parent",
             image: "/api/placeholder/100/100"
         },
         {
             type: "quote",
-            text: "Signing up for Mindler, and meeting and interacting with their experienced team was one of the decisions I made.",
+            text: "Signing up for Penchant Learning, and meeting and interacting with their experienced team was one of the decisions I made.",
             author: "Shaurya",
             role: "Aga Khan Academy",
             image: "/api/placeholder/100/100"

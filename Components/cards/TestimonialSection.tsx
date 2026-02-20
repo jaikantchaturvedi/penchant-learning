@@ -25,7 +25,7 @@ const TestimonialCard = ({
 }: TestimonialCardProps) => {
   return (
     <div className="bg-white px-6 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12 rounded-2xl sm:rounded-3xl w-full min-w-0 h-full">
-      
+
       {/* Stars */}
       <div className="flex gap-1 mb-4 sm:mb-5">
         {Array.from({ length: stars }).map((_, i) => (
@@ -63,16 +63,48 @@ const TestimonialCard = ({
   );
 };
 
+const SwiperStyles = () => (
+  <style jsx global>{`
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-color: #8c5a31;
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 50%;
+      color: white !important;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 18px !important;
+      font-weight: bold;
+    }
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background-color: #8c5a31 !important;
+      filter: brightness(1.1);
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      color: white !important;
+    }
+    .swiper-pagination-bullet-active {
+      background: #8c5a31 !important;
+    }
+  `}</style>
+);
+
 const TestimonialSection = () => {
   return (
     <section className="w-full py-12 sm:py-16 md:py-20 flex justify-center px-4 sm:px-6 overflow-x-hidden" id="testimonial">
-      
+      <SwiperStyles />
+
       {/* Yellow rounded container */}
       <div className="bg-[#F7F6F0] max-w-7xl w-full rounded-2xl sm:rounded-3xl px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40">
-        
+
         {/* Heading Row */}
         <div className="flex flex-col lg:flex-row justify-end items-start w-full mb-10 sm:mb-12 md:mb-16 gap-4">
-          
+
           {/* <p className="text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.25em] text-[#0A2A54] font-medium">
             Real Stories. Real Success.
           </p> */}

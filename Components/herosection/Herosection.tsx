@@ -44,11 +44,11 @@ export default function HeroSection() {
     if (!validateForm()) return;
 
     try {
-      const res =await fetch(`/api/leads`, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ name, email, telephone, location }),
-});
+      const res = await fetch(`/api/leads`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, telephone, location }),
+      });
 
       if (res.status === 409) {
         toast.error("You have already submitted your details.");
@@ -166,7 +166,7 @@ export default function HeroSection() {
               {/* Submit Button */}
               <button
                 onClick={handleSubmit}
-                className="w-full mt-4 py-2 rounded-full bg-[#904437] text-white font-semibold text-base"
+                className="w-full mt-4 py-2 rounded-full bg-[#8c5a31] text-white font-semibold text-base hover:brightness-110 transition-all"
               >
                 Send Message
               </button>

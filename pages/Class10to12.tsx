@@ -123,8 +123,8 @@ const CLASS_10_12_DATA: CounsellingPageData = {
     ],
     successStory: {
         category: "SUCCESS STORY",
-        title: "How Pranav, a Dissatisfied Engineering Student, Used Mindler Career Guidance to Find His Perfect Fit with Management",
-        story: "Pranav Vashishth, a 1st-year B.Tech student, was unable to cope with his academics and felt stuck in his career. Mindler career experts helped him explore multiple options and zero-in on Management, which proved to be a perfect fit with his talents and interests. He is now a top ranker at his university.",
+        title: "How Pranav, a Dissatisfied Engineering Student, Used Penchant Learning Career Guidance to Find His Perfect Fit with Management",
+        story: "Pranav Vashishth, a 1st-year B.Tech student, was unable to cope with his academics and felt stuck in his career. Penchant Learning career experts helped him explore multiple options and zero-in on Management, which proved to be a perfect fit with his talents and interests. He is now a top ranker at his university.",
         ctaText: "Read Full Story",
         ctaLink: "#",
         image: "/userimage3.jpeg",
@@ -195,7 +195,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
         }
     ],
     comparison: {
-        title: "Why Mindler is the Best Choice for Class 10-12",
+        title: "Why Penchant Learning is the Best Choice for Class 10-12",
         description: "See how we compare with other guidance platforms in helping you secure your ideal college and career.",
         ctaText: "View Comparison",
         ctaLink: "#"
@@ -217,7 +217,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
         },
         {
             type: "quote",
-            text: "Mindler's planning helped my daughter get into her dream college for Design.",
+            text: "Penchant Learning's planning helped my daughter get into her dream college for Design.",
             author: "Mrs. Verma",
             role: "Parent",
             image: "/api/placeholder/100/100"

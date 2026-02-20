@@ -87,12 +87,12 @@ export default function Header() {
         {
           title: "MUN Training Program",
           desc: "Expert-led training and comprehensive guidance sessions to help students excel at MUN conferences.",
-          link: "#"
+          link: "/mun-training"
         },
         {
-          title: "Mindler Talks",
+          title: "Penchant Learning Talks",
           desc: "Career awareness and inspirational talks for students with professionals who have achieved success in their fields.",
-          link: "#"
+          link: "/mindler-talks"
         }
       ]
     }
@@ -221,15 +221,21 @@ export default function Header() {
                   <div className="space-y-5">
                     {(megamenuType === "students" ? studentPrograms[0].items : institutionPrograms[0].items).map((prog, idx) => (
                       <div key={idx} className="group/item">
-                        <h4 className="font-bold text-[#1a1a1a] text-[15px] mb-0.5 group-hover/item:text-[#8c5a31] transition-colors">
-                          {prog.title} {"subtitle" in prog && (prog as any).subtitle && (
-                            <span className="font-normal text-gray-400 text-xs ml-1">{(prog as any).subtitle}</span>
-                          )}
-                        </h4>
+                        <Link href={prog.link} onClick={() => setIsMegamenuOpen(false)}>
+                          <h4 className="font-bold text-[#1a1a1a] text-[15px] mb-0.5 group-hover/item:text-[#8c5a31] transition-colors">
+                            {prog.title} {"subtitle" in prog && (prog as any).subtitle && (
+                              <span className="font-normal text-gray-400 text-xs ml-1">{(prog as any).subtitle}</span>
+                            )}
+                          </h4>
+                        </Link>
                         <p className="text-gray-500 text-[13px] leading-relaxed mb-1">
                           {prog.desc}
                         </p>
-                        <Link href={prog.link} className="text-[#8c5a31] text-[11px] font-bold flex items-center gap-1.5 hover:underline decoration-2 underline-offset-4">
+                        <Link
+                          href={prog.link}
+                          className="text-[#8c5a31] text-[11px] font-bold flex items-center gap-1.5 hover:underline decoration-2 underline-offset-4"
+                          onClick={() => setIsMegamenuOpen(false)}
+                        >
                           View Program Details <FiArrowRight size={13} />
                         </Link>
                       </div>
@@ -248,11 +254,17 @@ export default function Header() {
                     </div>
                     {(megamenuType === "students" ? studentPrograms[1].items : institutionPrograms[1].items).map((prog, idx) => (
                       <div key={idx} className="group/item">
-                        <h4 className="font-bold text-[#1a1a1a] text-[15px] mb-0.5 group-hover/item:text-[#8c5a31] transition-colors">{prog.title}</h4>
+                        <Link href={prog.link} onClick={() => setIsMegamenuOpen(false)}>
+                          <h4 className="font-bold text-[#1a1a1a] text-[15px] mb-0.5 group-hover/item:text-[#8c5a31] transition-colors">{prog.title}</h4>
+                        </Link>
                         <p className="text-gray-500 text-[13px] mb-1 leading-relaxed">
                           {prog.desc}
                         </p>
-                        <Link href={prog.link} className="text-[#8c5a31] text-[11px] font-bold flex items-center gap-1.5 hover:underline decoration-2 underline-offset-4">
+                        <Link
+                          href={prog.link}
+                          className="text-[#8c5a31] text-[11px] font-bold flex items-center gap-1.5 hover:underline decoration-2 underline-offset-4"
+                          onClick={() => setIsMegamenuOpen(false)}
+                        >
                           View Program Details <FiArrowRight size={13} />
                         </Link>
                       </div>
@@ -267,11 +279,17 @@ export default function Header() {
                       <div className="grid grid-cols-1 gap-6">
                         {studentPrograms[1].secondaryItems?.map((prog, idx) => (
                           <div key={idx} className="group/item">
-                            <h4 className="font-bold text-[#1a1a1a] text-[15px] mb-0.5 group-hover/item:text-[#8c5a31] transition-colors">{prog.title}</h4>
+                            <Link href={prog.link} onClick={() => setIsMegamenuOpen(false)}>
+                              <h4 className="font-bold text-[#1a1a1a] text-[15px] mb-0.5 group-hover/item:text-[#8c5a31] transition-colors">{prog.title}</h4>
+                            </Link>
                             <p className="text-gray-500 text-[13px] mb-1 leading-relaxed">
                               {prog.desc}
                             </p>
-                            <Link href={prog.link} className="text-[#8c5a31] text-[11px] font-bold flex items-center gap-1.5 hover:underline decoration-2 underline-offset-4">
+                            <Link
+                              href={prog.link}
+                              className="text-[#8c5a31] text-[11px] font-bold flex items-center gap-1.5 hover:underline decoration-2 underline-offset-4"
+                              onClick={() => setIsMegamenuOpen(false)}
+                            >
                               View Program Details <FiArrowRight size={13} />
                             </Link>
                           </div>
@@ -286,13 +304,21 @@ export default function Header() {
               <div className="flex-1 bg-gray-50/70 border-l border-gray-100 p-8 flex flex-col justify-between">
                 <div className="space-y-6">
                   <div className="space-y-4">
-                    <Link href="tel:+918744987449" className="flex items-center gap-4 text-[#092a51] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label">
+                    <Link
+                      href="tel:+918744987449"
+                      className="flex items-center gap-4 text-[#092a51] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label"
+                      onClick={() => setIsMegamenuOpen(false)}
+                    >
                       <div className="bg-white p-2.5 rounded-lg group-hover/label:bg-[#8c5a31] group-hover/label:text-white transition-all">
                         <FiPhone size={16} />
                       </div>
                       <span>+91 87449 87449</span>
                     </Link>
-                    <Link href="mailto:info@penchant.com" className="flex items-center gap-4 text-[#092a51] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label">
+                    <Link
+                      href="mailto:info@penchant.com"
+                      className="flex items-center gap-4 text-[#092a51] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label"
+                      onClick={() => setIsMegamenuOpen(false)}
+                    >
                       <div className="bg-white p-2.5 rounded-lg  group-hover/label:bg-[#8c5a31] group-hover/label:text-white transition-all">
                         <FiMail size={16} />
                       </div>
@@ -301,11 +327,19 @@ export default function Header() {
                   </div>
 
                   <div className="pt-8 border-t border-gray-200/60 space-y-6">
-                    <Link href="#" className="block text-[#092a51] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link">
+                    <Link
+                      href="#"
+                      className="block text-[#092a51] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link"
+                      onClick={() => setIsMegamenuOpen(false)}
+                    >
                       Success Stories
                       <FiArrowRight size={16} className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-[#8c5a31]" />
                     </Link>
-                    <Link href="#" className="block text-[#092a51] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link">
+                    <Link
+                      href="#"
+                      className="block text-[#092a51] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link"
+                      onClick={() => setIsMegamenuOpen(false)}
+                    >
                       About Us
                       <FiArrowRight size={16} className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-[#8c5a31]" />
                     </Link>
