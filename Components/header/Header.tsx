@@ -85,14 +85,14 @@ export default function Header() {
       category: "CAREER ADVANCEMENT PROGRAMS",
       items: [
         {
-          title: "MUN Training Program",
-          desc: "Expert-led training and comprehensive guidance sessions to help students excel at MUN conferences.",
-          link: "/mun-training"
+          title: "Penchant Learning Training Program",
+          desc: "Expert-led training and comprehensive guidance sessions to help students excel at Penchant Learning conferences.",
+          link: "/penchant-learning-training"
         },
         {
           title: "Penchant Learning Talks",
           desc: "Career awareness and inspirational talks for students with professionals who have achieved success in their fields.",
-          link: "/mindler-talks"
+          link: "/penchant-talks"
         }
       ]
     }
