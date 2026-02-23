@@ -28,6 +28,9 @@ body {
    */
    font-family: "Bricolage Grotesque", sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 
 /* ===============================

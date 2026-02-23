@@ -52,19 +52,19 @@ const CLASS_10_12_DATA: CounsellingPageData = {
         },
         {
             id: 2,
-            title: "Interactive Career & Stream Activities",
-            description: "Evaluate your academics, work style, aptitude and subject compatibility to identify your perfect career.",
-            image: "/gifs/assessments-2.gif",
-            ctaText: "View Sample Report",
+            title: "Nexus: AI-Powered Career Planning Tool",
+            description: "Best-Fit Subject Combinations as per Education Board & Career Preferences. Interdisciplinary Career Suggestions. Introduction to Role Models for Each Career Pathway. Suggestion for Soft Skill Development",
+            image: "/gifs/nexus-new.png",
+            ctaText: "Schedule a callback",
             ctaLink: "#",
-            decorationClass: "absolute -bottom-4 -right-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
+            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: true
         },
         {
             id: 3,
             title: "Simulated Virtual Career Internships",
             description: "Explore multiple career options through role play, simulations and experiential videos with our Virtual Internship Program.",
-            image: "/gifs/personalised-guidance.gif",
+            image: "/gifs/Virtual-Internship.gif",
             ctaText: "Schedule Call",
             ctaLink: "#",
             decorationClass: "absolute -top-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -72,59 +72,49 @@ const CLASS_10_12_DATA: CounsellingPageData = {
         },
         {
             id: 4,
-            title: "Personalised Guidance from Experts",
-            description: "Finalise your career path and build a customised career plan with help from our career experts.",
-            image: "/gifs/Virtual-Internship.gif",
-            ctaText: "Explore Internships",
+            title: "Interactive Career & Stream Activities",
+            description: "Evaluate your academics, work style, aptitude and subject compatibility to identify your perfect career.",
+            image: "/gifs/interactive activities.gif",
+            ctaText: "View Sample Report",
             ctaLink: "#",
-            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
+            decorationClass: "absolute -bottom-4 -right-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: true
         },
         {
             id: 5,
             title: "Career Roadmap Planner",
             description: "Plan ahead for college admissions and prepare for exams and college applications in time.",
-            image: "/gifs/Virtual-Internship.gif",
+            image: "/gifs/roadmap.gif",
             ctaText: "Schedule a callback",
             ctaLink: "#",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
-            reverse: true
+            reverse: false
         },
         {
             id: 6,
-            title: "Extensive Support & Resources",
-            description: "Get detailed information on all careers with our well-researched expert written resources.",
-            image: "/gifs/Virtual-Internship.gif",
-            ctaText: "Schedule a callback",
+            title: "Personalised Guidance from Experts",
+            description: "Finalise your career path and build a customised career plan with help from our career experts.",
+            image: "/gifs/personalised-guidance.gif",
+            ctaText: "Explore Internships",
             ctaLink: "#",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: true
         },
         {
             id: 7,
-            title: "Nexus: AI-Powered Career Planning Tool",
-            description: "Best-Fit Subject Combinations as per Education Board & Career Preferences. Interdisciplinary Career Suggestions. Introduction to Role Models for Each Career Pathway. Suggestion for Soft Skill Development",
-            image: "/gifs/Virtual-Internship.gif",
+            title: "Extensive Support & Resources",
+            description: "Get detailed information on all careers with our well-researched expert written resources.",
+            image: "/gifs/resources.gif",
             ctaText: "Schedule a callback",
             ctaLink: "#",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
-            reverse: true
-        },
-        {
-            id: 8,
-            title: "Orion: AI-Powered Career Mentor/Chatbot",
-            description: "Personalized Interactive Advice. Real-Time Insights on Career Related Queries. Comprehensive Problem Solving",
-            image: "/gifs/Virtual-Internship.gif",
-            ctaText: "Schedule a callback",
-            ctaLink: "#",
-            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
-            reverse: true
+            reverse: false
         },
     ],
     successStory: {
         category: "SUCCESS STORY",
-        title: "How Pranav, a Dissatisfied Engineering Student, Used Penchant Learning Career Guidance to Find His Perfect Fit with Management",
-        story: "Pranav Vashishth, a 1st-year B.Tech student, was unable to cope with his academics and felt stuck in his career. Penchant Learning career experts helped him explore multiple options and zero-in on Management, which proved to be a perfect fit with his talents and interests. He is now a top ranker at his university.",
+        title: "How Pranav, a Dissatisfied Engineering Student, Used Panchant Learning Career Guidance to Find His Perfect Fit with Management",
+        story: "Pranav Vashishth, a 1st-year B.Tech student, was unable to cope with his academics and felt stuck in his career. Panchant Learning career experts helped him explore multiple options and zero-in on Management, which proved to be a perfect fit with his talents and interests. He is now a top ranker at his university.",
         ctaText: "Read Full Story",
         ctaLink: "#",
         image: "/userimage3.jpeg",
@@ -132,70 +122,99 @@ const CLASS_10_12_DATA: CounsellingPageData = {
     },
     plans: [
         {
-            id: "stream-selection",
-            name: "Stream Selection",
-            subtitle: "Ideal for Class 10",
-            price: "₹2,400",
+            id: "realize",
+            name: "Realize",
+            subtitle: "",
+            price: "₹25,000 onwards",
             bestselling: false,
             icon: FiCompass,
-            iconColor: "text-[#092a51] opacity-80",
+            iconColor: "text-[#FFD700]",
             titleColor: "text-[#ff5c5c]",
-            borderColor: "border-[#8c5a31]",
-            accentColor: "#8c5a31",
-            features: [
-                { title: "Career Assessment", desc: "5-dimensional stream assessment." },
-                { title: "34-Page Report", desc: "Comprehensive analysis of career matches." },
-                { title: "1 Counselling Session", desc: "Expert guidance to finalize stream." }
-            ],
-            hasSessionSelector: false,
-            buttonText: "Buy Now",
-            linkText: "Learn more"
-        },
-        {
-            id: "career-selection",
-            name: "Career Selection",
-            subtitle: "Ideal for Class 11 & 12",
-            price: "₹5,900",
-            bestselling: true,
-            icon: FiBookOpen,
-            iconColor: "text-[#a3cf5d]",
-            titleColor: "text-[#ff5c5c] opacity-80",
             borderColor: "border-gray-100",
             accentColor: "#8c5a31",
             features: [
-                { title: "Multi-dimensional Assessment", desc: "In-depth evaluation of strengths." },
-                { title: "2 Detailed Sessions", desc: "Personalized mentoring sessions." },
-                { title: "Detailed Career Roadmap", desc: "Step-by-step plan for entrance exams." }
+                { title: "Career Assessment", desc: "5-dimensional assessment with best-fit career recommendations." },
+                { title: "Career Content", desc: "Well-researched information on hundreds of career options." },
+                { title: "34 Page Career Report", desc: "Detailed assessment report containing top career matches and personalized development plans." },
+                { title: "Career Counselling", desc: "Online career counselling session of up to 60 minutes with Panchant Learning's certified and experienced coaches." },
+                { title: "Dedicated Career Mentor", desc: "Personalised mentoring, goal monitoring and steady support." }
+            ],
+            hasSessionSelector: false,
+            buttonText: "Schedule Your Free Call Now",
+            linkText: "Learn more"
+        },
+        {
+            id: "explore",
+            name: "Explore",
+            subtitle: "Career Assessment + Counselling",
+            price: "₹11,400",
+            bestselling: true,
+            icon: FiCompass,
+            iconColor: "text-[#a855f7]",
+            titleColor: "text-[#ff5c5c]",
+            borderColor: "border-gray-100",
+            accentColor: "#8c5a31",
+            features: [
+                { title: "Career Assessment", desc: "5-dimensional assessment with best-fit career recommendations." },
+                { title: "Career Content", desc: "Well-researched information on hundreds of career options." },
+                { title: "34 Page Career Report", desc: "Detailed assessment report containing top career matches and personalized development plans." },
+                { title: "Career Counselling", desc: "Online career counselling session of up to 60 minutes with Panchant Learning's certified and experienced coaches." },
+                { title: "Dedicated Career Mentor", desc: "Personalised mentoring, goal monitoring and steady support.", locked: true }
+            ],
+            hasSessionSelector: true,
+            // sessionOptions: ["1 Session", "3 Sessions"],
+            // defaultSession: "3 Sessions",
+            buttonText: "Buy Now",
+            linkText: "Learn more"
+        },
+        {
+            id: "learn",
+            name: "Learn",
+            subtitle: "Career Assessment",
+            price: "₹2,400",
+            bestselling: false,
+            icon: FiBookOpen,
+            iconColor: "text-[#a3cf5d]",
+            titleColor: "text-[#ff5c5c]",
+            borderColor: "border-gray-100",
+            accentColor: "#8c5a31",
+            features: [
+                { title: "Career Assessment", desc: "5-dimensional assessment with best-fit career recommendations." },
+                { title: "Career Content", desc: "Well-researched information on hundreds of career options." },
+                { title: "34 Page Career Report", desc: "Detailed assessment report containing top career matches and personalized development plans." },
+                { title: "Career Counselling", desc: "Online career counselling session of up to 60 minutes with Panchant Learning's certified and experienced coaches.", locked: true },
+                { title: "Dedicated Career Mentor", desc: "Personalised mentoring, goal monitoring and steady support.", locked: true }
             ],
             hasSessionSelector: false,
             buttonText: "Buy Now",
             linkText: "Learn more"
         },
         {
-            id: "comprehensive",
-            name: "Comprehensive",
-            subtitle: "Complete Support",
-            price: "₹12,000+",
+            id: "preview",
+            name: "Preview",
+            subtitle: "Orientation Style Assessment",
+            price: "₹0",
             bestselling: false,
             icon: FiEye,
             iconColor: "text-[#ff9800]",
-            titleColor: "text-[#ff5c5c] opacity-60",
+            titleColor: "text-[#ff5c5c]",
             borderColor: "border-gray-100",
             accentColor: "#8c5a31",
             features: [
-                { title: "Unlimited Sessions", desc: "Continuous guidance and support." },
-                { title: "College Application", desc: "Support for applications in India & abroad." },
-                { title: "Profile Building", desc: "Enhance your profile for top universities." },
-                { title: "Exam Alerts", desc: "Stay updated on important dates." }
+                { title: "Career Assessment", desc: "Part 1 of 5-dimensional assessment to assess workstyle.", limitedAccess: true },
+                { title: "Career Content", desc: "Well-researched information on hundreds of career options." },
+                { title: "34 Page Career Report", desc: "Detailed assessment report containing top career matches and personalized development plans.", locked: true },
+                { title: "Career Counselling", desc: "Online career counselling session of up to 60 minutes with Panchant Learning's certified and experienced coaches.", locked: true },
+                { title: "Dedicated Career Mentor", desc: "Personalised mentoring, goal monitoring and steady support.", locked: true }
             ],
             hasSessionSelector: false,
             hasEmailInput: true,
-            buttonText: "Get Started",
+            buttonText: "Take Free Demo",
             linkText: "Learn more"
         }
     ],
     comparison: {
-        title: "Why Penchant Learning is the Best Choice for Class 10-12",
+        title: "Why Panchant Learning is the Best Choice for Class 10-12",
         description: "See how we compare with other guidance platforms in helping you secure your ideal college and career.",
         ctaText: "View Comparison",
         ctaLink: "#"
@@ -213,14 +232,14 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             text: "The clarity I got after the session was amazing. I knew exactly which engineering exams to target.",
             author: "Priya",
             role: "Class 12 Student",
-            image: "/api/placeholder/100/100"
+            image: "/images/testi-nitya.jpg"
         },
         {
             type: "quote",
-            text: "Penchant Learning's planning helped my daughter get into her dream college for Design.",
+            text: "Panchant Learning's planning helped my daughter get into her dream college for Design.",
             author: "Mrs. Verma",
             role: "Parent",
-            image: "/api/placeholder/100/100"
+            image: "/images/testi-kavita.jpg"
         }
     ],
     faqs: [
@@ -236,7 +255,22 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             question: "How accurate is the assessment?",
             answer: "The assessment is based on globally validated psychometric principles with a high reliability score, ensuring that the recommendations are scientifically backed and personalized to your unique profile."
         }
-    ]
+    ],
+    contact: {
+        title: "What can we help you with?",
+        subtitle: "Feel free to write to us. We usually respond within 24 hours!",
+        phoneNumber: "+91 87449 87449",
+        availability: "Monday - Friday",
+        availabilityHours: "10 am - 7 pm",
+        phoneImage: "/images/ContactUs.svg",
+        queryOptions: [
+            "Career Counselling",
+            "Pricing & Plans",
+            "Technical Support",
+            "Other"
+        ],
+        buttonText: "Submit"
+    },
 };
 
 // Default export wrapper for current usage

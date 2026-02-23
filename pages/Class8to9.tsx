@@ -184,27 +184,27 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             text: "All the things the assessment told me about myself and my interests were so true.",
             author: "Sneha",
             role: "DPS RK Puram",
-            image: "/api/placeholder/100/100"
+            image: "/images/testi-sneha.jpg"
         },
         {
             type: "quote",
             text: "Penchant Learning provided a mentored framework for my son's ambitions to achieve and succeed.",
             author: "Kavita",
             role: "Parent",
-            image: "/api/placeholder/100/100"
+            image: "/images/testi-kavita.jpg"
         },
         {
             type: "quote",
             text: "Signing up for Penchant Learning, and meeting and interacting with their experienced team was one of the decisions I made.",
             author: "Shaurya",
             role: "Aga Khan Academy",
-            image: "/api/placeholder/100/100"
+            image: "/images/testi-shaurya.jpg"
         },
         {
             type: "story_card",
             text: "How Nitya overcame her inhibitions and biases to choose the stream best aligned to her career goals.",
             highlightName: "Nitya",
-            image: "/api/placeholder/100/100",
+            image: "/images/testi-nitya.jpg",
             linkText: "Read full story"
         },
         {
@@ -240,7 +240,22 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             question: "Are your assessments only available online? Can I give them in a paper-pen format?",
             answer: "Our career assessments have been made completely in the online form, specifically because online assessments are more effective and superior to paper-and-pen tests. Our stream assessment provides access to your results, stream recommendations, reports, action plans, etc. through a single dashboard, which cannot happen with a pen-and-paper test. Online assessments give the added benefit of convenience, since they can be taken from the comfort of your home, further contributing to the accuracy of results."
         }
-    ]
+    ],
+contact: {
+    title: "What can we help you with?",
+    subtitle: "Feel free to write to us. We usually respond within 24 hours!",
+    phoneNumber: "+91 87449 87449",
+    availability: "Monday - Friday",
+    availabilityHours: "10 am - 7 pm",
+    phoneImage: "", 
+    queryOptions: [
+        "Career Counselling",
+        "Pricing & Plans",
+        "Technical Support",
+        "Other"
+    ],
+    buttonText: "Submit"
+},
 };
 
 // Default export wrapper for current usage
