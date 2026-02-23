@@ -41,7 +41,7 @@ export default function Header() {
           title: "College and Graduates",
           subtitle: "Career Selection & Development",
           desc: "5-dimensional assessment & superior guidance to help you discover your perfect career and choose the best next step.",
-          link: "#"
+          link: "/career-counselling-for-graduates-and-college-students"
         }
       ]
     },
@@ -52,7 +52,7 @@ export default function Header() {
         {
           title: "Virtual Career Internship",
           desc: "Experiential, immersive self-paced program that helps students experience different careers and gives them practical exposure to these careers.",
-          link: "#"
+          link: "/virtual-career-internships"
         }
       ],
       secondaryCategory: "COLLEGE APPLICATION PROGRAMS",
@@ -60,12 +60,12 @@ export default function Header() {
         {
           title: "Overseas Application",
           desc: "End-to-end overseas admissions guidance to help you build the perfect applications for your target universities.",
-          link: "#"
+          link: "/overseas-admissions-counselling"
         },
         {
           title: "Liberal Arts Application",
           desc: "Comprehensive guidance and personalised application development for admissions to Liberal Arts programs.",
-          link: "#"
+          link: "/liberal-arts-admissions-counselling"
         }
       ]
     }
@@ -77,7 +77,7 @@ export default function Header() {
         {
           title: "In School Career Guidance",
           desc: "State-of-the-art assessment & end-to-end career guidance to help students discover their perfect career.",
-          link: "#"
+          link: "/schools"
         }
       ]
     },

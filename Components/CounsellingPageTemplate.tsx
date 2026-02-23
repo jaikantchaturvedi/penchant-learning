@@ -13,13 +13,13 @@ export interface HeroData {
     subtitle: string;
     ctaText: string;
     ctaLink: string;
-    features: string[];
+    features?: string[];
     backgroundImage?: string;
 }
 
 export interface FeatureItem {
-    icon: any;
-    text: string;
+    icon ?: any;
+    text ?: string;
 }
 
 export interface HowItWorksItem {
@@ -48,6 +48,7 @@ export interface PlanFeature {
     desc: string;
     locked?: boolean;
     tag?: string;
+    limitedAccess ?: boolean;
 }
 
 export interface Plan {
@@ -61,7 +62,7 @@ export interface Plan {
     titleColor: string;
     borderColor: string;
     accentColor: string;
-    features: PlanFeature[];
+    features?: PlanFeature[];
     hasSessionSelector?: boolean;
     hasEmailInput?: boolean;
     buttonText: string;
@@ -94,15 +95,54 @@ export interface FaqItem {
     answer: string;
 }
 
-export interface CounsellingPageData {
-    hero: HeroData;
-    features: FeatureItem[];
-    howItWorks: HowItWorksItem[];
-    successStory: SuccessStoryData;
-    plans: Plan[];
-    comparison: ComparisonData;
-    testimonials: TestimonialItem[];
-    faqs: FaqItem[];
+export interface ContactData {
+    title: string;
+    subtitle: string;
+    phoneNumber: string;
+    availability: string;
+    availabilityHours: string;
+    phoneImage: string;
+    queryOptions: string[];
+    buttonText: string;
+}
+export interface ServiceItem {
+    id: string;
+    name: string;
+    price: number;
+    description: string;
+}
+
+export interface SpecialPackage {
+    icon: string;           // image path
+    title: string;
+    description: string;
+    ctaText: string;
+    ctaLink: string;
+}
+
+export interface ServicesData {
+    title: string;
+    subtitle: string;
+    services: ServiceItem[];
+}
+
+export interface SpecialPackagesData {
+    title: string;
+    packages: SpecialPackage[];
+}
+
+export interface  CounsellingPageData {
+    hero ?: HeroData;
+    features ?: FeatureItem[];
+    howItWorks ?: HowItWorksItem[];
+    successStory ?: SuccessStoryData;
+    plans ?: Plan[];
+    comparison ?: ComparisonData;
+    testimonials ?: TestimonialItem[];
+    faqs ?: FaqItem[];
+    contact ?: ContactData;
+    services?: ServicesData;
+    specialPackages?: SpecialPackagesData;
 }
 
 // --- Component ---
@@ -116,14 +156,15 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
         <div className="min-h-screen bg-white font-sans text-gray-800">
 
             {/* Side Sticky Call Button */}
-            <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40">
+            {/* <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40">
                 <div className="bg-[#e67e22] p-3 rounded-r-lg text-white cursor-pointer hover:bg-[#d35400] transition-colors shadow-lg">
                     <FiPhone size={24} />
                 </div>
-            </div>
+            </div> */}
 
             {/* Hero Section */}
-            <section className="relative overflow-hidden pt-12 pb-24 px-6 md:px-12 bg-gradient-to-b from-white to-[#fdfaf7]" style={{ backgroundImage: data.hero.backgroundImage ? `url("${data.hero.backgroundImage}")` : undefined, backgroundSize: '50%', backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom right' }}>
+            {data.hero && (
+                <section className="relative overflow-hidden pt-12 pb-24 px-6 md:px-12 bg-gradient-to-b from-white to-[#fdfaf7]" style={{ backgroundImage: data.hero.backgroundImage ? `url("${data.hero.backgroundImage}")` : undefined, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom right' }}>
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
                     <div className="md:w-1/2 space-y-6 z-10">
                         <h1 className="text-4xl md:text-5xl font-bold text-[#333] leading-tight max-w-lg">
@@ -142,10 +183,10 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                             </Link>
                         </div>
                         <div className="text-[#092a51] font-medium text-sm pt-4 flex flex-wrap gap-x-2">
-                            {data.hero.features.map((feature, index) => (
+                            {data.hero.features?.map((feature, index) => (
                                 <React.Fragment key={index}>
                                     <span>{feature}</span>
-                                    {index < data.hero.features.length - 1 && <span>|</span>}
+                                    { data.hero?.features?.length && index < data.hero.features?.length - 1 && <span>|</span>}
                                 </React.Fragment>
                             ))}
                         </div>
@@ -153,102 +194,160 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
 
                 </div>
             </section>
+            )}
 
             {/* Feature Icons Grid */}
-            <section className="py-16 px-6 md:px-12 bg-[#8c5a31]">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-                    {data.features.map((feature, index) => (
-                        <div key={index} className="flex flex-col items-center space-y-4">
-                            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg text-[#8c5a31]">
-                                <feature.icon size={36} />
+            {data.features && (
+                            <section className="py-16 px-6 md:px-12 bg-[#8c5a31]">
+                            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+                                {data.features.map((feature, index) => (
+                                    <div key={index} className="flex flex-col items-center space-y-4">
+                                        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg text-[#8c5a31]">
+                                            <feature.icon size={36} />
+                                        </div>
+                                        <p className="text-sm font-medium text-white leading-relaxed">
+                                            {feature.text}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
-                            <p className="text-sm font-medium text-white leading-relaxed">
-                                {feature.text}
-                            </p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+                        </section>
+            )}
+            {/* Our Services — Interactive Selector */}
+            {data.services && (
+                <section className="py-24 px-6 md:px-12 bg-[#f9fafb]">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-3xl font-semibold text-[#092a51] text-center mb-4">{data.services.title}</h2>
+                        <p className="text-gray-500 text-center mb-12">{data.services.subtitle}</p>
 
-            {/* How it Works Section */}
-            <section className="py-24 px-6 md:px-12 bg-white">
-                <div className="max-w-7xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] text-center mb-24">How it Works</h2>
-
-                    {data.howItWorks.map((step) => (
-                        <div key={step.id} className={`flex flex-col ${step.reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-16 mb-32`}>
-                            <div className="md:w-[55%] relative group">
-                                <div className="bg-white rounded-xl border border-gray-100 overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
-                                    <Image
-                                        src={step.image}
-                                        alt={step.title}
-                                        width={800}
-                                        height={500}
-                                        className="w-full h-auto"
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                            {data.services.services.map((service) => (
+                                <label key={service.id} className="flex items-start gap-4 p-5 border border-gray-200 rounded-xl bg-white cursor-pointer hover:border-[#8c5a31] transition-all group">
+                                    <input
+                                        type="checkbox"
+                                        className="mt-1 accent-[#8c5a31] w-4 h-4"
+                                        onChange={(e) => {
+                                            // handle selection — use useState in a client component
+                                        }}
                                     />
-                                </div>
-                                <div className={step.decorationClass}></div>
-                            </div>
-                            <div className="md:w-[45%] space-y-6">
-                                <h3 className="text-2xl md:text-3xl font-bold text-[#333]">{step.title}</h3>
-                                <p className="text-gray-600 text-lg leading-relaxed">
-                                    {step.description}
-                                </p>
-                                <div className="pt-4">
-                                    <Link
-                                        href={step.ctaLink}
-                                        className="inline-block px-8 py-2.5 border-2 text-[#8c5a31] font-bold rounded shadow-sm hover:bg-[#8c5a31] hover:text-white transition-all"
-                                        style={{ borderColor: "#8c5a31" }}
-                                    >
-                                        {step.ctaText}
+                                    <div>
+                                        <p className="font-bold text-sm text-gray-800">{service.name}</p>
+                                        <p className="text-xs text-gray-500">{service.description}</p>
+                                    </div>
+                                    <span className="ml-auto font-bold text-[#8c5a31] text-sm whitespace-nowrap">₹{service.price.toLocaleString()}</span>
+                                </label>
+                            ))}
+                        </div>
+
+                        <div className="border-t pt-6 flex items-center justify-between">
+                            {/* <div>
+                                <p className="text-sm text-gray-500">Total Amount Payable</p>
+                                <p className="text-3xl font-bold text-[#333]">₹{total.toLocaleString()}</p>
+                            </div> */}
+                            <button className="px-10 py-3 text-white font-bold rounded hover:brightness-110 transition-all" style={{ backgroundColor: "#8c5a31" }}>
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            )}
+            {/* Special Services & Packages */}
+            {data.specialPackages && (
+                <section className="py-24 px-6 md:px-12 bg-white">
+                    <div className="max-w-7xl mx-auto">
+                        <h2 className="text-3xl font-semibold text-[#092a51] text-center mb-16">{data.specialPackages.title}</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {data.specialPackages.packages.map((pkg, i) => (
+                                <div key={i} className="border border-gray-100 rounded-xl p-8 flex flex-col hover:shadow-xl transition-all">
+                                    <Image src={pkg.icon} alt={pkg.title} width={56} height={56} className="mb-6" />
+                                    <h3 className="text-lg font-bold text-gray-800 mb-3">{pkg.title}</h3>
+                                    <p className="text-gray-500 text-sm leading-relaxed flex-grow">{pkg.description}</p>
+                                    <hr className="my-6" />
+                                    <Link href={pkg.ctaLink} className="text-[#8c5a31] font-bold text-sm hover:underline">
+                                        {pkg.ctaText}
                                     </Link>
                                 </div>
-                            </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-            </section>
+                    </div>
+                </section>
+            )}
+
+            {/* How it Works Section */}
+                {data.howItWorks && data.howItWorks.length > 0 && (
+                            <section className="py-24 px-6 md:px-12 bg-white">
+                                <div className="max-w-7xl mx-auto">
+                                    <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] text-center mb-24">How it Works</h2>
+
+                                    {data.howItWorks.map((step) => (
+                                        <div key={step.id} className={`flex flex-col ${step.reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-16 mb-32`}>
+                                            <div className="md:w-[55%] relative group">
+                                                <div className="bg-white rounded-xl border border-gray-100 overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
+                                                    <Image
+                                                        src={step.image}
+                                                        alt={step.title}
+                                                        width={800}
+                                                        height={500}
+                                                        className="w-full h-auto"
+                                                    />
+                                                </div>
+                                                <div className={step.decorationClass}></div>
+                                            </div>
+                                            <div className="md:w-[45%] space-y-6">
+                                                <h3 className="text-2xl md:text-3xl font-bold text-[#333]">{step.title}</h3>
+                                                <p className="text-gray-600 text-lg leading-relaxed">
+                                                    {step.description}
+                                                </p>
+                                                <div className="pt-4">
+                                                    <Link
+                                                        href={step.ctaLink}
+                                                        className="inline-block px-8 py-2.5 border-2 text-[#8c5a31] font-bold rounded shadow-sm hover:bg-[#8c5a31] hover:text-white transition-all"
+                                                        style={{ borderColor: "#8c5a31" }}
+                                                    >
+                                                        {step.ctaText}
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+                )}
 
             {/* Success Story Section */}
-            <section className="bg-[#8c5a31] overflow-hidden">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12">
-                    <div className="md:w-2/3 py-8 space-y-2">
-                        <span className="text-white text-[10px] font-bold tracking-widest uppercase">
-                            {data.successStory.category}
-                        </span>
-                        <h2 className="text-xl md:text-2xl font-bold text-white leading-tight max-w-4xl">
-                            {data.successStory.title}
-                        </h2>
-                        <p className="text-white text-[13px] leading-relaxed max-w-3xl">
-                            {data.successStory.story}
-                        </p>
-                        <div className="pt-2">
-                            <Link
-                                href={data.successStory.ctaLink}
-                                className="inline-block px-5 py-1 text-white text-xs font-semibold border border-white rounded hover:bg-white hover:text-[#8c5a31] transition-all"
-                            >
-                                {data.successStory.ctaText}
-                            </Link>
+            {data.successStory && (
+                <section className="bg-[#8c5a31] overflow-hidden">
+                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12">
+                        <div className="md:w-2/3 py-8 space-y-2">
+                            <span className="text-white text-[10px] font-bold tracking-widest uppercase">
+                                {data.successStory.category}
+                            </span>
+                            <h2 className="text-xl md:text-2xl font-bold text-white leading-tight max-w-4xl">
+                                {data.successStory.title}
+                            </h2>
+                            <p className="text-white text-[13px] leading-relaxed max-w-3xl">
+                                {data.successStory.story}
+                            </p>
+                            <div className="pt-2">
+                                <Link href={data.successStory.ctaLink} className="inline-block px-5 py-1 text-white text-xs font-semibold border border-white rounded hover:bg-white hover:text-[#8c5a31] transition-all">
+                                    {data.successStory.ctaText}
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="md:w-1/3 flex justify-end items-end h-[240px]">
+                            <Image src={data.successStory.image} alt={data.successStory.personName} width={240} height={240} className="object-contain object-bottom h-full w-auto" />
                         </div>
                     </div>
-                    <div className="md:w-1/3 flex justify-end items-end h-[240px]">
-                        <Image
-                            src={data.successStory.image}
-                            alt={`Success Story - ${data.successStory.personName}`}
-                            width={240}
-                            height={240}
-                            className="object-contain object-bottom h-full w-auto"
-                        />
-                    </div>
-                </div>
-            </section>
+                </section>
+            )}
 
             {/* Plans and Pricing Section */}
+            {data.plans && (
             <section className="py-24 px-6 md:px-12 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] text-center mb-16 underline-offset-8">Plans and Pricing</h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         {data.plans.map((plan) => (
                             <div key={plan.id} className={`relative bg-white rounded-xl ${plan.borderColor} ${plan.bestselling ? 'border-2' : 'border'} p-8 flex flex-col hover:shadow-2xl transition-all h-full`}>
                                 {plan.bestselling && (
@@ -268,7 +367,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                 <div className="text-3xl font-bold text-[#333] mb-8">{plan.price}</div>
 
                                 <div className="space-y-6 flex-grow">
-                                    {plan.features.map((feature, featureIndex) => (
+                                    {plan ?.features?.map((feature, featureIndex) => (
                                         <div key={featureIndex} className={feature.locked ? "opacity-40 flex gap-2" : ""}>
                                             {feature.locked && <FiLock className="mt-1 flex-shrink-0" />}
                                             <div className={feature.locked ? "" : ""}>
@@ -316,13 +415,15 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                         ))}
                     </div>
                 </div>
-            </section>
+            </section>                
+            )}
 
             {/* Comparison/Why Mindler Section */}
-            <section className="bg-[#8c5a31] overflow-hidden">
+            {data.comparison && (
+             <section className="bg-[#8c5a31] overflow-hidden">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center px-6 md:px-12">
-                    <div className="md:w-2/3 py-8 space-y-2 flex flex-col items-center justify-center text-center">
-                        <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight max-w-2xl">
+                    <div className="md:w-[55rem] py-8 space-y-2 flex flex-col items-center justify-center text-center">
+                        <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight ">
                             {data.comparison.title}
                         </h2>
                         <p className="text-white text-[16px] leading-relaxed max-w-lg">
@@ -338,9 +439,11 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>               
+            )}
 
             {/* Testimonials Section */}
+            {data.testimonials && (
             <section className="py-24 px-6 md:px-12 bg-[#f9fafb]">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] text-center mb-16">Testimonials</h2>
@@ -425,42 +528,112 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                         })}
                     </div>
                 </div>
-            </section>
+            </section>                
+            )}
 
             {/* FAQ Section */}
-            <section className="py-24 px-6 md:px-12 bg-white">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] mb-2">Frequently Asked Questions</h2>
-                        <p className="text-gray-500 text-lg">What students usually ask us.</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-                        {/* Split FAQs into two columns */}
-                        <div className="space-y-12">
-                            {data.faqs.slice(0, Math.ceil(data.faqs.length / 2)).map((faq, index) => (
-                                <div key={index}>
-                                    <h3 className="text-lg font-bold text-[#333] mb-3">{faq.question}</h3>
-                                    <p className="text-gray-600 text-[15px] leading-relaxed">
-                                        {faq.answer}
-                                    </p>
+            {data.faqs && (
+                        <section className="py-24 px-6 md:px-12 bg-white">
+                            <div className="max-w-7xl mx-auto">
+                                <div className="text-center mb-16">
+                                    <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] mb-2">Frequently Asked Questions</h2>
+                                    <p className="text-gray-500 text-lg">What students usually ask us.</p>
                                 </div>
-                            ))}
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                                    {/* Split FAQs into two columns */}
+                                    <div className="space-y-12">
+                                        {data.faqs.slice(0, Math.ceil(data.faqs.length / 2)).map((faq, index) => (
+                                            <div key={index}>
+                                                <h3 className="text-lg font-bold text-[#333] mb-3">{faq.question}</h3>
+                                                <p className="text-gray-600 text-[15px] leading-relaxed">
+                                                    {faq.answer}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className="space-y-12">
+                                        {data.faqs.slice(Math.ceil(data.faqs.length / 2)).map((faq, index) => (
+                                            <div key={index}>
+                                                <h3 className="text-lg font-bold text-[#333] mb-3">{faq.question}</h3>
+                                                <p className="text-gray-600 text-[15px] leading-relaxed">
+                                                    {faq.answer}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+            )}
+            {/* Contact Section */}
+            {data.contact && (
+            <section className="bg-[#f0f0f0] py-16 px-6 md:px-12">
+                <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-sm p-10 md:p-14">
+                    <div className="flex flex-col md:flex-row gap-12 items-start">
+
+                        {/* Left: Form */}
+                        <div className="flex-1">
+                            <h2 className="text-2xl font-bold text-gray-800 mb-1">{data.contact.title}</h2>
+                            <p className="text-gray-500 text-sm mb-8">{data.contact.subtitle}</p>
+
+                            <form className="space-y-4">
+                                <input
+                                    type="text"
+                                    placeholder="Name"
+                                    className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400"
+                                />
+                                <input
+                                    type="email"
+                                    placeholder="Email"
+                                    className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400"
+                                />
+                                <input
+                                    type="tel"
+                                    placeholder="Contact Number"
+                                    className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400"
+                                />
+                                <select
+                                    defaultValue=""
+                                    className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-400 focus:outline-none focus:border-[#8c5a31] bg-white"
+                                >
+                                    <option value="" disabled>What is the nature of your query?</option>
+                                    {data.contact.queryOptions.map((option, i) => (
+                                        <option key={i} value={option}>{option}</option>
+                                    ))}
+                                </select>
+                                <textarea
+                                    placeholder="Query/Comment"
+                                    rows={4}
+                                    className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400 resize-none"
+                                />
+                                <div className="flex justify-center pt-2">
+                                    <button
+                                        type="submit"
+                                        className="px-10 py-2.5 bg-[#e67e22] hover:bg-[#d35400] text-white text-sm font-semibold rounded transition-colors"
+                                    >
+                                        {data.contact.buttonText}
+                                    </button>
+                                </div>
+                            </form>
                         </div>
 
-                        <div className="space-y-12">
-                            {data.faqs.slice(Math.ceil(data.faqs.length / 2)).map((faq, index) => (
-                                <div key={index}>
-                                    <h3 className="text-lg font-bold text-[#333] mb-3">{faq.question}</h3>
-                                    <p className="text-gray-600 text-[15px] leading-relaxed">
-                                        {faq.answer}
-                                    </p>
-                                </div>
-                            ))}
+                        {/* Right: Image */}
+                        <div className="flex-shrink-0 flex items-center justify-center w-full md:w-72">
+                            <Image
+                                src="/images/ContactUs.svg"
+                                alt="Contact us"
+                                width={280}
+                                height={320}
+                                className="object-contain"
+                            />
                         </div>
+
                     </div>
                 </div>
             </section>
+            )}
 
             <FooterSection />
         </div>
