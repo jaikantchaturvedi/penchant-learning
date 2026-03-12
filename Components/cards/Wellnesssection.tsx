@@ -93,11 +93,11 @@ export default function WellnessSection() {
         <div className="max-w-7xl mx-auto  w-full">
           {/* TOP TEXT */}
           <div className="text-center max-w-2xl mx-auto px-4">
-            <p className="uppercase tracking-wide text-[#092a51] text-sm">
+            <p className="uppercase tracking-wide text-[#8c5a31] text-sm">
               Enhancing your career potential
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-[#092a51] leading-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#8c5a31] leading-tight mb-6">
               We support & nurture <br /> lasting change
             </h2>
           </div>
@@ -226,7 +226,7 @@ export default function WellnessSection() {
             </button>
 
             {/* Title */}
-            <h3 className="text-3xl font-bold text-[#092a51] mb-6">
+            <h3 className="text-3xl font-bold text-[#8c5a31] mb-6">
               {popupContent[activeCard].title}
             </h3>
 

@@ -108,40 +108,46 @@ export const AdmissionsPageTemplate: React.FC<Props> = ({ data }) => {
 
             {/* ── HERO ─────────────────────────────────────────────────────── */}
             <section
-                className="relative pt-16 pb-20 px-6 md:px-12 bg-gradient-to-b from-white to-[#fdfaf7]"
-                style={
-                    data.hero.backgroundImage
-                        ? { backgroundImage: `url("${data.hero.backgroundImage}")`, backgroundSize: "100%", backgroundRepeat: "no-repeat", backgroundPosition: "bottom right" }
-                        : undefined
-                }
+                className="relative pt-12 pb-16 bg-gradient-to-b from-white to-[#fdfaf7]"
             >
-                <div className="max-w-7xl mx-auto flex flex-col items-center">
-                    <div>
-                    <h1 className="text-4xl md:text-5xl font-bold text-[#333] leading-tight max-w-4xl mb-4">
-                        {data.hero.title}
-                    </h1>
-                    <p className="text-gray-500 text-lg max-w-lg mb-8">
-                        {data.hero.subtitle}
-                    </p>
+                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                    <div className="md:w-1/2">
+                        <h1 className="text-4xl md:text-5xl font-bold text-[#333] leading-tight mb-4">
+                            {data.hero.title}
+                        </h1>
+                        <p className="text-gray-500 text-lg max-w-lg mb-8">
+                            {data.hero.subtitle}
+                        </p>
+                        <Link
+                            href={data.hero.ctaLink}
+                            className="inline-block px-10 py-3 text-white font-bold rounded shadow-md hover:brightness-110 transition-all mb-10"
+                            style={{ backgroundColor: "#8c5a31" }}
+                        >
+                            {data.hero.ctaText}
+                        </Link>
                     </div>
-                   
-                    <Link
-                        href={data.hero.ctaLink}
-                        className="inline-block px-10 py-3 text-white font-bold rounded shadow-md hover:brightness-110 transition-all mb-10"
-                        style={{ backgroundColor: "#8c5a31" }}
-                    >
-                        {data.hero.ctaText}
-                    </Link>
 
+                    {data.hero.backgroundImage && (
+                        <div className="md:w-1/2 flex justify-center items-center">
+                            <Image 
+                                src={data.hero.backgroundImage} 
+                                alt={data.hero.title} 
+                                width={600} 
+                                height={500} 
+                                className="w-full h-auto object-contain max-h-[550px]"
+                                priority
+                            />
+                        </div>
+                    )}
                 </div>
-                    {/* Nav links strip */}
-                    < div className="flex flex-wrap justify-center w-full absolute bottom-[7px] gap-x-8 gap-y-2 border-t border-gray-100 pt-6">
-                        {data.hero.navLinks.map((link, i) => (
-                            <Link key={i} href={link.href} className="text-[#007dab] font-semibold text-sm hover:underline">
-                                {link.label}
-                            </Link>
-                        ))}
-                    </div>
+                {/* Nav links strip */}
+                <div className="flex flex-wrap justify-center w-full absolute bottom-[7px] gap-x-8 gap-y-2 border-t border-gray-100 pt-6">
+                    {data.hero.navLinks.map((link, i) => (
+                        <Link key={i} href={link.href} className="text-[#8c5a31] font-semibold text-sm hover:underline">
+                            {link.label}
+                        </Link>
+                    ))}
+                </div>
             </section>
 
             {/* ── ABOUT THE PROGRAM ─────────────────────────────────────────── */}
@@ -168,7 +174,7 @@ export const AdmissionsPageTemplate: React.FC<Props> = ({ data }) => {
             {data.howItWorks && data.howItWorks.length > 0 && (
                 <section id="how" className="py-24 px-6 md:px-12 bg-white">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-semibold text-[#8c5a31] text-center mb-16">
                             How We Help You Achieve Your Overseas Education Dream
                         </h2>
 
@@ -228,7 +234,7 @@ export const AdmissionsPageTemplate: React.FC<Props> = ({ data }) => {
             {data.universities && data.universities.length > 0 && (
                 <section className="py-16 px-6 md:px-12 bg-[#f9fafb]">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-2xl font-semibold text-[#092a51] text-center mb-12">
+                        <h2 className="text-2xl font-semibold text-[#8c5a31] text-center mb-12">
                             {data.universityTitle || "Successful Applications At"}
                         </h2>
                         <div className="flex flex-wrap justify-center items-center gap-8">
@@ -252,7 +258,7 @@ export const AdmissionsPageTemplate: React.FC<Props> = ({ data }) => {
             {data.applicationPrograms && data.applicationPrograms.length > 0 && (
                 <section id="programs" className="py-24 px-6 md:px-12 bg-white">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-3xl font-semibold text-[#092a51] text-center mb-4">
+                        <h2 className="text-3xl font-semibold text-[#8c5a31] text-center mb-4">
                             Our Application Programs
                         </h2>
                         <p className="text-gray-500 text-center mb-12">
@@ -313,7 +319,7 @@ export const AdmissionsPageTemplate: React.FC<Props> = ({ data }) => {
             {/* ── TESTIMONIALS ─────────────────────────────────────────────── */}
             <section id="testimonials" className="py-24 px-6 md:px-12 bg-[#f9fafb]">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-3xl font-semibold text-[#092a51] text-center mb-16">Testimonials</h2>
+                    <h2 className="text-3xl font-semibold text-[#8c5a31] text-center mb-16">Testimonials</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {data.testimonials.map((t, i) => (
                             <div key={i} className="bg-white rounded-xl border border-gray-100 p-8 flex flex-col hover:shadow-lg transition-all relative overflow-hidden">
@@ -339,7 +345,7 @@ export const AdmissionsPageTemplate: React.FC<Props> = ({ data }) => {
             {/* ── FAQs ─────────────────────────────────────────────────────── */}
             <section id="faqs" className="py-24 px-6 md:px-12 bg-white">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-semibold text-[#092a51] text-center mb-4">
+                    <h2 className="text-3xl font-semibold text-[#8c5a31] text-center mb-4">
                         Frequently Asked Questions
                     </h2>
                     <p className="text-gray-500 text-center mb-16">What students usually ask us.</p>
@@ -386,7 +392,7 @@ export const AdmissionsPageTemplate: React.FC<Props> = ({ data }) => {
                                 </select>
                                 <textarea placeholder="Query/Comment" rows={4} className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-[#8c5a31] placeholder-gray-400 resize-none" />
                                 <div className="flex justify-center pt-2">
-                                    <button type="submit" className="px-10 py-2.5 bg-[#e67e22] hover:bg-[#d35400] text-white text-sm font-semibold rounded transition-colors">
+                                    <button type="submit" className="px-10 py-2.5 bg-[#8c5a31] hover:brightness-110 text-white text-sm font-semibold rounded transition-colors">
                                         {data.contact.buttonText}
                                     </button>
                                 </div>

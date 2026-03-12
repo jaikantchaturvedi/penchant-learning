@@ -5,7 +5,7 @@ const schoolsData: SchoolsPageData = {
 
     // ── HERO ─────────────────────────────────────────────────────────────────
     // Replace this with your own hero background image
-    heroBg: "/images/schools-hero.png",
+    heroBg: "/images/schools_hero.png",
     heroTitle: "Creating a Career Guidance Ecosystem in Sync with the Vision of NEP",
     heroCtaText: "Enquire Now",
     heroCtaLink: "#contact",
@@ -32,7 +32,7 @@ const schoolsData: SchoolsPageData = {
     navLinks: [
         { label: "Our Partners", href: "#partners" },
         { label: "About the Program", href: "#guide" },
-        { label: "Why Panchant Learning", href: "#iccc" },
+        { label: "Why Penchant Learning", href: "#iccc" },
         { label: "Testimonials", href: "#testimonials" },
         { label: "FAQs", href: "#faqs" },
         { label: "Contact Us", href: "#contact" },
@@ -299,28 +299,28 @@ const schoolsData: SchoolsPageData = {
             text: "All the things the assessment told me about myself and my interests were so true.",
             name: "Sneha",
             school: "DPS RK Puram",
-            image: "https://mindlerimages.imgix.net/tinyimg/testi-6.jpg",
+            image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
         },
         {
             type: "quote",
             text: "Panchant Learning provided a mentored framework for my son's ambitions to achieve and succeed.",
             name: "Kavita",
             school: "Parent",
-            image: "https://mindlerimages.imgix.net/tinyimg/testi-5.jpg",
+            image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=150&h=150",
         },
         {
             type: "quote",
             text: "Signing up for Panchant Learning, and meeting and interacting with their experienced team was one of the best decisions I made.",
             name: "Shaurya",
             school: "Aga Khan Academy",
-            image: "https://mindlerimages.imgix.net/tinyimg/testi-7.jpg",
+            image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150&h=150",
         },
         {
             type: "story",
             text: "How Nitya overcame her inhibitions and biases to choose the stream best aligned to her career goals.",
             name: "Nitya",
             school: "",
-            image: "https://mindlerimages.imgix.net/tinyimg/new-nitya_new.webp",
+            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
             storyLink: "/success-stories/confused-class-10-student-found-her-perfect-stream",
         },
     ],

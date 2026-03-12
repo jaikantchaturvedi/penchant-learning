@@ -141,14 +141,14 @@ const MUNTraining = () => {
             <SwiperStyles />
 
 
-            <section className="relative overflow-hidden pt-24 pb-32 px-6 md:px-12 bg-gradient-to-b from-white to-[#fdfaf7] flex items-center justify-center min-h-[500px]" style={{ backgroundImage: `url("/images/mindler-mun-banner.svg")`, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom right' }}>
-                <div className="w-full mx-auto flex flex-col md:flex-row items-center justify-center ">
-                    <div className="md:w-1/2 space-y-6 z-10 flex flex-col justify-center items-center">
-                        <h1 className="text-4xl md:text-5xl font-bold text-[#333] leading-tight max-w-lg text-center">
-                            Guide and Inspire the next  generation of MUN Leaders
+            <section className="relative overflow-hidden pt-12 pb-16 bg-gradient-to-b from-white to-[#fdfaf7]">
+                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                    <div className="md:w-1/2 space-y-6">
+                        <h1 className="text-4xl md:text-5xl font-bold text-[#8c5a31] leading-tight">
+                            Guide and Inspire the next generation of MUN Leaders
                         </h1>
-                        <p className="text-gray-500 text-lg max-w-md text-center">
-                            Expert-led MUN Training Program for Schools
+                        <p className="text-gray-500 text-lg max-w-md">
+                            Expert-led MUN Training Program for Schools. Empowering students with critical thinking and diplomatic skills.
                         </p>
                         <div className="pt-2">
                             <button
@@ -158,14 +158,24 @@ const MUNTraining = () => {
                                 Learn More
                             </button>
                         </div>
+                    </div>
 
+                    <div className="md:w-1/2 flex justify-center items-center">
+                        <Image 
+                            src="/images/mun_hero.png" 
+                            alt="MUN Training" 
+                            width={600} 
+                            height={500} 
+                            className="w-full h-auto object-contain max-h-[550px]"
+                            priority
+                        />
                     </div>
                 </div>
             </section>
 
             {/* About Section */}
             <section id="about" className="py-20 px-6 max-w-5xl mx-auto text-center">
-                <h2 className="text-3xl font-bold text-[#4a5568] mb-6">About MUN Training Program</h2>
+                <h2 className="text-3xl font-bold text-[#8c5a31] mb-6">About MUN Training Program</h2>
                 <p className="text-[15px] text-gray-500 leading-relaxed max-w-4xl mx-auto px-4 md:px-0">
                     Model United Nations (MUN) conferences have become a significant part of the co-curricular world at schools and colleges today.
                     An activity driven by extensive knowledge and preparation, MUNs sit at the intersection of professional skills, communication skills and global know-how.
@@ -173,7 +183,7 @@ const MUNTraining = () => {
                 </p>
 
                 <div className="mt-20">
-                    <p className="text-[#4a5568] font-medium text-sm border-b border-gray-100 inline-block pb-2 mb-16">
+                    <p className="text-[#8c5a31] font-medium text-sm border-b border-gray-100 inline-block pb-2 mb-16">
                         The Penchant Learning MUN Training Program trains students in the following areas:
                     </p>
 
@@ -184,7 +194,7 @@ const MUNTraining = () => {
                                 <div className={`w-20 h-20 rounded-full border-2 ${area.iconBorder} flex items-center justify-center mb-6 bg-white transition-transform duration-300 group-hover:scale-110`}>
                                     {/* Icon simulation using yellow circle and blue icon as in the image */}
                                     <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center relative overflow-hidden">
-                                        <area.icon size={28} className="text-[#2ea3f2] relative z-10" />
+                                        <area.icon size={28} className="text-[#8c5a31] relative z-10" />
                                         {/* Suggestion of yellow outer ring from images */}
                                         <div className="absolute inset-0 border-[6px] border-yellow-400 opacity-20 rounded-full"></div>
                                     </div>
@@ -202,7 +212,7 @@ const MUNTraining = () => {
             {/* Schools We Work With */}
             <section className="py-20 px-6 bg-white border-t border-gray-50">
                 <div className="max-w-7xl mx-auto text-center">
-                    <h2 className="text-xl font-bold text-[#4a5568] mb-16">Schools We Work With</h2>
+                    <h2 className="text-xl font-bold text-[#8c5a31] mb-16">Schools We Work With</h2>
                     <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8 items-center place-items-center">
                         {[
                             { name: "WELHAM BOY'S", img: "/images/slogo-1.jpg" },
@@ -276,7 +286,7 @@ const MUNTraining = () => {
             {/* FAQ Section */}
             <section id="faq" className="py-24 px-6 bg-white">
                 <div className="max-w-7xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold text-[#4a5568] mb-16">Frequently Asked Questions</h2>
+                    <h2 className="text-3xl font-bold text-[#8c5a31] mb-16">Frequently Asked Questions</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12 text-left">
                         {faqs.map((faq, index) => (
                             <div key={index} className="space-y-3">
@@ -297,7 +307,7 @@ const MUNTraining = () => {
                     {/* Left Side - Form */}
                     <div className="w-full md:w-[60%] space-y-8">
                         <div className="space-y-2">
-                            <h2 className="text-2xl md:text-3xl font-semibold text-gray-700">
+                            <h2 className="text-2xl md:text-3xl font-semibold text-[#8c5a31]">
                                 Ready to develop MUN leaders at your school?
                             </h2>
                             <p className="text-gray-500 text-sm">
@@ -309,25 +319,25 @@ const MUNTraining = () => {
                             <input
                                 type="text"
                                 placeholder="Name"
-                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#0c84b4] transition-colors text-sm text-gray-700 outline-none"
+                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
                             />
                             <input
                                 type="email"
                                 placeholder="Email"
-                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#0c84b4] transition-colors text-sm text-gray-700 outline-none"
+                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
                             />
                             <input
                                 type="text"
                                 placeholder="Contact Number"
-                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#0c84b4] transition-colors text-sm text-gray-700 outline-none"
+                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
                             />
                             <input
                                 type="text"
                                 placeholder="School Name"
-                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#0c84b4] transition-colors text-sm text-gray-700 outline-none"
+                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
                             />
                             <div className="relative">
-                                <select className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#0c84b4] transition-colors text-sm text-gray-400 outline-none appearance-none">
+                                <select className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-400 outline-none appearance-none">
                                     <option>Number of Students?</option>
                                     <option>Less than 100</option>
                                     <option>100 - 500</option>
@@ -342,7 +352,7 @@ const MUNTraining = () => {
                             <textarea
                                 placeholder="Query/ Comment (Optional)"
                                 rows={4}
-                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#0c84b4] transition-colors text-sm text-gray-700 outline-none resize-none"
+                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none resize-none"
                             ></textarea>
 
                             <div className="flex justify-center pt-4">
@@ -366,7 +376,7 @@ const MUNTraining = () => {
 
                         <div className="space-y-2">
                             <p className="text-gray-400 text-lg">Need to speak to us now?</p>
-                            <h3 className="text-xl md:text-2xl font-bold text-gray-700">
+                            <h3 className="text-xl md:text-2xl font-bold text-[#8c5a31]">
                                 Call us at +91 87449 87449
                             </h3>
                             <p className="text-gray-400 text-sm">

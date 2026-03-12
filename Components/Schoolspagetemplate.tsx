@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import FooterSection from "@/Components/cards/Footer";
 
 // ─── TYPES ───────────────────────────────────────────────────────────────────
@@ -100,27 +101,41 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
         <div className="min-h-screen bg-white text-gray-800" style={{ fontFamily: "'Inter', sans-serif" }}>
 
             {/* ─── HERO — full background image ──────────────────────────── */}
+            {/* ─── HERO — side-by-side layout ──────────────────────────── */}
             <section
-                className="relative min-h-[520px] flex items-center"
-                style={{
-                    backgroundImage: `url('${data.heroBg}')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center top",
-                }}
+                className="relative min-h-[550px] flex items-center pt-12 pb-16 bg-gradient-to-b from-white to-[#fdfaf7]"
             >
-                {/* dark overlay */}
-                <div className="absolute inset-0 opacity-100" />
-                <div className="relative z-10 w-full mx-auto px-6 md:px-16 py-24 text-#333">
-                    <h1 className="text-5xl md:text-5xl font-bold max-w-4xl md:w-xl leading-tight mb-8">
-                        {data.heroTitle}
-                    </h1>
-                    <Link
-                        href={data.heroCtaLink}
-                        className="inline-block px-10 py-3.5 text-white font-semibold rounded text-sm transition-all"
-                        style={{ backgroundColor: "#8c5a31" }}
-                    >
-                        {data.heroCtaText}
-                    </Link>
+                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 w-full">
+                    <div className="md:w-1/2 space-y-6">
+                        <h1 className="text-5xl md:text-5xl font-bold text-[#8c5a31] leading-tight">
+                            {data.heroTitle}
+                        </h1>
+                        <p className="text-gray-500 text-lg max-w-md">
+                            Equip your students for the future with our comprehensive career guidance ecosystem.
+                        </p>
+                        <div className="flex flex-wrap gap-4 pt-4">
+                            <Link
+                                href={data.heroCtaLink}
+                                className="inline-block px-10 py-3.5 text-white font-semibold rounded text-sm transition-all"
+                                style={{ backgroundColor: "#8c5a31" }}
+                            >
+                                {data.heroCtaText}
+                            </Link>
+                        </div>
+                    </div>
+
+                    {data.heroBg && (
+                        <div className="md:w-1/2 flex justify-center items-center">
+                            <Image 
+                                src={data.heroBg} 
+                                alt={data.heroTitle} 
+                                width={600} 
+                                height={500} 
+                                className="w-full h-auto object-contain max-h-[550px]"
+                                priority
+                            />
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -130,7 +145,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                     {data.stats.map((s, i) => (
                         <div key={i} className="flex flex-col items-center text-center gap-2">
                             <img src={s.icon} alt={s.label} className="h-12 w-auto object-contain" />
-                            <p className="text-3xl font-bold text-[#092a51]">{s.number}</p>
+                            <p className="text-3xl font-bold text-[#8c5a31]">{s.number}</p>
                             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{s.label}</p>
                         </div>
                     ))}
@@ -184,7 +199,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                             <a
                                 key={i}
                                 href={link.href}
-                                className="text-sm font-semibold text-[#092a51] hover:text-[#e67e22] whitespace-nowrap transition-colors border-b-2 border-transparent hover:border-[#e67e22] pb-1"
+                                className="text-sm font-semibold text-[#8c5a31] hover:text-[#8c5a31] whitespace-nowrap transition-colors border-b-2 border-transparent hover:border-[#8c5a31] pb-1"
                             >
                                 {link.label}
                             </a>
@@ -196,7 +211,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
             {/* ─── PARTNER INSTITUTIONS ───────────────────────────────────── */}
             <section id="partners" className="py-20 px-6 md:px-16 bg-white">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#092a51] mb-10 text-center">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#8c5a31] mb-10 text-center">
                         Our Partner Institutions
                     </h2>
 
@@ -228,7 +243,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                             <div
                                 key={i}
                                 title={logo.name}
-                                className="flex flex-col items-center justify-center gap-2 border border-gray-100 rounded-lg p-3 hover:shadow-md hover:border-[#092a51] transition-all"
+                                className="flex flex-col items-center justify-center gap-2 border border-gray-100 rounded-lg p-3 hover:shadow-md hover:border-[#8c5a31] transition-all"
                             >
                                 <img
                                     src={logo.image}
@@ -245,7 +260,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
             {/* ─── 12 STEP GUIDE ──────────────────────────────────────────── */}
             <section id="guide" className="py-20 px-6 md:px-16 bg-[#f7f9fc]">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#092a51] mb-14 text-center">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#8c5a31] mb-14 text-center">
                         {data.guideTitle}
                     </h2>
 
@@ -255,14 +270,14 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                             {data.guideSteps.map((step, i) => (
                                 <div key={i}>
                                     <button
-                                        onClick={() => setOpenGuideStep(openGuideStep === i ? i : i)}
+                                        onClick={() => setOpenGuideStep(i)}
                                         className={`w-full flex items-center gap-4 px-5 py-4 rounded-lg text-left transition-all ${openGuideStep === i
-                                            ? "bg-white shadow-md border-l-4 border-[#e67e22]"
+                                            ? "bg-white shadow-md border-l-4 border-[#8c5a31]"
                                             : "bg-transparent hover:bg-white"
                                             }`}
                                     >
                                         <img src={step.icon} alt={step.title} className="w-8 h-8 object-contain flex-shrink-0" />
-                                        <span className={`text-sm font-semibold ${openGuideStep === i ? "text-[#e67e22]" : "text-[#092a51]"}`}>
+                                        <span className={`text-sm font-semibold ${openGuideStep === i ? "text-[#8c5a31]" : "text-gray-400"}`}>
                                             {step.title}
                                         </span>
                                     </button>
@@ -278,7 +293,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                                 className="w-full h-56 object-cover"
                             />
                             <div className="p-8">
-                                <h3 className="text-xl font-bold text-[#092a51] mb-5">{activeStep.title}</h3>
+                                <h3 className="text-xl font-bold text-[#8c5a31] mb-5">{activeStep.title}</h3>
                                 <ul className="space-y-3 mb-8">
                                     {activeStep.bullets.map((b, j) => (
                                         <li key={j} className="flex items-start gap-3">
@@ -304,7 +319,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
 {data.icccLevels && (
     <section id="iccc" className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#092a51] text-center mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#8c5a31] text-center mb-3">
                 {data.icccTitle}
             </h2>
             <p className="text-gray-500 text-center text-sm mb-14 max-w-2xl mx-auto">
@@ -322,7 +337,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                         </div>
                         <div className="flex flex-col items-center text-center mt-6 mb-6">
                             <img src={level.icon} alt={level.title} className="w-12 h-12 object-contain mb-4" />
-                            <h3 className="text-lg font-bold text-[#092a51] mb-3">{level.title}</h3>
+                            <h3 className="text-lg font-bold text-[#8c5a31] mb-3">{level.title}</h3>
                             <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
                                 <span className="flex items-center gap-1">
                                     <img src="https://mindlerimages.imgix.net/tinyimg/credits-school.svg?w=16" alt="" className="w-3.5 h-3.5" />
@@ -338,7 +353,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                         <ul className="space-y-2">
                             {level.bullets.map((b, j) => (
                                 <li key={j} className="flex items-center gap-3 text-sm text-gray-600">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#e67e22] flex-shrink-0" />
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#8c5a31] flex-shrink-0" />
                                     {b}
                                 </li>
                             ))}
@@ -409,7 +424,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
             {/* ─── TESTIMONIALS ───────────────────────────────────────────── */}
             <section id="testimonials" className="py-20 px-6 md:px-16 bg-[#f7f9fc]">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#092a51] text-center mb-14">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#8c5a31] text-center mb-14">
                         Testimonials
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -424,7 +439,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                                         <div className="flex items-center gap-3">
                                             <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover border-2 border-[#8c5a31]" />
                                             <div>
-                                                <p className="font-bold text-sm text-[#092a51]">{t.name}</p>
+                                                <p className="font-bold text-sm text-[#8c5a31]">{t.name}</p>
                                                 <p className="text-xs text-gray-400">{t.school}</p>
                                             </div>
                                         </div>
@@ -435,7 +450,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                                         <div className="flex items-center gap-3 mb-4">
                                             <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover border-2 border-[#8c5a31]" />
                                             <div>
-                                                <p className="font-bold text-sm text-[#092a51]">{t.name}</p>
+                                                <p className="font-bold text-sm text-[#8c5a31]">{t.name}</p>
                                             </div>
                                         </div>
                                         {t.storyLink && (
@@ -468,7 +483,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
             {/* ─── FAQs ───────────────────────────────────────────────────── */}
             <section id="faqs" className="py-20 px-6 md:px-16 bg-[#f7f9fc]">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#092a51] text-center mb-12">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#8c5a31] text-center mb-12">
                         Frequently Asked Questions
                     </h2>
                     <div className="space-y-3">
@@ -478,7 +493,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                                     className="w-full flex justify-between items-center px-6 py-5 text-left"
                                 >
-                                    <span className="font-semibold text-[#092a51] text-sm pr-4">{faq.question}</span>
+                                    <span className="font-semibold text-[#8c5a31] text-sm pr-4">{faq.question}</span>
                                     <span className="text-[#8c5a31] text-lg font-bold flex-shrink-0">
                                         {openFaq === i ? "−" : "+"}
                                     </span>
@@ -497,16 +512,16 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
             {/* ─── CONTACT FORM ───────────────────────────────────────────── */}
             <section id="contact" className="py-20 px-6 md:px-16 bg-white">
                 <div className="max-w-3xl mx-auto text-center">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#092a51] mb-3">{data.contactTitle}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#8c5a31] mb-3">{data.contactTitle}</h2>
                     <p className="text-gray-500 text-sm mb-10">{data.contactSubtitle}</p>
                     <form className="text-left space-y-4 bg-[#f7f9fc] p-8 rounded-2xl border border-gray-100">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="text" placeholder="School / Institution Name" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#092a51] bg-white" />
-                            <input type="text" placeholder="Contact Person Name" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#092a51] bg-white" />
-                            <input type="email" placeholder="Email Address" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#092a51] bg-white" />
-                            <input type="tel" placeholder="Contact Number" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#092a51] bg-white" />
+                            <input type="text" placeholder="School / Institution Name" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white" />
+                            <input type="text" placeholder="Contact Person Name" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white" />
+                            <input type="email" placeholder="Email Address" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white" />
+                            <input type="tel" placeholder="Contact Number" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white" />
                         </div>
-                        <textarea rows={4} placeholder="Your message..." className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#092a51] bg-white resize-none" />
+                        <textarea rows={4} placeholder="Your message..." className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white resize-none" />
                         <div className="flex justify-center pt-2">
                             <button
                                 type="submit"

@@ -20,7 +20,7 @@ const graduatesPageData: CounsellingPageData = {
         subtitle:
             "Get a comprehensive understanding of skills and qualifications required to pursue your dream career.",
         ctaText: "Get Started",
-        ctaLink: "https://dashboard.Panchant Learning.com/onboarding",
+        ctaLink: "https://dashboard.Penchant Learning.com/onboarding",
         features: [
             "Career Assessment",
             "Personalized Guidance",
@@ -29,7 +29,7 @@ const graduatesPageData: CounsellingPageData = {
             "Interview Training",
             "University Application Support",
         ],
-        backgroundImage: "/images/graduates-hero-bg.svg",
+        backgroundImage: "/images/graduates_hero.png",
     },
 
     // ─── FEATURE ICONS ───────────────────────────────────────────────────────
@@ -72,21 +72,21 @@ specialPackages: {
             title: "Essay/SOP Review",
             description: "With our experts learn how to translate personal and professional experiences into impactful narratives while also connecting with the unique ethos of each university.",
             ctaText: "Inquire Now",
-            ctaLink: "https://Panchant Learning.as.me/callback"
+            ctaLink: "https://Penchant Learning.as.me/callback"
         },
         {
             icon: "/images/masters-icon.svg",
             title: "Comprehensive Package - Master's Degree (Overseas)",
             description: "The comprehensive package includes all essential services from Program and University selection, CV/Resume reviews, SoP/Essay reviews, and Interview Prep with unlimited sessions.",
             ctaText: "Inquire Now",
-            ctaLink: "https://Panchant Learning.as.me/callback"
+            ctaLink: "https://Penchant Learning.as.me/callback"
         },
         {
             icon: "/images/mba-icon.svg",
             title: "Premium Package MiM/MBA (Overseas/India)",
             description: "The MiM/MBA application strategy will be designed to match the applicant's profile. All essential services from Program and University selection, CV/Resume reviews, SoP/Essay reviews, and Interview Prep are included.",
             ctaText: "Inquire Now",
-            ctaLink: "https://Panchant Learning.as.me/callback"
+            ctaLink: "https://Penchant Learning.as.me/callback"
         },
     ]
 },
@@ -121,7 +121,7 @@ specialPackages: {
     //         id: 3,
     //         title: "Expert Career Counselling",
     //         description:
-    //             "Get direct guidance from Panchant Learning experts through online counselling sessions to create a career plan. Select your best-fit career, choose the right course and college, and make a step-by-step plan for your career goals.",
+    //             "Get direct guidance from Penchant Learning experts through online counselling sessions to create a career plan. Select your best-fit career, choose the right course and college, and make a step-by-step plan for your career goals.",
     //         image: "/images/graduates-counselling.png",
     //         ctaText: "Book a Session",
     //         ctaLink: "#",
@@ -134,11 +134,11 @@ specialPackages: {
     // ─── SUCCESS STORY ───────────────────────────────────────────────────────
     successStory: {
         category: "Success Story",
-        title: "How Tarun Got his Career and Confidence on Track with the Help of Panchant Learning Experts",
+        title: "How Tarun Got his Career and Confidence on Track with the Help of Penchant Learning Experts",
         story:
-            "Tarun Bhardwaj, a 25-year-old student, had dropped out of Engineering because it didn't excite him. Panchant Learning career experts helped him choose the perfect career and course to utilise his skill-set, and make up for his gap years through the right opportunities. He is now on the path to achieving his new-found goals.",
+            "Tarun Bhardwaj, a 25-year-old student, had dropped out of Engineering because it didn't excite him. Penchant Learning career experts helped him choose the perfect career and course to utilise his skill-set, and make up for his gap years through the right opportunities. He is now on the path to achieving his new-found goals.",
         ctaText: "Read Full Story",
-        ctaLink: "https://www.Panchant Learning.com/success-stories/dropout-student-got-his-career-on-track",
+        ctaLink: "https://www.Penchant Learning.com/success-stories/dropout-student-got-his-career-on-track",
         image: "/images/tarun-bhardwaj.png",
         personName: "Tarun Bhardwaj",
     },
@@ -171,7 +171,7 @@ specialPackages: {
                 },
                 {
                     title: "Career Counselling",
-                    desc: "Online career counselling session of up to 60 minutes with Panchant Learning's certified and experienced coaches.",
+                    desc: "Online career counselling session of up to 60 minutes with Penchant Learning's certified and experienced coaches.",
                 },
                 {
                     title: "Dedicated Career Mentor",
@@ -208,7 +208,7 @@ specialPackages: {
                 },
                 {
                     title: "Career Counselling",
-                    desc: "Online career counselling session of up to 60 minutes with Panchant Learning's certified and experienced coaches.",
+                    desc: "Online career counselling session of up to 60 minutes with Penchant Learning's certified and experienced coaches.",
                 },
                 {
                     title: "Dedicated Career Mentor",
@@ -246,7 +246,7 @@ specialPackages: {
                 },
                 {
                     title: "Career Counselling",
-                    desc: "Online career counselling session of up to 60 minutes with Panchant Learning's certified and experienced coaches.",
+                    desc: "Online career counselling session of up to 60 minutes with Penchant Learning's certified and experienced coaches.",
                     locked: true,
                 },
                 {
@@ -287,7 +287,7 @@ specialPackages: {
                 },
                 {
                     title: "Career Counselling",
-                    desc: "Online career counselling session of up to 60 minutes with Panchant Learning's certified and experienced coaches.",
+                    desc: "Online career counselling session of up to 60 minutes with Penchant Learning's certified and experienced coaches.",
                     locked: true,
                 },
                 {
@@ -305,11 +305,11 @@ specialPackages: {
 
     // ─── COMPARISON ──────────────────────────────────────────────────────────
     comparison: {
-        title: "Why Choose Panchant Learning vs. Other Platforms?",
+        title: "Why Choose Penchant Learning vs. Other Platforms?",
         description:
-            "Compare all leading career counselling platforms in India, to see how Panchant Learning tops the charts across all major elements of career guidance.",
+            "Compare all leading career counselling platforms in India, to see how Penchant Learning tops the charts across all major elements of career guidance.",
         ctaText: "View Full Report",
-        ctaLink: "https://www.Panchant Learning.com/top-career-guidance-platforms-in-india",
+        ctaLink: "https://www.Penchant Learning.com/top-career-guidance-platforms-in-india",
     },
 
     // ─── TESTIMONIALS ────────────────────────────────────────────────────────
@@ -323,14 +323,14 @@ specialPackages: {
         },
         {
             type: "quote",
-            text: "Panchant Learning provided a mentored framework for my son's ambitions to achieve and succeed.",
+            text: "Penchant Learning provided a mentored framework for my son's ambitions to achieve and succeed.",
             author: "Kavita",
             role: "Parent",
             image: "/images/testi-kavita.jpg",
         },
         {
             type: "quote",
-            text: "Signing up for Panchant Learning, and meeting and interacting with their experienced team was one of the best decisions I made.",
+            text: "Signing up for Penchant Learning, and meeting and interacting with their experienced team was one of the best decisions I made.",
             author: "Shaurya",
             role: "Aga Khan Academy",
             image: "/images/testi-shaurya.jpg",
@@ -362,7 +362,7 @@ specialPackages: {
             question:
                 "Will you also be able to help me with details on overseas colleges and courses?",
             answer:
-                "Yes, we provide information for overseas programs and colleges for your target careers and help you shortlist them. This is included in our Explore program. For more extensive guidance on the application process, we also have a comprehensive Overseas Coach program. Get in touch at hello@Panchant Learning.com or +91 87449 87449.",
+                "Yes, we provide information for overseas programs and colleges for your target careers and help you shortlist them. This is included in our Explore program. For more extensive guidance on the application process, we also have a comprehensive Overseas Coach program. Get in touch at hello@Penchant Learning.com or +91 87449 87449.",
         },
         {
             question: "Do I get support after my sessions with the coach are over?",
@@ -379,7 +379,7 @@ specialPackages: {
             question:
                 "I do not require the career assessment. Can I just avail the counselling sessions?",
             answer:
-                "We do not recommend counselling without the assessment as it gives the counsellor key insights about you. However, in certain cases we offer counselling-only sessions at ₹5,000, which includes all Explore features minus the assessment. This is offered on a case-by-case basis. Contact us at hello@Panchant Learning.com or +91 87449 87449.",
+                "We do not recommend counselling without the assessment as it gives the counsellor key insights about you. However, in certain cases we offer counselling-only sessions at ₹5,000, which includes all Explore features minus the assessment. This is offered on a case-by-case basis. Contact us at hello@Penchant Learning.com or +91 87449 87449.",
         },
     ],
 contact: {

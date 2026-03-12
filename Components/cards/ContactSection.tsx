@@ -78,11 +78,11 @@ const ContactSection = () => {
 
         {/* LEFT CONTENT */}
         <div>
-          <p className="text-sm tracking-widest text-[#904437] font-medium mb-3">
+          <p className="text-sm tracking-widest text-[#8c5a31] font-medium mb-3">
             CONTACT US
           </p>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#092a51] leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#8c5a31] leading-tight">
             Let’s Shape Your Future
           </h2>
 
@@ -98,7 +98,7 @@ const ContactSection = () => {
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full mb-3 rounded-full px-4 py-3 bg-white border border-gray-200 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#904437]"
+            className="w-full mb-3 rounded-full px-4 py-3 bg-white border border-gray-200 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#8c5a31]"
             placeholder="Name"
           />
 
@@ -106,7 +106,7 @@ const ContactSection = () => {
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full mb-3 rounded-full px-4 py-3 bg-white border border-gray-200 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#904437]"
+            className="w-full mb-3 rounded-full px-4 py-3 bg-white border border-gray-200 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#8c5a31]"
             placeholder="Email"
           />
 
@@ -114,7 +114,7 @@ const ContactSection = () => {
           <input
             value={telephone}
             onChange={(e) => setTelephone(e.target.value)}
-            className="w-full mb-3 rounded-full px-4 py-3 bg-white border border-gray-200 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#904437]"
+            className="w-full mb-3 rounded-full px-4 py-3 bg-white border border-gray-200 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#8c5a31]"
             placeholder="Telephone"
           />
 
@@ -122,7 +122,7 @@ const ContactSection = () => {
           <input
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="w-full mb-3 rounded-full px-4 py-3 bg-white border border-gray-200 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#904437]"
+            className="w-full mb-3 rounded-full px-4 py-3 bg-white border border-gray-200 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#8c5a31]"
             placeholder="City"
           />
 
@@ -132,7 +132,7 @@ const ContactSection = () => {
               type="checkbox"
               checked={agree}
               onChange={(e) => setAgree(e.target.checked)}
-              className="mr-2 mt-1 accent-[#904437]"
+              className="mr-2 mt-1 accent-[#8c5a31]"
             />
             I agree that my data is
             <span className="text-red-700 ml-1">

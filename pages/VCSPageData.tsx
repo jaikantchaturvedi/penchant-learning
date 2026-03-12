@@ -7,7 +7,7 @@ const vcsData: VCSPageData = {
     heroSubtitle: "Take multiple careers for a test-drive and understand the inner workings of each profession with our Virtual Career Simulator.",
     heroCta: "Start Free Trial",
     ctaLink: "#",
-    backgroundImage:"/images/vcs-hero.svg",
+    backgroundImage:"/images/vcs_hero.png",
 
     highlights: [
         {
@@ -281,7 +281,7 @@ const vcsData: VCSPageData = {
             answer: "Yes! It gives the student a hands-on practical exposure to the careers they're sure about — providing a golden chance to gain in-depth knowledge about that particular field ranging from every minute detail to the holistic picture.",
         },
         {
-            question: "How is VCS different from Panchant Learning's Career Assessment?",
+            question: "How is VCS different from Penchant Learning's Career Assessment?",
             answer: "Career Assessments help students get a comprehensive analysis of their profile and discover best-fit careers based on multiple dimensions. The VCS allows students to deep-dive into those best-fit careers to gain real-life experience in those career domains.",
         },
     ],

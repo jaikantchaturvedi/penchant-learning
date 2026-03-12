@@ -22,7 +22,7 @@
 //             "FAQs",
 //             "Contact Us",
 //         ],
-//         backgroundImage: "/images/liberal-arts-hero-bg.svg",
+//         backgroundImage: "/images/liberal_arts_hero.png",
 //     },
 
 //     // ─── FEATURE ICONS (About the Program) ───────────────────────────────────
@@ -64,9 +64,9 @@
 
 //     // ─── COMPARISON — not needed for this page ───────────────────────────────
 //     // comparison: {
-//     //     title: "Why Choose Panchant Learning vs. Other Platforms?",
+//     //     title: "Why Choose Penchant Learning vs. Other Platforms?",
 //     //     description:
-//     //         "Compare all leading career counselling platforms in India to see how Panchant Learning tops the charts across all major elements of career guidance.",
+//     //         "Compare all leading career counselling platforms in India to see how Penchant Learning tops the charts across all major elements of career guidance.",
 //     //     ctaText: "View Full Report",
 //     //     ctaLink: "/top-career-guidance-platforms-in-india",
 //     // },
@@ -75,21 +75,21 @@
 //     testimonials: [
 //         {
 //             type: "quote",
-//             text: "Panchant Learning stepped in and cleared the mental chaos and brought my daughter's mind on the right track. The guidance for application forms, interview and GD preparations, and SOP was very impressive. They got her to realise her strengths and interests and enabled her to work on her weaknesses.",
+//             text: "Penchant Learning stepped in and cleared the mental chaos and brought my daughter's mind on the right track. The guidance for application forms, interview and GD preparations, and SOP was very impressive. They got her to realise her strengths and interests and enabled her to work on her weaknesses.",
 //             author: "Rashmi",
 //             role: "Parent",
 //             image: "/images/testi-rashmi.jpg",
 //         },
 //         {
 //             type: "quote",
-//             text: "Working with Panchant Learning was an amazing experience. It helped me explore and discover new avenues, keeping in mind my interests and hobbies. The team is very supportive and understanding. They helped me with my admissions and enabled me to get admission in my dream university.",
+//             text: "Working with Penchant Learning was an amazing experience. It helped me explore and discover new avenues, keeping in mind my interests and hobbies. The team is very supportive and understanding. They helped me with my admissions and enabled me to get admission in my dream university.",
 //             author: "Pratham",
 //             role: "Student",
 //             image: "/images/testi-pratham.jpg",
 //         },
 //         {
 //             type: "quote",
-//             text: "Panchant Learning has helped me transform as an individual. It has helped me streamline my career path and played a pivotal role in my decision making. The entire team is extremely helpful and every member has been instrumental in my success.",
+//             text: "Penchant Learning has helped me transform as an individual. It has helped me streamline my career path and played a pivotal role in my decision making. The entire team is extremely helpful and every member has been instrumental in my success.",
 //             author: "Manav",
 //             role: "Student",
 //             image: "/images/testi-manav.jpg",
@@ -171,7 +171,7 @@ const liberalArtsData: AdmissionsPageData = {
             { label: "FAQs", href: "#faqs" },
             { label: "Contact Us", href: "#contact" },
         ],
-        backgroundImage: "/images/liberal-arts-hero-bg.svg",
+        backgroundImage: "/images/liberal_arts_hero.png",
     },
 
     programSectionTitle: "About the Program",
@@ -212,19 +212,19 @@ const liberalArtsData: AdmissionsPageData = {
     
     testimonials: [
         {
-            text: "Panchant Learning stepped in and cleared the mental chaos and brought my daughter's mind on the right track. The guidance for application forms, interview and GD preparations, and SOP was very impressive. They helped her realise her strengths and enabled her to work on her weaknesses.",
+            text: "Penchant Learning stepped in and cleared the mental chaos and brought my daughter's mind on the right track. The guidance for application forms, interview and GD preparations, and SOP was very impressive. They helped her realise her strengths and enabled her to work on her weaknesses.",
             author: "Rashmi",
-            image: "/images/testi-rashmi.jpg",
+            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
         },
         {
-            text: "Working with Panchant Learning was an amazing experience. It helped me explore and discover new avenues keeping in mind my interests and hobbies. They helped me with my admissions and enabled me to get into my dream university.",
+            text: "Working with Penchant Learning was an amazing experience. It helped me explore and discover new avenues keeping in mind my interests and hobbies. They helped me with my admissions and enabled me to get into my dream university.",
             author: "Pratham",
-            image: "/images/testi-pratham.jpg",
+            image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=150&h=150",
         },
         {
-            text: "Panchant Learning has helped me transform as an individual. It streamlined my career path and played a pivotal role in my decision making. The entire team is extremely helpful and every member has been instrumental in my success.",
+            text: "Penchant Learning has helped me transform as an individual. It streamlined my career path and played a pivotal role in my decision making. The entire team is extremely helpful and every member has been instrumental in my success.",
             author: "Manav",
-            image: "/images/testi-manav.jpg",
+            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
         },
     ],
 

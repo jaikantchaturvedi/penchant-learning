@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import { FiMenu, FiX, FiChevronDown, FiPhone, FiMail, FiArrowRight } from "react-icons/fi";
 import Image from "next/image";
 
@@ -10,6 +11,8 @@ export default function Header() {
   const [active, setActive] = useState("home");
   const [isMegamenuOpen, setIsMegamenuOpen] = useState(false);
   const [megamenuType, setMegamenuType] = useState<"students" | "institutions" | null>(null);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const menuItems = [
     { label: "Home", id: "home" },
@@ -102,8 +105,27 @@ export default function Header() {
   const handleScroll = (id: string) => {
     setMobileOpen(false);
     setIsMegamenuOpen(false);
+
+    if (id === "home") {
+      if (pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        router.push("/");
+      }
+      return;
+    }
+
+    if (pathname !== "/") {
+      router.push(`/#${id}`);
+      return;
+    }
+
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(`/#${id}`);
+    }
   };
 
   // Active section on scroll
@@ -123,6 +145,42 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Update active state based on pathname
+  useEffect(() => {
+    if (!pathname) return;
+
+    if (pathname === "/") {
+      return;
+    }
+
+    const isStudentRoute = studentPrograms.some(cat =>
+      cat.items.some(item => item.link === pathname) ||
+      (cat.secondaryItems && cat.secondaryItems.some(item => item.link === pathname))
+    );
+
+    if (isStudentRoute) {
+      setActive("students");
+      return;
+    }
+
+    const isInstitutionRoute = institutionPrograms.some(cat =>
+      cat.items.some(item => item.link === pathname)
+    );
+
+    if (isInstitutionRoute) {
+      setActive("institutions");
+      return;
+    }
+
+    // Handle other static routes if any
+    const menuMatch = menuItems.find(item => item.id !== "home" && !item.hasSubmenu && pathname?.includes(item.id));
+    if (menuMatch) {
+      setActive(menuMatch.id);
+    } else {
+      setActive("");
+    }
+  }, [pathname]);
+
   return (
     <>
       <header className="w-full bg-white sticky top-0 z-50 shadow-sm transition-all duration-300">
@@ -141,7 +199,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-7 text-[14px] font-medium text-[#092a51] h-full">
+          <nav className="hidden md:flex items-center gap-7 text-[14px] font-medium text-[#333] h-full">
             {menuItems.map((item) => (
               <div
                 key={item.id}
@@ -163,7 +221,7 @@ export default function Header() {
                 >
                   {item.label}
                   {item.hasSubmenu && <FiChevronDown className={`transition-transform ${isMegamenuOpen && megamenuType === item.id ? "rotate-180" : ""}`} />}
-                  {active === item.id && !item.hasSubmenu && (
+                  {(active === item.id || (item.hasSubmenu && isMegamenuOpen && megamenuType === item.id)) && (
                     <span className="absolute bottom-5 left-0 w-full h-[2.5px] bg-[#8c5a31]" />
                   )}
                 </button>
@@ -186,7 +244,7 @@ export default function Header() {
 
             {/* Hamburger */}
             <button
-              className="md:hidden text-2xl text-[#092a51]"
+              className="md:hidden text-2xl text-[#333]"
               onClick={() => setMobileOpen(!mobileOpen)}
             >
               {mobileOpen ? <FiX /> : <FiMenu />}
@@ -306,7 +364,7 @@ export default function Header() {
                   <div className="space-y-4">
                     <Link
                       href="tel:+918744987449"
-                      className="flex items-center gap-4 text-[#092a51] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label"
+                      className="flex items-center gap-4 text-[#333] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label"
                       onClick={() => setIsMegamenuOpen(false)}
                     >
                       <div className="bg-white p-2.5 rounded-lg group-hover/label:bg-[#8c5a31] group-hover/label:text-white transition-all">
@@ -316,7 +374,7 @@ export default function Header() {
                     </Link>
                     <Link
                       href="mailto:info@penchant.com"
-                      className="flex items-center gap-4 text-[#092a51] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label"
+                      className="flex items-center gap-4 text-[#333] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label"
                       onClick={() => setIsMegamenuOpen(false)}
                     >
                       <div className="bg-white p-2.5 rounded-lg  group-hover/label:bg-[#8c5a31] group-hover/label:text-white transition-all">
@@ -329,7 +387,7 @@ export default function Header() {
                   <div className="pt-8 border-t border-gray-200/60 space-y-6">
                     <Link
                       href="#"
-                      className="block text-[#092a51] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link"
+                      className="block text-[#333] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link"
                       onClick={() => setIsMegamenuOpen(false)}
                     >
                       Success Stories
@@ -337,7 +395,7 @@ export default function Header() {
                     </Link>
                     <Link
                       href="#"
-                      className="block text-[#092a51] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link"
+                      className="block text-[#333] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link"
                       onClick={() => setIsMegamenuOpen(false)}
                     >
                       About Us
@@ -361,7 +419,7 @@ export default function Header() {
           className={`fixed top-0 right-0 z-50 h-full w-[80%] max-w-sm bg-white transform transition-transform duration-300 ${mobileOpen ? "translate-x-0" : "translate-x-full"
             }`}
         >
-          <div className="p-6 flex flex-col gap-6 text-[#092a51] font-medium">
+          <div className="p-6 flex flex-col gap-6 text-[#333] font-medium">
             {menuItems.map((item) => (
               <button
                 key={item.id}

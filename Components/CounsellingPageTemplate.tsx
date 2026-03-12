@@ -157,17 +157,17 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
 
             {/* Side Sticky Call Button */}
             {/* <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40">
-                <div className="bg-[#e67e22] p-3 rounded-r-lg text-white cursor-pointer hover:bg-[#d35400] transition-colors shadow-lg">
+                <div className="bg-[#8c5a31] p-3 rounded-r-lg text-white cursor-pointer hover:brightness-110 transition-colors shadow-lg">
                     <FiPhone size={24} />
                 </div>
             </div> */}
 
             {/* Hero Section */}
             {data.hero && (
-                <section className="relative overflow-hidden pt-12 pb-24 px-6 md:px-12 bg-gradient-to-b from-white to-[#fdfaf7]" style={{ backgroundImage: data.hero.backgroundImage ? `url("${data.hero.backgroundImage}")` : undefined, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom right' }}>
-                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+                <section className="relative overflow-hidden pt-12 pb-16 bg-gradient-to-b from-white to-[#fdfaf7]">
+                    <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                         <div className="md:w-1/2 space-y-6 z-10">
-                            <h1 className="text-4xl md:text-5xl font-bold text-[#333] leading-tight max-w-lg">
+                            <h1 className="text-4xl md:text-5xl font-bold text-[#333] leading-tight">
                                 {data.hero.title}
                             </h1>
                             <p className="text-gray-500 text-lg max-w-md">
@@ -182,7 +182,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                     {data.hero.ctaText}
                                 </Link>
                             </div>
-                            <div className="text-[#092a51] font-medium text-sm pt-4 flex flex-wrap gap-x-2">
+                            <div className="text-[#8c5a31] font-medium text-sm pt-4 flex flex-wrap gap-x-2">
                                 {data.hero.features?.map((feature, index) => (
                                     <React.Fragment key={index}>
                                         <span>{feature}</span>
@@ -192,6 +192,18 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                             </div>
                         </div>
 
+                        {data.hero.backgroundImage && (
+                            <div className="md:w-1/2 flex justify-center items-center">
+                                <Image
+                                    src={data.hero.backgroundImage}
+                                    alt={data.hero.title}
+                                    width={600}
+                                    height={500}
+                                    className="w-full h-auto object-contain max-h-[550px]"
+                                    priority
+                                />
+                            </div>
+                        )}
                     </div>
                 </section>
             )}
@@ -217,7 +229,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             {data.services && (
                 <section className="py-24 px-6 md:px-12 bg-[#f9fafb]">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-semibold text-[#092a51] text-center mb-4">{data.services.title}</h2>
+                        <h2 className="text-3xl font-semibold text-[#8c5a31] text-center mb-4">{data.services.title}</h2>
                         <p className="text-gray-500 text-center mb-12">{data.services.subtitle}</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
@@ -255,7 +267,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             {data.specialPackages && (
                 <section className="py-24 px-6 md:px-12 bg-white">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-3xl font-semibold text-[#092a51] text-center mb-16">{data.specialPackages.title}</h2>
+                        <h2 className="text-3xl font-semibold text-[#8c5a31] text-center mb-16">{data.specialPackages.title}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {data.specialPackages.packages.map((pkg, i) => (
                                 <div key={i} className="border border-gray-100 rounded-xl p-8 flex flex-col hover:shadow-xl transition-all">
@@ -277,7 +289,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             {data.howItWorks && data.howItWorks.length > 0 && (
                 <section className="py-24 px-6 md:px-12 bg-white">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] text-center mb-24">How it Works</h2>
+                        <h2 className="text-3xl md:text-4xl font-semibold text-[#8c5a31] text-center mb-24">How it Works</h2>
 
                         {data.howItWorks.map((step) => (
                             <div key={step.id} className={`flex flex-col ${step.reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-16 mb-32`}>
@@ -345,9 +357,9 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             {data.plans && (
                 <section className="py-24 px-6 md:px-12 bg-white">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] text-center mb-16 underline-offset-8">Plans and Pricing</h2>
+                        <h2 className="text-3xl md:text-4xl font-semibold text-[#8c5a31] text-center mb-16 underline-offset-8">Plans and Pricing</h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <div className={`grid grid-cols-1 gap-8 ${data.plans.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'}`}>
                             {data.plans.map((plan) => (
                                 <div key={plan.id} className={`relative bg-white rounded-xl ${plan.borderColor} ${plan.bestselling ? 'border-2' : 'border'} p-8 flex flex-col hover:shadow-2xl transition-all h-full`}>
                                     {plan.bestselling && (
@@ -407,7 +419,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                         >
                                             {plan.buttonText}
                                         </button>
-                                        <button className="w-full text-[#007dab] font-bold text-xs hover:underline">
+                                        <button className="w-full text-[#8c5a31] font-bold text-xs hover:underline">
                                             {plan.linkText}
                                         </button>
                                     </div>
@@ -446,7 +458,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             {data.testimonials && (
                 <section className="py-24 px-6 md:px-12 bg-[#f9fafb]">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] text-center mb-16">Testimonials</h2>
+                        <h2 className="text-3xl md:text-4xl font-semibold text-[#8c5a31] text-center mb-16">Testimonials</h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {data.testimonials.map((item, index) => {
@@ -500,7 +512,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                                             </React.Fragment>
                                                         ))}
                                                     </p>
-                                                    <Link href="#" className="text-[#007dab] font-bold text-sm hover:underline flex items-center gap-1">
+                                                    <Link href="#" className="text-[#8c5a31] font-bold text-sm hover:underline flex items-center gap-1">
                                                         {item.linkText} <FiArrowRight size={14} />
                                                     </Link>
                                                 </div>
@@ -508,7 +520,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                                     <div className="absolute -top-1 right-0 text-yellow-400">
                                                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
                                                     </div>
-                                                    <div className="absolute top-10 -left-2 text-blue-400">
+                                                    <div className="absolute top-10 -left-2 text-[#8c5a31]/30">
                                                         <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
                                                     </div>
 
@@ -516,7 +528,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                                         <Image src={item.image!} alt={item.highlightName!} width={80} height={80} className="object-cover w-full h-full" />
                                                     </div>
 
-                                                    <div className="absolute bottom-0 right-2 text-blue-400">
+                                                    <div className="absolute bottom-0 right-2 text-[#8c5a31]/30">
                                                         <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
                                                     </div>
                                                 </div>
@@ -536,7 +548,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                 <section className="py-24 px-6 md:px-12 bg-white">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] mb-2">Frequently Asked Questions</h2>
+                            <h2 className="text-3xl md:text-4xl font-semibold text-[#8c5a31] mb-2">Frequently Asked Questions</h2>
                             <p className="text-gray-500 text-lg">What students usually ask us.</p>
                         </div>
 
@@ -611,7 +623,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                     <div className="flex justify-center pt-2">
                                         <button
                                             type="submit"
-                                            className="px-10 py-2.5 bg-[#e67e22] hover:bg-[#d35400] text-white text-sm font-semibold rounded transition-colors"
+                                            className="px-10 py-2.5 bg-[#8c5a31] hover:brightness-110 text-white text-sm font-semibold rounded transition-colors"
                                         >
                                             {data.contact.buttonText}
                                         </button>

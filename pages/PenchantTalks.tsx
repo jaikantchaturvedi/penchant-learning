@@ -55,42 +55,42 @@ const programAreas = [
         desc: "Open students' mind up to possibilities - connect them with professionals from a wide range of careers to expose them to the dynamic career options available to them.",
         icon: FiSearch,
         color: "bg-white",
-        iconBorder: "border-blue-100 shadow-[0_0_20px_rgba(46,163,242,0.15)]"
+        iconBorder: "border-orange-100 shadow-[0_0_20px_rgba(140,90,49,0.15)]"
     },
     {
         title: "Professional Insights & Inspiration",
         desc: "Those who have lived a career and scaled its heights, have invaluable insights to share. Enable students to obtain information, advice and inspiration to plan their own career journeys.",
         icon: FiStar,
         color: "bg-white",
-        iconBorder: "border-blue-100 shadow-[0_0_20px_rgba(46,163,242,0.15)]"
+        iconBorder: "border-orange-100 shadow-[0_0_20px_rgba(140,90,49,0.15)]"
     },
     {
         title: "Targeted Professional Development",
         desc: "Give students a head start for their professional lives. Empower them to learn about how skills and knowledge are translated into the professional world to prepare them for the road ahead.",
         icon: FiTarget,
         color: "bg-white",
-        iconBorder: "border-blue-100 shadow-[0_0_20px_rgba(46,163,242,0.15)]"
+        iconBorder: "border-orange-100 shadow-[0_0_20px_rgba(140,90,49,0.15)]"
     },
     {
         title: "Life Skills Development",
         desc: "Inculcate all the necessary ingredients of success - perseverance, focus, will-power and direction, through powerful, inspired guidance and hands-on reflection activities aimed at growth.",
         icon: FiAward,
         color: "bg-white",
-        iconBorder: "border-blue-100 shadow-[0_0_20px_rgba(46,163,242,0.15)]"
+        iconBorder: "border-orange-100 shadow-[0_0_20px_rgba(140,90,49,0.15)]"
     },
     {
         title: "Networking & Guidance Opportunities",
         desc: "Provide students with the opportunity to ask and resolve all kinds of questions - big and small - in their minds and help them gain a deeper understanding of their fields of interest.",
         icon: FiUsers,
         color: "bg-white",
-        iconBorder: "border-blue-100 shadow-[0_0_20px_rgba(46,163,242,0.15)]"
+        iconBorder: "border-orange-100 shadow-[0_0_20px_rgba(140,90,49,0.15)]"
     },
     {
         title: "Individualised Mentorship",
         desc: "Help students set aspirational career goals and get the support they need to achieve success, through direct mentorship opportunities for a select few students.",
         icon: FiUser,
         color: "bg-white",
-        iconBorder: "border-blue-100 shadow-[0_0_20px_rgba(46,163,242,0.15)]"
+        iconBorder: "border-orange-100 shadow-[0_0_20px_rgba(140,90,49,0.15)]"
     }
 ];
 
@@ -142,10 +142,10 @@ const PenchantLearningTalks = () => {
             <SwiperStyles />
 
             {/* Hero Section */}
-            <section className="relative overflow-hidden pt-24 pb-32 px-6 md:px-12 bg-gradient-to-b from-white to-[#fdfaf7] flex items-center justify-center min-h-[500px]" style={{ backgroundImage: `url("/images/mindler-talks-banner.svg")`, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center right', backgroundColor: '#fff' }}>
-                <div className="w-full mx-auto flex flex-col md:flex-row items-center justify-center">
-                    <div className="md:w-1/2 space-y-6 z-10 flex flex-col justify-center items-center text-center">
-                        <div className="flex flex-col items-center gap-2 mb-4">
+            <section className="relative overflow-hidden pt-12 pb-16 bg-gradient-to-b from-white to-[#fdfaf7] flex items-center justify-center min-h-[400px]" style={{ backgroundImage: `url("/images/mindler-talks-banner.svg")`, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center right', backgroundColor: '#fff' }}>
+                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
+                    <div className="md:w-1/2 space-y-6 z-10 flex flex-col justify-start items-start text-left">
+                        <div className="flex flex-col items-start gap-2 mb-4">
                             <span className="text-[10px] tracking-[0.3em] text-gray-400 font-bold uppercase">Introducing</span>
                             <div className="flex items-center gap-2">
                                 <Image src="/images/pl-learning.png" alt="Penchant Learning Talks Logo" width={220} height={60} className="object-contain" />
@@ -170,7 +170,7 @@ const PenchantLearningTalks = () => {
 
             {/* About Section */}
             <section id="about" className="py-24 px-6 max-w-7xl mx-auto text-center">
-                <h2 className="text-[32px] font-semibold text-[#092a51] mb-6">About the Program</h2>
+                <h2 className="text-[32px] font-semibold text-[#8c5a31] mb-6">About the Program</h2>
                 <p className="text-[15px] text-gray-500 leading-relaxed max-w-4xl mx-auto mb-4">
                     Penchant Learning Talks is an interactive, workshop-led program aimed at driving career awareness and inspiring success in students.
                 </p>
@@ -200,7 +200,7 @@ const PenchantLearningTalks = () => {
             {/* Schools We Work With */}
             <section className="py-20 px-6 bg-white border-t border-gray-50">
                 <div className="max-w-7xl mx-auto text-center">
-                    <h2 className="text-xl font-bold text-gray-500 mb-16 uppercase tracking-widest">Schools We Work With</h2>
+                    <h2 className="text-xl font-bold text-[#8c5a31] mb-16 uppercase tracking-widest">Schools We Work With</h2>
                     <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8 items-center place-items-center">
                         {schoolLogos.map((school, idx) => (
                             <div key={idx} className="flex flex-col items-center gap-3 transition-all duration-300">
@@ -259,7 +259,7 @@ const PenchantLearningTalks = () => {
             {/* FAQ Section */}
             <section id="faq" className="py-24 px-6 bg-white">
                 <div className="max-w-7xl mx-auto text-center">
-                    <h2 className="text-[28px] font-semibold text-[#092a51] mb-16">Frequently Asked Questions</h2>
+                    <h2 className="text-[28px] font-semibold text-[#8c5a31] mb-16">Frequently Asked Questions</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12 text-left">
                         {faqs.map((faq, index) => (
                             <div key={index} className="space-y-3">
@@ -279,7 +279,7 @@ const PenchantLearningTalks = () => {
                     {/* Left Side - Form */}
                     <div className="w-full md:w-[60%] space-y-8">
                         <div className="space-y-2 text-center md:text-left">
-                            <h2 className="text-2xl md:text-3xl font-semibold text-gray-700">
+                            <h2 className="text-2xl md:text-3xl font-semibold text-[#8c5a31]">
                                 Interested in hosting a Penchant Learning Talk?
                             </h2>
                             <p className="text-gray-500 text-sm">

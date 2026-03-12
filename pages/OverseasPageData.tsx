@@ -16,7 +16,7 @@ const overseasData: AdmissionsPageData = {
             { label: "FAQs", href: "#faqs" },
             { label: "Contact Us", href: "#contact" },
         ],
-        backgroundImage:"/images/OverseasBackground.svg"
+        backgroundImage:"/images/overseas_hero.png"
     },
 
     programSectionTitle: "About the Program",
@@ -368,19 +368,19 @@ const overseasData: AdmissionsPageData = {
 
     testimonials: [
         {
-            text: "Panchant Learning stepped in and cleared the mental chaos. The guidance for application forms, interview and GD preparations, and SOP was very impressive. They helped my daughter realise her strengths and enabled her to work on her weaknesses.",
+            text: "Penchant Learning stepped in and cleared the mental chaos. The guidance for application forms, interview and GD preparations, and SOP was very impressive. They helped my daughter realise her strengths and enabled her to work on her weaknesses.",
             author: "Rashmi, Parent",
-            image: "/images/testi-rashmi.jpg",
+            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
         },
         {
-            text: "Working with Panchant Learning was an amazing experience. It helped me explore and discover new avenues keeping in mind my interests and hobbies. They helped me get admission in my dream university.",
+            text: "Working with Penchant Learning was an amazing experience. It helped me explore and discover new avenues keeping in mind my interests and hobbies. They helped me get admission in my dream university.",
             author: "Pratham, Student",
-            image: "/images/testi-pratham.jpg",
+            image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=150&h=150",
         },
         {
-            text: "Panchant Learning has helped me transform as an individual. It streamlined my career path and played a pivotal role in my decision making. Every team member has been instrumental in my success.",
+            text: "Penchant Learning has helped me transform as an individual. It streamlined my career path and played a pivotal role in my decision making. Every team member has been instrumental in my success.",
             author: "Manav, Student",
-            image: "/images/testi-manav.jpg",
+            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
         },
     ],
 

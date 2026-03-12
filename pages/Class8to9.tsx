@@ -8,7 +8,7 @@ import { CounsellingPageTemplate, CounsellingPageData } from "@/Components/Couns
 const CLASS_8_9_DATA: CounsellingPageData = {
     hero: {
         title: "Discover the perfect stream and subjects for your career",
-        backgroundImage: "/images/class8.svg",
+        backgroundImage: "/images/class8_hero.png",
         subtitle: "Get ahead of the curve and build a solid foundation for your career with the right stream and subject choices",
         ctaText: "Get Started",
         ctaLink: "#",
@@ -43,7 +43,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             id: 1,
             title: "Advanced Assessment & Best-Fit Matches",
             description: "Learn about your strengths and interests with our 4-dimensional assessment and 25-page stream report.",
-            image: "/gifs/assessments.gif",
+            image: "/images/accessment_1.png",
             ctaText: "Take Free Demo",
             ctaLink: "#",
             decorationClass: "absolute -top-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -51,19 +51,19 @@ const CLASS_8_9_DATA: CounsellingPageData = {
         },
         {
             id: 2,
-            title: "Advanced Assessment & Best-Fit Matches",
-            description: "Learn about your strengths and interests with our 4-dimensional assessment and 25-page stream report.",
-            image: "/gifs/assessments-2.gif",
+            title: "Detailed Stream Analysis",
+            description: "Get a comprehensive 25-page report with in-depth analysis of your potential and best-fit stream recommendations.",
+            image: "/images/accessment_2.png",
             ctaText: "Take Free Demo",
             ctaLink: "#",
-            decorationClass: "absolute -bottom-4 -right-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
+            decorationClass: "absolute -bottom-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
             reverse: true
         },
         {
             id: 3,
             title: "Interactive Career & Stream Activities",
             description: "Evaluate your academics, work style, aptitude and subject compatibility to identify your perfect stream.",
-            image: "/gifs/personalised-guidance.gif",
+            image: "/images/interactive_activities.png",
             ctaText: "Schedule A Call Back",
             ctaLink: "#",
             decorationClass: "absolute -top-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -73,17 +73,17 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             id: 4,
             title: "Simulated Virtual Career Internships",
             description: "Explore multiple career options through role play, simulations and experiential videos with our Virtual Internship Program.",
-            image: "/gifs/Virtual-Internship.gif",
+            image: "/images/virtual_internship.png",
             ctaText: "View Program Details",
             ctaLink: "#",
-            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
+            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
             reverse: true
         },
         {
             id: 5,
             title: "Extensive Support & Resources",
             description: "Explore career options for your chosen stream with our well-researched expert written resources.",
-            image: "/gifs/resources.gif",
+            image: "/images/support_resources.png",
             ctaText: "Schedule A Call Back",
             ctaLink: "#",
             decorationClass: "absolute -top-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -107,7 +107,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             price: "₹11,400",
             bestselling: true,
             icon: FiCompass,
-            iconColor: "text-[#092a51] opacity-80",
+            iconColor: "text-[#8c5a31] opacity-80",
             titleColor: "text-[#ff5c5c]",
             borderColor: "border-[#8c5a31]",
             accentColor: "#8c5a31",
@@ -136,7 +136,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
                 { title: "Stream Assessment", desc: "4-dimensional stream assessment with top stream recommendations." },
                 { title: "Career Content", desc: "Well-researched Information on hundreds of career options." },
                 { title: "25 Page Stream Report", desc: "Detailed assessment report containing best-fit stream matches and personalized development plans." },
-                { title: "Career Counselling", desc: "Online career counselling session of up to 60 minutes with Mindler's certified and experienced coaches.", locked: true }
+                { title: "Career Counselling", desc: "Online career counselling session of up to 60 minutes with Penchant Learning's certified and experienced coaches.", locked: true }
             ],
             hasSessionSelector: false,
             buttonText: "Buy Now",
@@ -157,7 +157,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
                 { title: "Stream Assessment", desc: "Part 1 of 4-dimensional assessment to assess workstyle.", tag: "LIMITED ACCESS" },
                 { title: "Career Content", desc: "Well-researched Information on hundreds of career options." },
                 { title: "25 Page Stream Report", desc: "Detailed assessment report containing best-fit stream matches and personalized development plans.", locked: true },
-                { title: "Career Counselling", desc: "Online career counselling session of up to 60 minutes with Mindler's certified and experienced coaches.", locked: true }
+                { title: "Career Counselling", desc: "Online career counselling session of up to 60 minutes with Penchant Learning's certified and experienced coaches.", locked: true }
             ],
             hasSessionSelector: false,
             hasEmailInput: true,
@@ -184,27 +184,27 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             text: "All the things the assessment told me about myself and my interests were so true.",
             author: "Sneha",
             role: "DPS RK Puram",
-            image: "/images/testi-sneha.jpg"
+            image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150"
         },
         {
             type: "quote",
             text: "Penchant Learning provided a mentored framework for my son's ambitions to achieve and succeed.",
             author: "Kavita",
             role: "Parent",
-            image: "/images/testi-kavita.jpg"
+            image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=150&h=150"
         },
         {
             type: "quote",
             text: "Signing up for Penchant Learning, and meeting and interacting with their experienced team was one of the decisions I made.",
             author: "Shaurya",
             role: "Aga Khan Academy",
-            image: "/images/testi-shaurya.jpg"
+            image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150&h=150"
         },
         {
             type: "story_card",
             text: "How Nitya overcame her inhibitions and biases to choose the stream best aligned to her career goals.",
             highlightName: "Nitya",
-            image: "/images/testi-nitya.jpg",
+            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
             linkText: "Read full story"
         },
         {
@@ -241,21 +241,21 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             answer: "Our career assessments have been made completely in the online form, specifically because online assessments are more effective and superior to paper-and-pen tests. Our stream assessment provides access to your results, stream recommendations, reports, action plans, etc. through a single dashboard, which cannot happen with a pen-and-paper test. Online assessments give the added benefit of convenience, since they can be taken from the comfort of your home, further contributing to the accuracy of results."
         }
     ],
-contact: {
-    title: "What can we help you with?",
-    subtitle: "Feel free to write to us. We usually respond within 24 hours!",
-    phoneNumber: "+91 87449 87449",
-    availability: "Monday - Friday",
-    availabilityHours: "10 am - 7 pm",
-    phoneImage: "", 
-    queryOptions: [
-        "Career Counselling",
-        "Pricing & Plans",
-        "Technical Support",
-        "Other"
-    ],
-    buttonText: "Submit"
-},
+    contact: {
+        title: "What can we help you with?",
+        subtitle: "Feel free to write to us. We usually respond within 24 hours!",
+        phoneNumber: "+91 87449 87449",
+        availability: "Monday - Friday",
+        availabilityHours: "10 am - 7 pm",
+        phoneImage: "",
+        queryOptions: [
+            "Career Counselling",
+            "Pricing & Plans",
+            "Technical Support",
+            "Other"
+        ],
+        buttonText: "Submit"
+    },
 };
 
 // Default export wrapper for current usage

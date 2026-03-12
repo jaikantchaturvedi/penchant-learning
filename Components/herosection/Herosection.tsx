@@ -83,7 +83,7 @@ export default function HeroSection() {
         {/* LEFT SECTION */}
         <div className="flex flex-col items-start gap-4 w-full">
           <div className="w-full">
-            <h1 className="text-4xl md:text-6xl font-semibold text-[#092a51] leading-tight text-left mt-0">
+            <h1 className="text-4xl md:text-6xl font-semibold text-[#8c5a31] leading-tight text-left mt-0">
               Start your journey <br /> from learning to leading
             </h1>
 
@@ -115,7 +115,7 @@ export default function HeroSection() {
           {/* Centered Form */}
           <div className="absolute inset-0 flex justify-center items-center px-4">
             <div className="bg-[#f7f5ef]/90 rounded-[40px] p-6 w-full max-w-sm flex flex-col gap-3">
-              <h2 className="text-2xl font-bold text-[#092a51] mb-7 text-center">
+              <h2 className="text-2xl font-bold text-[#8c5a31] mb-7 text-center">
                 You deserve support. First session free!
               </h2>
 

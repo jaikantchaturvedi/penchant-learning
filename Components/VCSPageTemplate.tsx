@@ -113,7 +113,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
             {/* <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
                     <div className="font-black text-2xl text-[#8c5a31] tracking-tight">
-                        Panchant<span className="text-[#092a51]">Immrse</span>
+                        Penchant<span className="text-[#8c5a31]">Immrse</span>
                     </div>
                     <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
                         <a href="#program" className="hover:text-[#8c5a31] transition-colors">About the Program</a>
@@ -134,41 +134,49 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
 
             {/* ── HERO ─────────────────────────────────────────────────────── */}
             <section
-                className="relative overflow-hidden bg-gradient-to-br from-[#fdfaf7] via-white to-[#f0f4ff] py-24 px-6 md:px-12"
-                style={
-                    data.backgroundImage
-                        ? { backgroundImage: `url("${data.backgroundImage}")`, backgroundSize: "100%", backgroundRepeat: "no-repeat"}
-                        : undefined
-                }
+                className="relative overflow-hidden bg-gradient-to-br from-[#fdfaf7] via-white to-[#f0f4ff] pt-12 pb-16"
             >
                 {/* Background decoration */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#8c5a31] opacity-5 rounded-full -translate-y-1/2 translate-x-1/2" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#092a51] opacity-5 rounded-full translate-y-1/2 -translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#8c5a31] opacity-5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
-                <div className="max-w-7xl mx-auto relative z-10 ">
-                    <div >
-                    <div className="max-w-3xl mx-auto flex flex-col items-center ">
-                        {/* Badge */}
-                        <div className="inline-flex items-center gap-2 bg-[#fdf3ea] text-[#8c5a31] text-xs font-bold px-4 py-2 rounded-full mb-6 border border-[#e8d5c0]">
-                            <span className="w-2 h-2 bg-[#8c5a31] rounded-full animate-pulse" />
-                            Virtual Career Simulator
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="flex flex-col md:flex-row items-center gap-12">
+                        <div className="md:w-1/2">
+                            {/* Badge */}
+                            <div className="inline-flex items-center gap-2 bg-[#fdf3ea] text-[#8c5a31] text-xs font-bold px-4 py-2 rounded-full mb-6 border border-[#e8d5c0]">
+                                <span className="w-2 h-2 bg-[#8c5a31] rounded-full animate-pulse" />
+                                Virtual Career Simulator
+                            </div>
+
+                            <h1 className="text-4xl md:text-5xl font-black text-[#8c5a31] leading-tight mb-6">
+                                {data.heroTitle}
+                            </h1>
+                            <p className="text-[#8c5a31] text-lg leading-relaxed mb-10 max-w-xl">
+                                {data.heroSubtitle}
+                            </p>
+                            <Link
+                                href={data.ctaLink}
+                                className="inline-flex items-center gap-3 px-10 py-4 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 transition-all text-base"
+                                style={{ backgroundColor: "#8c5a31" }}
+                            >
+                                {data.heroCta}
+                                <FiArrowRight size={18} />
+                            </Link>
                         </div>
 
-                        <h1 className="text-5xl md:text-5xl font-black text-[#092a51] leading-tight mb-6">
-                            {data.heroTitle}
-                        </h1>
-                        <p className="text-[#092a51] text-xl leading-relaxed mb-10 max-w-xl">
-                            {data.heroSubtitle}
-                        </p>
-                        <Link
-                            href={data.ctaLink}
-                            className="inline-flex items-center gap-3 px-10 py-4 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 transition-all text-base"
-                            style={{ backgroundColor: "#8c5a31" }}
-                        >
-                            {data.heroCta}
-                            <FiArrowRight size={18} />
-                        </Link>
-                    </div>
+                        {data.backgroundImage && (
+                            <div className="md:w-1/2 flex justify-center items-center">
+                                <Image 
+                                    src={data.backgroundImage} 
+                                    alt={data.heroTitle} 
+                                    width={600} 
+                                    height={500} 
+                                    className="w-full h-auto object-contain max-h-[550px]"
+                                    priority
+                                />
+                            </div>
+                        )}
                     </div>
 
                     {/* Highlights strip */}
@@ -186,7 +194,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
             {/* ── CAREERS GRID ─────────────────────────────────────────────── */}
             <section id="careers" className="py-24 px-6 md:px-12 bg-white">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#092a51] text-center mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#8c5a31] text-center mb-4">
                         {data.careersSectionTitle}
                     </h2>
                     <p className="text-gray-500 text-center mb-14">{data.careersSectionSubtitle}</p>
@@ -215,7 +223,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                                 </div>
 
                                 <div className="p-5">
-                                    <h3 className="font-bold text-[#092a51] text-base mb-1">{career.title}</h3>
+                                    <h3 className="font-bold text-[#8c5a31] text-base mb-1">{career.title}</h3>
                                     <p className="text-xs text-gray-400 mb-3">By <span className="font-semibold text-gray-600">{career.by}</span></p>
 
                                     <div className="flex items-center justify-between mb-3">
@@ -256,7 +264,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
             </section>
 
             {/* ── EXPERIENCE SECTION ───────────────────────────────────────── */}
-            <section id="program" className="py-24 px-6 md:px-12 bg-[#092a51]">
+            <section id="program" className="py-24 px-6 md:px-12 bg-[#8c5a31]">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
                         {data.experienceSectionTitle}
@@ -316,7 +324,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                             />
                         </div>
                         <div className="md:w-1/2 space-y-4">
-                            <h3 className="text-2xl font-bold text-[#092a51] mb-6">
+                            <h3 className="text-2xl font-bold text-[#8c5a31] mb-6">
                                 {data.internshipReasons[activeReason].title}
                             </h3>
                             {data.internshipReasons[activeReason].points.map((p, i) => (
@@ -333,7 +341,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
             {/* ── TESTIMONIALS ─────────────────────────────────────────────── */}
             <section id="testimonials" className="py-24 px-6 md:px-12 bg-[#fdfaf7]">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-3xl font-bold text-[#092a51] text-center mb-14">
+                    <h2 className="text-3xl font-bold text-[#8c5a31] text-center mb-14">
                         What Students Say About Our Program
                     </h2>
                     {/* Scrollable row */}
@@ -366,7 +374,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
             {/* ── PRICING ──────────────────────────────────────────────────── */}
             <section id="pricing" className="py-24 px-6 md:px-12 bg-white">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-3xl font-bold text-[#092a51] text-center mb-4">{data.pricingTitle}</h2>
+                    <h2 className="text-3xl font-bold text-[#8c5a31] text-center mb-4">{data.pricingTitle}</h2>
                     <p className="text-gray-400 text-center mb-14">Choose the plan that suits your exploration needs</p>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
@@ -384,7 +392,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                                     </div>
                                 )}
                                 <p className="text-xs font-bold text-[#8c5a31] uppercase tracking-widest mb-2">{plan.tier}</p>
-                                <h3 className="text-2xl font-black text-[#092a51] mb-1">{plan.name}</h3>
+                                <h3 className="text-2xl font-black text-[#8c5a31] mb-1">{plan.name}</h3>
                                 <p className="text-sm text-gray-500 mb-1">{plan.pack}</p>
                                 <p className="text-xs text-gray-400 mb-6">{plan.duration}</p>
                                 <div className="text-4xl font-black text-[#8c5a31] mb-8">{plan.price}</div>
@@ -402,7 +410,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                     </div>
 
                     {/* Pack inclusions */}
-                    <div className="bg-[#092a51] rounded-2xl p-10">
+                    <div className="bg-[#8c5a31] rounded-2xl p-10">
                         <h3 className="text-white font-bold text-center mb-8 text-lg">All Plans Include</h3>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                             {data.packInclusions.map((inc, i) => (
@@ -427,7 +435,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
             {/* ── FAQs ─────────────────────────────────────────────────────── */}
             <section id="faqs" className="py-24 px-6 md:px-12 bg-[#fdfaf7]">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold text-[#092a51] text-center mb-4">
+                    <h2 className="text-3xl font-bold text-[#8c5a31] text-center mb-4">
                         Frequently Asked Questions
                     </h2>
                     <p className="text-gray-400 text-center mb-14">What students usually ask us</p>
