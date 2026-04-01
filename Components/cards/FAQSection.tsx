@@ -11,14 +11,14 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-  id: "01",
-  question: "How we support your journey?",
-  answer:
-    "3 Steps to Boost Your Career:\n\n" +
-    "STEP 1 – Assess: Discover your strengths with a psychometric test\n" +
-    "STEP 2 – Explore: Get expert guidance online or in-person\n" +
-    "STEP 3 – Act: Turn your career plan into action",
-},
+    id: "01",
+    question: "How we support your journey?",
+    answer:
+      "3 Steps to Boost Your Career:\n\n" +
+      "STEP 1 – Assess: Discover your strengths with a psychometric test\n" +
+      "STEP 2 – Explore: Get expert guidance online or in-person\n" +
+      "STEP 3 – Act: Turn your career plan into action",
+  },
 
   {
     id: "02",
@@ -34,7 +34,8 @@ const faqs: FAQItem[] = [
 ];
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  // const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -79,9 +80,8 @@ export default function FAQSection() {
                         }}
                       >
                         <p
-                          className={`mt-3 sm:mt-4 text-gray-600 text-base sm:text-lg leading-relaxed transition-opacity duration-500 break-words pr-2 ${
-                            isOpen ? "opacity-100" : "opacity-0"
-                          }`}
+                          className={`mt-3 sm:mt-4 text-gray-600 text-base sm:text-lg leading-relaxed transition-opacity duration-500 break-words pr-2 ${isOpen ? "opacity-100" : "opacity-0"
+                            }`}
                         >
                           {item.answer}
                         </p>

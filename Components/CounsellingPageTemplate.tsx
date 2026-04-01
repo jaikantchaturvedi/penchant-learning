@@ -319,7 +319,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                 <section className="bg-[#8c5a31] overflow-hidden">
                     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12">
                         <div className="md:w-2/3 py-8 space-y-2">
-                            <span className="text-white text-[10px] font-bold tracking-widest uppercase">
+                            <span className=" text-2xl md:text-3xl font-bold  text-white  tracking-widest uppercase">
                                 {data.successStory.category}
                             </span>
                             <h2 className="text-xl md:text-2xl font-bold text-white leading-tight max-w-4xl">

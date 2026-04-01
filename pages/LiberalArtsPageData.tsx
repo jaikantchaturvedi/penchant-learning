@@ -209,7 +209,7 @@ const liberalArtsData: AdmissionsPageData = {
     ],
 
     // No howItWorks, universities, or applicationPrograms for liberal arts
-    
+
     testimonials: [
         {
             text: "Panchant Learning stepped in and cleared the mental chaos and brought my daughter's mind on the right track. The guidance for application forms, interview and GD preparations, and SOP was very impressive. They helped her realise her strengths and enabled her to work on her weaknesses.",

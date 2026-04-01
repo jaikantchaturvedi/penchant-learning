@@ -36,8 +36,8 @@ export default function MentalHealthHero() {
       <div className="flex-1">
         <div className="w-full h-full rounded-3xl overflow-hidden">
           <Image
-            src="/guide.png"
-            alt="Therapy Session"
+            src="/guidee.png"
+            alt=""
             width={800}
             height={900}
             className="w-full h-full object-cover rounded-3xl"

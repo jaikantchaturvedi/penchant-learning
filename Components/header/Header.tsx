@@ -10,7 +10,7 @@ export default function Header() {
   const [active, setActive] = useState("home");
   const [isMegamenuOpen, setIsMegamenuOpen] = useState(false);
   const [megamenuType, setMegamenuType] = useState<"students" | "institutions" | null>(null);
-
+  const [showContactDropdown, setShowContactDropdown] = useState(false);
   const menuItems = [
     { label: "Home", id: "home" },
     { label: "For Students", id: "students", hasSubmenu: true },
@@ -54,20 +54,20 @@ export default function Header() {
           desc: "Experiential, immersive self-paced program that helps students experience different careers and gives them practical exposure to these careers.",
           link: "/virtual-career-internships"
         }
-      ],
-      secondaryCategory: "COLLEGE APPLICATION PROGRAMS",
-      secondaryItems: [
-        {
-          title: "Overseas Application",
-          desc: "End-to-end overseas admissions guidance to help you build the perfect applications for your target universities.",
-          link: "/overseas-admissions-counselling"
-        },
-        {
-          title: "Liberal Arts Application",
-          desc: "Comprehensive guidance and personalised application development for admissions to Liberal Arts programs.",
-          link: "/liberal-arts-admissions-counselling"
-        }
       ]
+      // secondaryCategory: "COLLEGE APPLICATION PROGRAMS",
+      // secondaryItems: [
+      //   {
+      //     title: "Overseas Application",
+      //     desc: "End-to-end overseas admissions guidance to help you build the perfect applications for your target universities.",
+      //     link: "/overseas-admissions-counselling"
+      //   },
+      //   {
+      //     title: "Liberal Arts Application",
+      //     desc: "Comprehensive guidance and personalised application development for admissions to Liberal Arts programs.",
+      //     link: "/liberal-arts-admissions-counselling"
+      //   }
+      // ]
     }
   ];
   const institutionPrograms = [
@@ -84,11 +84,11 @@ export default function Header() {
     {
       category: "CAREER ADVANCEMENT PROGRAMS",
       items: [
-        {
-          title: "Penchant Learning Training Program",
-          desc: "Expert-led training and comprehensive guidance sessions to help students excel at Penchant Learning conferences.",
-          link: "/penchant-learning-training"
-        },
+        // {
+        //   title: "Penchant Learning Training Program",
+        //   desc: "Expert-led training and comprehensive guidance sessions to help students excel at Penchant Learning conferences.",
+        //   link: "/penchant-learning-training"
+        // },
         {
           title: "Penchant Learning Talks",
           desc: "Career awareness and inspirational talks for students with professionals who have achieved success in their fields.",
@@ -155,7 +155,13 @@ export default function Header() {
                 onMouseLeave={() => item.hasSubmenu && setIsMegamenuOpen(false)}
               >
                 <button
-                  onClick={() => !item.hasSubmenu && handleScroll(item.id)}
+                  onClick={() => {
+                    if (item.id === "contact") {
+                      setShowContactDropdown(!showContactDropdown);
+                    } else if (!item.hasSubmenu) {
+                      handleScroll(item.id);
+                    }
+                  }}
                   className={`relative transition flex items-center gap-1 h-full ${active === item.id || (item.hasSubmenu && isMegamenuOpen && megamenuType === item.id)
                     ? "text-[#8c5a31]"
                     : "hover:text-gray-500"
@@ -167,6 +173,27 @@ export default function Header() {
                     <span className="absolute bottom-5 left-0 w-full h-[2.5px] bg-[#8c5a31]" />
                   )}
                 </button>
+                {item.id === "contact" && showContactDropdown && (
+                  <div className="absolute top-full mt-2 w-52 bg-white  shadow-lg overflow-hidden z-50">
+
+                    <a
+                      href="https://wa.me/919468643369"
+                      target="_blank"
+                      className="block px-4 py-3 text-sm hover:bg-gray-100"
+                    >
+                      WhatsApp
+                    </a>
+
+                    <a
+                      href="https://www.instagram.com/penchantlearnings/"
+                      target="_blank"
+                      className="block px-4 py-3 text-sm hover:bg-gray-100"
+                    >
+                      Instagram
+                    </a>
+
+                  </div>
+                )}
               </div>
             ))}
 
@@ -271,7 +298,7 @@ export default function Header() {
                     ))}
                   </div>
 
-                  {megamenuType === "students" && studentPrograms[1].secondaryCategory && (
+                  {/* {megamenuType === "students" && studentPrograms[1].secondaryCategory && (
                     <div className="mt-2">
                       <h3 className="text-[#ff5c5c] text-[11px] font-bold tracking-wider uppercase border-b border-gray-50 pb-1 mb-4">
                         {studentPrograms[1].secondaryCategory}
@@ -296,53 +323,40 @@ export default function Header() {
                         ))}
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
 
               {/* Right Sidebar Content */}
               <div className="flex-1 bg-gray-50/70 border-l border-gray-100 p-8 flex flex-col justify-between">
-                <div className="space-y-6">
-                  <div className="space-y-4">
-                    <Link
-                      href="tel:+918744987449"
+                <div className="space-y-4">
+                  {/* WhatsApp redirect on number click */}
+                  <Link
+                    href="https://wa.me/919468643369"
+                    target="_blank"
+                    className="flex items-center gap-4 text-[#092a51] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label"
+                    onClick={() => setIsMegamenuOpen(false)}
+                  >
+                    <div className="bg-white p-2.5 rounded-lg group-hover/label:bg-[#8c5a31] group-hover/label:text-white transition-all">
+                      <FiPhone size={16} />
+                    </div>
+                    <span>+91 94686 43369</span>
+                  </Link>
+
+                  {/* Email redirect */}
+                  <div className="flex items-center gap-4 text-[#092a51] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label">
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=penchantlearnings@gmail.com&su=Inquiry&body=Hello%20I%20want%20to%20know%20more"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-4 text-[#092a51] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label"
                       onClick={() => setIsMegamenuOpen(false)}
                     >
                       <div className="bg-white p-2.5 rounded-lg group-hover/label:bg-[#8c5a31] group-hover/label:text-white transition-all">
-                        <FiPhone size={16} />
-                      </div>
-                      <span>+91 87449 87449</span>
-                    </Link>
-                    <Link
-                      href="mailto:info@penchant.com"
-                      className="flex items-center gap-4 text-[#092a51] hover:text-[#8c5a31] font-bold text-sm transition-colors group/label"
-                      onClick={() => setIsMegamenuOpen(false)}
-                    >
-                      <div className="bg-white p-2.5 rounded-lg  group-hover/label:bg-[#8c5a31] group-hover/label:text-white transition-all">
                         <FiMail size={16} />
                       </div>
                       <span>Send a Message</span>
-                    </Link>
-                  </div>
-
-                  <div className="pt-8 border-t border-gray-200/60 space-y-6">
-                    <Link
-                      href="#"
-                      className="block text-[#092a51] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link"
-                      onClick={() => setIsMegamenuOpen(false)}
-                    >
-                      Success Stories
-                      <FiArrowRight size={16} className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-[#8c5a31]" />
-                    </Link>
-                    <Link
-                      href="#"
-                      className="block text-[#092a51] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link"
-                      onClick={() => setIsMegamenuOpen(false)}
-                    >
-                      About Us
-                      <FiArrowRight size={16} className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-[#8c5a31]" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

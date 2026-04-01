@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { useState } from "react";
 
+// ✅ Swiper Imports
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 interface TestimonialCardProps {
   stars?: number;
@@ -23,8 +24,10 @@ const TestimonialCard = ({
   role,
   avatar,
 }: TestimonialCardProps) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
-    <div className="bg-white px-6 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12 rounded-2xl sm:rounded-3xl w-full min-w-0 h-full">
+    <div className="bg-white px-6 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12 rounded-2xl sm:rounded-3xl w-full h-full flex flex-col">
 
       {/* Stars */}
       <div className="flex gap-1 mb-4 sm:mb-5">
@@ -36,12 +39,24 @@ const TestimonialCard = ({
       </div>
 
       {/* Text */}
-      <p className="text-base sm:text-lg font-semibold text-[#032e61] mb-6 sm:mb-8 break-words leading-relaxed">
-        {text}
-      </p>
+      <div className="flex-1">
+        <p
+          className={`text-base sm:text-lg font-semibold text-[#032e61] break-words leading-relaxed transition-all duration-300 ${isExpanded ? "" : "line-clamp-4"
+            }`}
+        >
+          {text}
+        </p>
+
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="mt-2 text-sm font-medium text-[#8c5a31] hover:underline"
+        >
+          {isExpanded ? "Read Less" : "Read More"}
+        </button>
+      </div>
 
       {/* Profile */}
-      <div className="flex items-center gap-3 sm:gap-4">
+      <div className="flex items-center gap-3 sm:gap-4 mt-6 sm:mt-8">
         <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0">
           <Image
             src={avatar}
@@ -63,116 +78,89 @@ const TestimonialCard = ({
   );
 };
 
-const SwiperStyles = () => (
-  <style jsx global>{`
-    .swiper-button-next,
-    .swiper-button-prev {
-      background-color: #8c5a31;
-      width: 44px !important;
-      height: 44px !important;
-      border-radius: 50%;
-      color: white !important;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-      font-size: 18px !important;
-      font-weight: bold;
-    }
-    .swiper-button-next:hover,
-    .swiper-button-prev:hover {
-      background-color: #8c5a31 !important;
-      filter: brightness(1.1);
-      transform: scale(1.1);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      color: white !important;
-    }
-    .swiper-pagination-bullet-active {
-      background: #8c5a31 !important;
-    }
-  `}</style>
-);
-
 const TestimonialSection = () => {
+  const testimonials = [
+    {
+      stars: 5,
+      text: "I had a very good experience with the counseling. The counselor was supportive, patient, and explained everything clearly. Proper guidance was given according to my goals, and all my doubts were addressed honestly. The session helped me gain clarity and confidence in my decisions.",
+      name: "Devesh Gupta",
+      role: "Student",
+      avatar: "/userimge.jpeg",
+    },
+    {
+      stars: 5,
+      text: "The career counseling sessions were absolutely excellent. I went in feeling completely lost, but the counselor's insights provided a clear roadmap for my future career. I now feel confident and motivated about my path.",
+      name: "Anushka Jain",
+      role: "Student",
+      avatar: "/userimage1.jpg",
+    },
+    {
+      stars: 5,
+      text: "An excellent experience. The counselor was professional, patient, and provided practical, tailored advice that made navigating my career transition so much smoother.",
+      name: "Syed amil ali",
+      role: "Professional",
+      avatar: "/userimage2.jpeg",
+    },
+    {
+      stars: 5,
+      text: "Career counselling provides the process and structure, while the counsellor ensures personalized attention and practical implementation.",
+      name: "Akshita Khandelwal",
+      role: "Student",
+      avatar: "/userimage3.jpeg",
+    },
+  ];
+
   return (
-    <section className="w-full py-12 sm:py-16 md:py-20 flex justify-center px-4 sm:px-6 overflow-x-hidden" id="testimonial">
-      <SwiperStyles />
+    <section
+      className="w-full py-12 sm:py-16 md:py-20 flex justify-center px-4 sm:px-6 overflow-visible"
+      id="testimonial"
+    >
+      {/* Yellow container */}
+      <div className="bg-[#F7F6F0] max-w-7xl w-full rounded-2xl px-6 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20 relative">
 
-      {/* Yellow rounded container */}
-      <div className="bg-[#F7F6F0] max-w-7xl w-full rounded-2xl sm:rounded-3xl px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40">
-
-        {/* Heading Row */}
+        {/* Header */}
         <div className="flex flex-col lg:flex-row justify-end items-start w-full mb-10 sm:mb-12 md:mb-16 gap-4">
-
-          {/* <p className="text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.25em] text-[#0A2A54] font-medium">
-            Real Stories. Real Success.
-          </p> */}
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#0A2A54] 
-                         leading-tight break-words 
-                         text-left lg:text-right 
-                         max-w-3xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#0A2A54] text-left lg:text-right max-w-3xl">
             <span className="block">Real Stories. Real Success.</span>
             <span className="block">Discover Listener Today</span>
           </h1>
-
         </div>
 
-        {/* Swiper Slider */}
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          slidesPerView={1}
-          spaceBetween={24}
-          autoplay={{
-            delay: 8000,
-            disableOnInteraction: false,
-          }}
-          pagination={{ clickable: true }}
-          navigation
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-          }}
-          className="w-full"
-        >
-          <SwiperSlide>
-            <TestimonialCard
-              text="I had a very good experience with the counseling. The counselor was supportive, patient, and explained everything clearly. Proper guidance was given according to my goals, and all my doubts were addressed honestly. The session helped me gain clarity and confidence in my decisions."
-              name="Devesh Gupta"
-              role=""
-              avatar="/userimge.jpeg"
-            />
-          </SwiperSlide>
+        {/* Slider Wrapper */}
+        <div className="relative">
 
-          <SwiperSlide>
-            <TestimonialCard
-              text="The career counseling sessions were absolutely excellent. I went in feeling completely lost, but the counselor's insights provided a clear roadmap for my future career. I now feel confident and motivated about my path."
-              name="Anushka Jain"
-              role=""
-              avatar="/userimage1.jpg"
-            />
-          </SwiperSlide>
+          {/* LEFT BUTTON */}
+          <button className="swiper-button-prev-custom absolute -left-15 top-1/2 z-10 -translate-y-1/2 bg-[#8c5a31] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
+            ‹
+          </button>
 
-          <SwiperSlide>
-            <TestimonialCard
-              text="An excellent experience.The counselor was professional, patient, and provided practical, tailored advice that made navigating my career transition so much smoother. I now have a clear roadmap for my future. I am very happy and glad to make thank to counselor for giving me a good guidance regarding my future"
-              name="Syed amil ali"
-              role=""
-              avatar="/userimage2.jpeg"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialCard
-              text="From my perspective, career counselling and the guidance of a career counsellor together form a vital support system for making informed career choices. Career counselling provides the process and structure, while the counsellor ensures personalized attention and practical implementation of that process. Together, they help students navigate academic transitions, competitive exams, and career uncertainties with a clearer vision."
-              name="Akshita Khandelwal"
-              role=""
-              avatar="/userimage3.jpeg"
-            />
-          </SwiperSlide>
-        </Swiper>
+          {/* RIGHT BUTTON */}
+          <button className="swiper-button-next-custom absolute -right-15 top-1/2 z-10 -translate-y-1/2 bg-[#8c5a31] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
+            ›
+          </button>
 
+          {/* Swiper */}
+          <Swiper
+            modules={[Navigation]}
+            navigation={{
+              nextEl: ".swiper-button-next-custom",
+              prevEl: ".swiper-button-prev-custom",
+            }}
+            spaceBetween={20}
+            slidesPerView={1}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <TestimonialCard {...testimonial} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );

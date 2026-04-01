@@ -79,7 +79,7 @@ const ContactSection = () => {
         {/* LEFT CONTENT */}
         <div>
           <p className="text-sm tracking-widest text-[#904437] font-medium mb-3">
-            CONTACT US
+            CONSULT NOW
           </p>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#092a51] leading-tight">

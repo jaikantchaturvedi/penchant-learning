@@ -128,7 +128,7 @@ export default function WellnessSection() {
 
             {/* IMAGE */}
             <div className="rounded-3xl overflow-hidden h-[340px] relative">
-              <Image src="/custom-img1.jpeg" alt="" fill className="object-cover" />
+              <Image src="/img-1.jpg" alt="" fill className="object-cover" />
             </div>
 
             {/* CARD 2 */}
@@ -154,12 +154,12 @@ export default function WellnessSection() {
 
             {/* IMAGE */}
             <div className="rounded-3xl overflow-hidden h-[340px] relative">
-              <Image src="/img 2.png" alt="" fill className="object-cover" />
+              <Image src="/img-2.jpg" alt="" fill className="object-cover" />
             </div>
 
             {/* IMAGE */}
             <div className="rounded-3xl overflow-hidden h-[340px] relative">
-              <Image src="/img 3.png" alt="" fill className="object-cover" />
+              <Image src="/img-3.jpg" alt="" fill className="object-cover" />
             </div>
 
             {/* CARD 3 */}
@@ -185,7 +185,7 @@ export default function WellnessSection() {
 
             {/* IMAGE */}
             <div className="rounded-3xl overflow-hidden h-[340px] relative">
-              <Image src="/custom-img2.jpeg" alt="" fill className="object-cover" />
+              <Image src="/img-4.jpg" alt="" fill className="object-cover" />
             </div>
 
             {/* CARD 4 */}
