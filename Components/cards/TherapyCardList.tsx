@@ -1,4 +1,4 @@
-import TherapyCard from "./TherapyCard";  
+import TherapyCard from "./TherapyCard";
 
 interface Therapy {
   category: string;
@@ -10,27 +10,27 @@ const therapyData: Therapy[] = [
   {
     category: "SELF-IMPROVEMENT",
     title: "Building resilience through cognitive behavioral therapy",
-    image: "/therapy1.jpg",
+    image: "/therapy-1.jpeg",
   },
   {
     category: "MENTAL WELLNESS",
     title: "Unlocking self-awareness through psychological techniques",
-    image: "/therapy2.jpg",
+    image: "/therapyy-2.jpeg",
   },
   {
     category: "MENTAL WELLNESS",
     title: "Understanding how therapy fosters personal growth",
-    image: "/therapy3.jpg",
+    image: "/therapy-3.jpeg",
   },
 ];
 
 export default function TherapyCardList() {
   return (
     <section className="w-full px-6 sm:px-10 md:px-16 lg:px-20 py-16">
-      
+
       {/* HEADER */}
       <div className="text-left mb-12 max-w-3xl">
-        <h1 className="text-sm tracking-widest uppercase text-[#032e61]">
+        <h1 className=" text-2xl md:text-3xl font-bold uppercase text-[#032e61]">
           Supporting your career journey
         </h1>
 
@@ -53,7 +53,7 @@ export default function TherapyCardList() {
             category={therapy.category}
             title={therapy.title}
             image={therapy.image}
-            isFeatured={index === 1} 
+            isFeatured={index === 1}
           />
         ))}
       </div>

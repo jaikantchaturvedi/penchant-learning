@@ -1,5 +1,7 @@
 // import { VCSPageTemplate, VCSPageData } from "@/Components/VCSPageTemplate";
-import { VCSPageTemplate,VCSPageData } from "@/Components/VCSPageTemplate";
+import { VCSPageTemplate, VCSPageData } from "@/Components/VCSPageTemplate";
+import Image from "next/image";
+
 
 const vcsData: VCSPageData = {
 
@@ -7,7 +9,7 @@ const vcsData: VCSPageData = {
     heroSubtitle: "Take multiple careers for a test-drive and understand the inner workings of each profession with our Virtual Career Simulator.",
     heroCta: "Start Free Trial",
     ctaLink: "#",
-    backgroundImage:"/images/vcs_hero.png",
+    backgroundImage: "/images/vcs-hero.svg",
 
     highlights: [
         {
@@ -181,37 +183,37 @@ const vcsData: VCSPageData = {
             text: "The most attractive and impressive part was the gamified version. I must say this is the best thing which I've ever experienced till now.",
             author: "Smriti Ruparel",
             role: "Student",
-            image: "/images/testi-smriti.png",
+            image: "/images/testi-nidhi.jpg",
         },
         {
             text: "The simulations were really helpful. I did the architecture one, so it helped me to understand architecture better, the different types of architecture.",
             author: "Shania Serao",
             role: "Student",
-            image: "/images/testi-shania.png",
+            image: "/images/testi-simran.jpg",
         },
         {
             text: "The professional who was talking about the career, I lived his life. The experience was very good and the way he explained about the career, that was amazing.",
             author: "Shubham",
             role: "Student",
-            image: "/images/testi-shubham.png",
+            image: "/images/testi-shaurya.jpg",
         },
         {
             text: "After watching all the videos and doing the tasks, it has given me a clearer vision. I'll recommend everyone to do this course.",
             author: "Sanaya Sabharwal",
             role: "Student",
-            image: "/images/testi-sanaya.png",
+            image: "/images/testi-sneha.jpg",
         },
         {
             text: "It was a very good experience, different from other forms of career counseling as this was more student-friendly and audio-visual, making it more appealing to our senses.",
             author: "Pearl Pandya",
             role: "Student",
-            image: "/images/testi-pearl.png",
+            image: "/images/testi-nitya.jpg",
         },
         {
             text: "Immrse has been a wonderful experience, and a very hands-on and experimental way of testing aptitude in comparison to the other tests I've been through.",
             author: "Vrushali Mehta",
             role: "Student",
-            image: "/images/testi-vrushali.png",
+            image: "/images/testi-kavita.jpg",
         },
     ],
 

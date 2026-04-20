@@ -161,11 +161,11 @@ const PenchantLearningTraining = () => {
                     </div>
 
                     <div className="md:w-1/2 flex justify-center items-center">
-                        <Image 
-                            src="/images/mun_hero.png" 
-                            alt="Penchant Learning Training" 
-                            width={600} 
-                            height={500} 
+                        <Image
+                            src="/images/mun_hero.png"
+                            alt="Penchant Learning Training"
+                            width={600}
+                            height={500}
                             className="w-full h-auto object-contain max-h-[550px]"
                             priority
                         />
@@ -210,7 +210,7 @@ const PenchantLearningTraining = () => {
             </section>
 
             {/* Schools We Work With */}
-            <section className="py-20 px-6 bg-white border-t border-gray-50">
+            {/* <section className="py-20 px-6 bg-white border-t border-gray-50">
                 <div className="max-w-7xl mx-auto text-center">
                     <h2 className="text-xl font-bold text-[#8c5a31] mb-16">Schools We Work With</h2>
                     <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8 items-center place-items-center">
@@ -241,7 +241,7 @@ const PenchantLearningTraining = () => {
                     </div>
                     <div className="mt-12 text-gray-400 italic text-sm">and many more...</div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Gallery Section */}
             <section id="gallery" className="py-24 bg-[#8c5a31] relative">
@@ -376,8 +376,8 @@ const PenchantLearningTraining = () => {
 
                         <div className="space-y-2">
                             <p className="text-gray-400 text-lg">Need to speak to us now?</p>
-                            <h3 className="text-xl md:text-2xl font-bold text-[#8c5a31]">
-                                Call us at +91 87449 87449
+                            <h3 className="text-xl md:text-2xl font-bold text-gray-700">
+                                Call us at +91 94686 43369
                             </h3>
                             <p className="text-gray-400 text-sm">
                                 Monday - Friday, 10 am - 7 pm

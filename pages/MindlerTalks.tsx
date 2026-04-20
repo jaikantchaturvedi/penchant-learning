@@ -142,12 +142,12 @@ const PenchantLearningTalks = () => {
             <SwiperStyles />
 
             {/* Hero Section */}
-            <section className="relative overflow-hidden pt-12 pb-16 bg-gradient-to-b from-white to-[#fdfaf7] flex items-center justify-start min-h-[400px]" style={{ backgroundImage: `url("/images/mindler-talks-banner.svg")`, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center right', backgroundColor: '#fff' }}>
-                <div className="max-w-8xl mx-32 px-6 flex flex-col md:flex-row items-center">
-                    <div className="md:w-1/2 space-y-6 z-10 flex flex-col justify-start items-start text-left">
-                        <div className="flex flex-col items-start gap-2  py-10">
-                            <span className="text-[10px] tracking-[0.3em] text-gray-400 font-bold uppercase">Introducing</span>
-                            <div className="flex items-start  gap-2">
+            <section className="relative overflow-hidden pt-24 pb-32 px-6 md:px-12 bg-gradient-to-b from-white to-[#fdfaf7] flex items-center justify-center min-h-[500px]" style={{ backgroundImage: `url("/images/mindler-talks-banner.svg")`, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center right', backgroundColor: '#fff' }}>
+                <div className="w-full mx-auto flex flex-col md:flex-row items-center justify-center">
+                    <div className="md:w-1/2 space-y-6 z-10 flex flex-col justify-center items-center text-center">
+                        <div className="flex flex-col items-center gap-2 mb-4">
+                            <span className="text-2xl md:text-3xl font-bold text-[#092a51] uppercase">Introducing</span>
+                            <div className="flex items-center gap-2">
                                 <Image src="/images/pl-learning.png" alt="Penchant Learning Talks Logo" width={220} height={60} className="object-contain" />
                             </div>
                         </div>
@@ -198,7 +198,7 @@ const PenchantLearningTalks = () => {
             </section>
 
             {/* Schools We Work With */}
-            <section className="py-20 px-6 bg-white border-t border-gray-50">
+            {/* <section className="py-20 px-6 bg-white border-t border-gray-50">
                 <div className="max-w-7xl mx-auto text-center">
                     <h2 className="text-xl font-bold text-[#8c5a31] mb-16 uppercase tracking-widest">Schools We Work With</h2>
                     <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8 items-center place-items-center">
@@ -216,7 +216,7 @@ const PenchantLearningTalks = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Gallery Section */}
             <section id="gallery" className="py-24 bg-[#8c5a31] relative">
@@ -234,11 +234,11 @@ const PenchantLearningTalks = () => {
                         className="rounded-xl testimonial-swiper"
                     >
                         {[
-                            "/herosection.jpg",
-                            "/Journey.jpeg",
-                            "/therapy1.jpg",
-                            "/therapy2.jpg",
-                            "/therapy3.jpg"
+                            "/journeyyy.jpg",
+                            "/banner-1.jpeg",
+                            "/therapy-1.jpeg",
+                            "/therapyy-2.jpeg",
+                            "/therapy-3.jpeg"
                         ].map((img, i) => (
                             <SwiperSlide key={i}>
                                 <div className="aspect-[4/3] bg-white rounded-lg overflow-hidden shadow-2xl group relative">
@@ -307,7 +307,7 @@ const PenchantLearningTalks = () => {
                         <div className="space-y-3">
                             <p className="text-gray-400 font-medium">Have any queries?</p>
                             <h3 className="text-2xl font-bold text-gray-700 flex items-center justify-center gap-3">
-                                <FiPhone className="text-[#8c5a31]" /> +91 87449 87449
+                                <FiPhone className="text-[#8c5a31]" /> +91 94686 43369
                             </h3>
                             <p className="text-gray-400 text-sm">Monday - Saturday, 9:30 am - 6:30 pm</p>
                         </div>

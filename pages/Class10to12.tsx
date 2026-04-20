@@ -258,7 +258,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
     contact: {
         title: "What can we help you with?",
         subtitle: "Feel free to write to us. We usually respond within 24 hours!",
-        phoneNumber: "+91 87449 87449",
+        phoneNumber: "+91 94686 43369",
         availability: "Monday - Friday",
         availabilityHours: "10 am - 7 pm",
         phoneImage: "/images/ContactUs.svg",

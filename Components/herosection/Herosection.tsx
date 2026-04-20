@@ -94,7 +94,7 @@ export default function HeroSection() {
 
           <div className="relative w-full hidden md:block">
             <Image
-              src="/Journey.jpeg"
+              src="/Journeyy.jpg"
               alt="Therapy Session"
               width={1200}
               height={1200}
@@ -106,7 +106,7 @@ export default function HeroSection() {
         {/* RIGHT FORM SECTION */}
         <div className="relative w-full h-[500px] md:h-[640px] rounded-[40px] shadow-lg overflow-hidden">
           <Image
-            src="/custom-img-106.jpg"
+            src="/custom-img-108.jpg"
             alt="Background"
             fill
             className="object-cover"
@@ -175,7 +175,7 @@ export default function HeroSection() {
         </div>
         <div className="relative w-full block md:hidden">
           <Image
-            src="/Journey.jpeg"
+            src="/Journeyy.jpg"
             alt="Therapy Session"
             width={1200}
             height={1200}

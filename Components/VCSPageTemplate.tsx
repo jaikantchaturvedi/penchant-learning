@@ -66,7 +66,7 @@ export interface VCSPageData {
     heroTitle: string;
     heroSubtitle: string;
     heroCta: string;
-    backgroundImage:string;
+    backgroundImage: string;
     // heroImage?: string;      
     // heroImageAlt?: string;
     highlights: VCSHighlight[];
@@ -134,25 +134,36 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
 
             {/* ── HERO ─────────────────────────────────────────────────────── */}
             <section
-                className="relative overflow-hidden bg-gradient-to-br from-[#fdfaf7] via-white to-[#f0f4ff] pt-12 pb-16"
+
+                className="relative overflow-hidden bg-gradient-to-br from-[#fdfaf7] via-white to-[#f0f4ff] py-24 px-6 md:px-12"
+                style={
+                    data.backgroundImage
+                        ? {
+                            backgroundImage: `url("${data.backgroundImage}")`,
+                            backgroundSize: "contain",
+                            backgroundPosition: "center",
+                            backgroundRepeat: "no-repeat"
+                        }
+                        : undefined
+                }
             >
                 {/* Background decoration */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#8c5a31] opacity-5 rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#8c5a31] opacity-5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <div className="flex flex-col md:flex-row items-center gap-12">
-                        <div className="md:w-1/2">
+                <div className="max-w-7xl mx-auto relative z-10 ">
+                    <div >
+                        <div className="max-w-3xl mx-auto flex flex-col items-center ">
                             {/* Badge */}
                             <div className="inline-flex items-center gap-2 bg-[#fdf3ea] text-[#8c5a31] text-xs font-bold px-4 py-2 rounded-full mb-6 border border-[#e8d5c0]">
                                 <span className="w-2 h-2 bg-[#8c5a31] rounded-full animate-pulse" />
                                 Virtual Career Simulator
                             </div>
 
-                            <h1 className="text-4xl md:text-5xl font-black text-[#8c5a31] leading-tight mb-6">
+                            <h1 className="text-5xl md:text-5xl font-black text-[#092a51] leading-tight mb-6">
                                 {data.heroTitle}
                             </h1>
-                            <p className="text-[#8c5a31] text-lg leading-relaxed mb-10 max-w-xl">
+                            <p className="text-[#092a51] text-xl leading-relaxed mb-10 max-w-xl">
                                 {data.heroSubtitle}
                             </p>
                             <Link
@@ -164,19 +175,6 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                                 <FiArrowRight size={18} />
                             </Link>
                         </div>
-
-                        {data.backgroundImage && (
-                            <div className="md:w-1/2 flex justify-center items-center">
-                                <Image 
-                                    src={data.backgroundImage} 
-                                    alt={data.heroTitle} 
-                                    width={600} 
-                                    height={500} 
-                                    className="w-full h-auto object-contain max-h-[550px]"
-                                    priority
-                                />
-                            </div>
-                        )}
                     </div>
 
                     {/* Highlights strip */}
@@ -207,21 +205,16 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                                 className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                             >
                                 {/* Career image */}
-                                <div className="relative h-44 overflow-hidden">
+                                <div className="relative w-full aspect-[16/10] overflow-hidden rounded-t-2xl">
                                     <Image
                                         src={career.image}
                                         alt={career.title}
                                         fill
+                                        quality={100}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                    <div className="absolute bottom-3 left-3">
-                                        <span className="bg-[#8c5a31] text-white text-[10px] font-bold px-2 py-1 rounded-full">
-                                            {career.tag}
-                                        </span>
-                                    </div>
                                 </div>
-
                                 <div className="p-5">
                                     <h3 className="font-bold text-[#8c5a31] text-base mb-1">{career.title}</h3>
                                     <p className="text-xs text-gray-400 mb-3">By <span className="font-semibold text-gray-600">{career.by}</span></p>

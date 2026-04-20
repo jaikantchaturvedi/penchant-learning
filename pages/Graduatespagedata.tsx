@@ -51,45 +51,45 @@ const graduatesPageData: CounsellingPageData = {
             text: "Plan the ideal next step in your academic or professional journey with our expert coaches",
         },
     ],
-services: {
-    title: "Our Services",
-    subtitle: "Select the services you are interested in and we will create a customised plan just for you.",
-    services: [
-        { id: "assessment", name: "Career Assessment", price: 2400, description: "5-dimensional career assessment" },
-        { id: "counselling-1", name: "1 Counselling Session", price: 3000, description: "60-min session with expert coach" },
-        { id: "counselling-3", name: "3 Counselling Sessions", price: 7500, description: "3x 60-min sessions with expert coach" },
-        { id: "resume", name: "Resume Review", price: 1500, description: "Expert feedback on your resume" },
-        { id: "interview", name: "Interview Training", price: 2000, description: "Mock interviews with feedback" },
-        { id: "internship", name: "Internship & Job Search Strategy", price: 2500, description: "Guided job search planning" },
-    ]
-},
+    services: {
+        title: "Our Services",
+        subtitle: "Select the services you are interested in and we will create a customised plan just for you.",
+        services: [
+            { id: "assessment", name: "Career Assessment", price: 2400, description: "5-dimensional career assessment" },
+            { id: "counselling-1", name: "1 Counselling Session", price: 3000, description: "60-min session with expert coach" },
+            { id: "counselling-3", name: "3 Counselling Sessions", price: 7500, description: "3x 60-min sessions with expert coach" },
+            { id: "resume", name: "Resume Review", price: 1500, description: "Expert feedback on your resume" },
+            { id: "interview", name: "Interview Training", price: 2000, description: "Mock interviews with feedback" },
+            { id: "internship", name: "Internship & Job Search Strategy", price: 2500, description: "Guided job search planning" },
+        ]
+    },
 
-specialPackages: {
-    title: "Special Services and Packages",
-    packages: [
-        {
-            icon: "/images/essay-icon.svg",
-            title: "Essay/SOP Review",
-            description: "With our experts learn how to translate personal and professional experiences into impactful narratives while also connecting with the unique ethos of each university.",
-            ctaText: "Inquire Now",
-            ctaLink: "https://Penchant Learning.as.me/callback"
-        },
-        {
-            icon: "/images/masters-icon.svg",
-            title: "Comprehensive Package - Master's Degree (Overseas)",
-            description: "The comprehensive package includes all essential services from Program and University selection, CV/Resume reviews, SoP/Essay reviews, and Interview Prep with unlimited sessions.",
-            ctaText: "Inquire Now",
-            ctaLink: "https://Penchant Learning.as.me/callback"
-        },
-        {
-            icon: "/images/mba-icon.svg",
-            title: "Premium Package MiM/MBA (Overseas/India)",
-            description: "The MiM/MBA application strategy will be designed to match the applicant's profile. All essential services from Program and University selection, CV/Resume reviews, SoP/Essay reviews, and Interview Prep are included.",
-            ctaText: "Inquire Now",
-            ctaLink: "https://Penchant Learning.as.me/callback"
-        },
-    ]
-},
+    specialPackages: {
+        title: "Special Services and Packages",
+        packages: [
+            {
+                icon: "/images/essay-icon.svg",
+                title: "Essay/SOP Review",
+                description: "With our experts learn how to translate personal and professional experiences into impactful narratives while also connecting with the unique ethos of each university.",
+                ctaText: "Inquire Now",
+                ctaLink: "https://Panchant Learning.as.me/callback"
+            },
+            {
+                icon: "/images/masters-icon.svg",
+                title: "Comprehensive Package - Master's Degree (Overseas)",
+                description: "The comprehensive package includes all essential services from Program and University selection, CV/Resume reviews, SoP/Essay reviews, and Interview Prep with unlimited sessions.",
+                ctaText: "Inquire Now",
+                ctaLink: "https://Panchant Learning.as.me/callback"
+            },
+            {
+                icon: "/images/mba-icon.svg",
+                title: "Premium Package MiM/MBA (Overseas/India)",
+                description: "The MiM/MBA application strategy will be designed to match the applicant's profile. All essential services from Program and University selection, CV/Resume reviews, SoP/Essay reviews, and Interview Prep are included.",
+                ctaText: "Inquire Now",
+                ctaLink: "https://Panchant Learning.as.me/callback"
+            },
+        ]
+    },
 
     // ─── HOW IT WORKS ────────────────────────────────────────────────────────
     // howItWorks: [
@@ -362,7 +362,7 @@ specialPackages: {
             question:
                 "Will you also be able to help me with details on overseas colleges and courses?",
             answer:
-                "Yes, we provide information for overseas programs and colleges for your target careers and help you shortlist them. This is included in our Explore program. For more extensive guidance on the application process, we also have a comprehensive Overseas Coach program. Get in touch at hello@Penchant Learning.com or +91 87449 87449.",
+                "Yes, we provide information for overseas programs and colleges for your target careers and help you shortlist them. This is included in our Explore program. For more extensive guidance on the application process, we also have a comprehensive Overseas Coach program. Get in touch at hello@Panchant Learning.com or +91 94686 43369.",
         },
         {
             question: "Do I get support after my sessions with the coach are over?",
@@ -379,24 +379,24 @@ specialPackages: {
             question:
                 "I do not require the career assessment. Can I just avail the counselling sessions?",
             answer:
-                "We do not recommend counselling without the assessment as it gives the counsellor key insights about you. However, in certain cases we offer counselling-only sessions at ₹5,000, which includes all Explore features minus the assessment. This is offered on a case-by-case basis. Contact us at hello@Penchant Learning.com or +91 87449 87449.",
+                "We do not recommend counselling without the assessment as it gives the counsellor key insights about you. However, in certain cases we offer counselling-only sessions at ₹5,000, which includes all Explore features minus the assessment. This is offered on a case-by-case basis. Contact us at hello@Panchant Learning.com or +91 94686 43369.",
         },
     ],
-contact: {
-    title: "What can we help you with?",
-    subtitle: "Feel free to write to us. We usually respond within 24 hours!",
-    phoneNumber: "+91 87449 87449",
-    availability: "Monday - Friday",
-    availabilityHours: "10 am - 7 pm",
-    phoneImage: "/images/ContactUs.svg",
-    queryOptions: [
-        "Career Counselling",
-        "Pricing & Plans",
-        "Technical Support",
-        "Other"
-    ],
-    buttonText: "Submit"
-},
+    contact: {
+        title: "What can we help you with?",
+        subtitle: "Feel free to write to us. We usually respond within 24 hours!",
+        phoneNumber: "+91 94686 43369",
+        availability: "Monday - Friday",
+        availabilityHours: "10 am - 7 pm",
+        phoneImage: "/images/ContactUs.svg",
+        queryOptions: [
+            "Career Counselling",
+            "Pricing & Plans",
+            "Technical Support",
+            "Other"
+        ],
+        buttonText: "Submit"
+    },
 };
 
 // Default export wrapper for current usage
