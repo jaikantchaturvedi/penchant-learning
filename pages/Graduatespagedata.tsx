@@ -319,21 +319,21 @@ const graduatesPageData: CounsellingPageData = {
             text: "All the things the assessment told me about myself and my interests were so true.",
             author: "Sneha",
             role: "DPS RK Puram",
-            image: "/images/testi-sneha.jpg", // replace with your asset
+            image: "/images/testimonials/female1.png", // replace with your asset
         },
         {
             type: "quote",
             text: "Penchant Learning provided a mentored framework for my son's ambitions to achieve and succeed.",
             author: "Kavita",
             role: "Parent",
-            image: "/images/testi-kavita.jpg",
+            image: "/images/testimonials/mother1.png",
         },
         {
             type: "quote",
             text: "Signing up for Penchant Learning, and meeting and interacting with their experienced team was one of the best decisions I made.",
             author: "Shaurya",
             role: "Aga Khan Academy",
-            image: "/images/testi-shaurya.jpg",
+            image: "/images/testimonials/male2.png",
         },
         // {
         //     type: "story_card",

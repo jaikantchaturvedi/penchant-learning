@@ -8,7 +8,7 @@ import { CounsellingPageTemplate, CounsellingPageData } from "@/Components/Couns
 const CLASS_10_12_DATA: CounsellingPageData = {
     hero: {
         title: "Find your true calling in life and start your career journey",
-        backgroundImage: "/images/class10_hero.png",
+        backgroundImage: "/images/class10_hero_indian.png",
         subtitle: "Identify your career goals and formulate a step-by-step plan to get there with guidance from career experts",
         ctaText: "Get Started",
         ctaLink: "#",
@@ -43,7 +43,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             id: 1,
             title: "Advanced Assessment & Best-Fit Matches",
             description: "Learn about your strengths and interests with our 5-dimensional assessment and 34-page career report.",
-            image: "/images/accessment_1.png",
+            image: "/images/indian_assessment.png",
             ctaText: "Take Free Demo",
             ctaLink: "#",
             decorationClass: "absolute -top-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -53,7 +53,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             id: 2,
             title: "Nexus: AI-Powered Career Planning Tool",
             description: "Best-Fit Subject Combinations as per Education Board & Career Preferences. Interdisciplinary Career Suggestions. Introduction to Role Models for Each Career Pathway. Suggestion for Soft Skill Development",
-            image: "/images/accessment_2.png",
+            image: "/images/indian_analysis.png",
             ctaText: "Schedule a callback",
             ctaLink: "#",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -63,7 +63,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             id: 3,
             title: "Simulated Virtual Career Internships",
             description: "Explore multiple career options through role play, simulations and experiential videos with our Virtual Internship Program.",
-            image: "/images/virtual_internship.png",
+            image: "/images/indian_internship.png",
             ctaText: "Schedule Call",
             ctaLink: "#",
             decorationClass: "absolute -top-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -73,7 +73,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             id: 4,
             title: "Interactive Career & Stream Activities",
             description: "Evaluate your academics, work style, aptitude and subject compatibility to identify your perfect career.",
-            image: "/images/interactive_activities.png",
+            image: "/images/indian_interactive.png",
             ctaText: "View Sample Report",
             ctaLink: "#",
             decorationClass: "absolute -bottom-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -83,7 +83,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             id: 5,
             title: "Career Roadmap Planner",
             description: "Plan ahead for college admissions and prepare for exams and college applications in time.",
-            image: "/images/career_roadmap.png",
+            image: "/images/indian_roadmap.png",
             ctaText: "Schedule a callback",
             ctaLink: "#",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -93,7 +93,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             id: 6,
             title: "Personalised Guidance from Experts",
             description: "Finalise your career path and build a customised career plan with help from our career experts.",
-            image: "/images/personalised_guidance.png",
+            image: "/images/indian_coach.png",
             ctaText: "Explore Internships",
             ctaLink: "#",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -103,7 +103,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             id: 7,
             title: "Extensive Support & Resources",
             description: "Get detailed information on all careers with our well-researched expert written resources.",
-            image: "/images/support_resources.png",
+            image: "/images/indian_resources.png",
             ctaText: "Schedule a callback",
             ctaLink: "#",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -220,25 +220,25 @@ const CLASS_10_12_DATA: CounsellingPageData = {
     },
     testimonials: [
         {
-            type: "video",
-            youtubeId: "dQw4w9WgXcQ",
-            title: "Success Story - Rahul Sharma",
+            type: "quote",
+            text: "Penchant Learning helped me navigate the complex college application process with ease. I am now heading to my dream university!",
             author: "Rahul Sharma",
-            overlayText: { pre: "My", main: "Experience" }
+            role: "Student",
+            image: "/images/testimonials/male1.png"
         },
         {
             type: "quote",
             text: "The clarity I got after the session was amazing. I knew exactly which engineering exams to target.",
             author: "Priya",
             role: "Class 12 Student",
-            image: "/images/testi-nitya.jpg"
+            image: "/images/testimonials/female1.png"
         },
         {
             type: "quote",
             text: "Penchant Learning's planning helped my daughter get into her dream college for Design.",
             author: "Mrs. Verma",
             role: "Parent",
-            image: "/images/testi-kavita.jpg"
+            image: "/images/testimonials/mother1.png"
         }
     ],
     faqs: [

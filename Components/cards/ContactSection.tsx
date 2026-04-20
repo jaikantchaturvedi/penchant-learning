@@ -11,6 +11,7 @@ const ContactSection = () => {
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
   const [location, setLocation] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   // const [agree, setAgree] = useState(false);
   // -------- VALIDATION -------- //
   const validateForm = () => {
@@ -41,12 +42,13 @@ const ContactSection = () => {
   // -------- SUBMIT -------- //
   const handleSubmit = async () => {
     if (!validateForm()) return;
+    setIsSubmitting(true);
 
     try {
-      const res = await fetch(`${API_URL}/leads`, {
+      const res = await fetch(`/api/leads`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, telephone, location }),
+        body: JSON.stringify({ name, email, telephone, location, source: "General Contact Form" }),
       });
 
       if (res.ok) {
@@ -66,6 +68,8 @@ const ContactSection = () => {
     } catch (error) {
       console.error(error);
       toast.error("Server error. Try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -143,9 +147,17 @@ const ContactSection = () => {
           {/* Submit Button */}
           <button
             onClick={handleSubmit}
-            className="w-full mt-6 py-3 rounded-full bg-[#8c5a31] text-white font-semibold text-base hover:brightness-110 transition"
+            disabled={isSubmitting}
+            className="w-full mt-6 py-3 rounded-full bg-[#8c5a31] text-white font-semibold text-base hover:brightness-110 transition disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            Send Message
+            {isSubmitting ? (
+              <>
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                Sending...
+              </>
+            ) : (
+              "Send Message"
+            )}
           </button>
         </div>
       </div>

@@ -8,7 +8,7 @@ import { CounsellingPageTemplate, CounsellingPageData } from "@/Components/Couns
 const CLASS_8_9_DATA: CounsellingPageData = {
     hero: {
         title: "Discover the perfect stream and subjects for your career",
-        backgroundImage: "/images/class8_hero.png",
+        backgroundImage: "/images/class8_hero_indian.png",
         subtitle: "Get ahead of the curve and build a solid foundation for your career with the right stream and subject choices",
         ctaText: "Get Started",
         ctaLink: "#",
@@ -43,7 +43,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             id: 1,
             title: "Advanced Assessment & Best-Fit Matches",
             description: "Learn about your strengths and interests with our 4-dimensional assessment and 25-page stream report.",
-            image: "/images/accessment_1.png",
+            image: "/images/indian_assessment.png",
             ctaText: "Take Free Demo",
             ctaLink: "#",
             decorationClass: "absolute -top-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -53,7 +53,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             id: 2,
             title: "Detailed Stream Analysis",
             description: "Get a comprehensive 25-page report with in-depth analysis of your potential and best-fit stream recommendations.",
-            image: "/images/accessment_2.png",
+            image: "/images/indian_analysis.png",
             ctaText: "Take Free Demo",
             ctaLink: "#",
             decorationClass: "absolute -bottom-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -63,7 +63,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             id: 3,
             title: "Interactive Career & Stream Activities",
             description: "Evaluate your academics, work style, aptitude and subject compatibility to identify your perfect stream.",
-            image: "/images/interactive_activities.png",
+            image: "/images/indian_interactive.png",
             ctaText: "Schedule A Call Back",
             ctaLink: "#",
             decorationClass: "absolute -top-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -73,7 +73,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             id: 4,
             title: "Simulated Virtual Career Internships",
             description: "Explore multiple career options through role play, simulations and experiential videos with our Virtual Internship Program.",
-            image: "/images/virtual_internship.png",
+            image: "/images/indian_internship.png",
             ctaText: "View Program Details",
             ctaLink: "#",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -83,7 +83,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             id: 5,
             title: "Extensive Support & Resources",
             description: "Explore career options for your chosen stream with our well-researched expert written resources.",
-            image: "/images/support_resources.png",
+            image: "/images/indian_resources.png",
             ctaText: "Schedule A Call Back",
             ctaLink: "#",
             decorationClass: "absolute -top-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
@@ -173,46 +173,46 @@ const CLASS_8_9_DATA: CounsellingPageData = {
     },
     testimonials: [
         {
-            type: "video",
-            youtubeId: "dQw4w9WgXcQ",
-            title: "Before & After Sessions - Vedant Srivastava",
+            type: "quote",
+            text: "The counselling sessions at Penchant Learning were eye-opening. I was able to overcome my biases and choose a stream that truly aligns with my goals.",
             author: "Vedant Srivastava",
-            overlayText: { pre: "re", main: "& After" }
+            role: "Student",
+            image: "/images/testimonials/male1.png"
         },
         {
             type: "quote",
             text: "All the things the assessment told me about myself and my interests were so true.",
             author: "Sneha",
             role: "DPS RK Puram",
-            image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150"
+            image: "/images/testimonials/female1.png"
         },
         {
             type: "quote",
             text: "Penchant Learning provided a mentored framework for my son's ambitions to achieve and succeed.",
             author: "Kavita",
             role: "Parent",
-            image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=150&h=150"
+            image: "/images/testimonials/mother1.png"
         },
         {
             type: "quote",
             text: "Signing up for Penchant Learning, and meeting and interacting with their experienced team was one of the decisions I made.",
             author: "Shaurya",
             role: "Aga Khan Academy",
-            image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150&h=150"
+            image: "/images/testimonials/male2.png"
         },
         {
             type: "story_card",
             text: "How Nitya overcame her inhibitions and biases to choose the stream best aligned to her career goals.",
             highlightName: "Nitya",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
+            image: "/images/testimonials/female2.png",
             linkText: "Read full story"
         },
         {
-            type: "video",
-            youtubeId: "dQw4w9WgXcQ",
-            title: "Before & After Sessions - Arshiya Mittal",
+            type: "quote",
+            text: "Discovering my career path early gave me the confidence I needed to focus on my Class 10 goals. The 4-D assessment was spot on!",
             author: "Arshiya Mittal",
-            overlayText: { pre: "re", main: "& After" }
+            role: "Student",
+            image: "/images/testimonials/female1.png"
         }
     ],
     faqs: [

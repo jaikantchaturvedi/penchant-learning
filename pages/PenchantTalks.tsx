@@ -20,14 +20,32 @@ const SwiperStyles = () => (
             width: 44px !important;
             height: 44px !important;
             border-radius: 50%;
-            color: white !important;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            top: 50% !important;
+            margin: 0 !important;
+            transform: translateY(-50%) !important;
         }
         .testimonial-swiper .swiper-button-next:after,
         .testimonial-swiper .swiper-button-prev:after {
-            font-size: 18px !important;
-            font-weight: bold;
+            content: '' !important;
+            display: block !important;
+            width: 10px !important;
+            height: 10px !important;
+            border-top: 2.5px solid #fff !important;
+            border-right: 2.5px solid #fff !important;
+            position: relative !important;
+        }
+        .testimonial-swiper .swiper-button-next:after {
+            transform: rotate(45deg) !important;
+            left: -6px !important;
+        }
+        .testimonial-swiper .swiper-button-prev:after {
+            transform: rotate(-135deg) !important;
+            left: -3px !important;
         }
         .testimonial-swiper .swiper-button-next:hover,
         .testimonial-swiper .swiper-button-prev:hover {
@@ -234,7 +252,7 @@ const PenchantLearningTalks = () => {
                         className="rounded-xl testimonial-swiper"
                     >
                         {[
-                            "/herosection.jpg",
+                            "/images/mun-gallery-1.png",
                             "/Journey.jpeg",
                             "/therapy1.jpg",
                             "/therapy2.jpg",
@@ -244,7 +262,7 @@ const PenchantLearningTalks = () => {
                                 <div className="aspect-[4/3] bg-white rounded-lg overflow-hidden shadow-2xl group relative">
                                     <Image
                                         src={img}
-                                        alt={`Penchant Learning Training Gallery ${i + 1}`}
+                                        alt={`Penchant Learning Talks Gallery ${i + 1}`}
                                         fill
                                         className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                                     />

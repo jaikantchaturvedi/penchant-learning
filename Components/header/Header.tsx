@@ -1,16 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { FiMenu, FiX, FiChevronDown, FiPhone, FiMail, FiArrowRight } from "react-icons/fi";
 import Image from "next/image";
+
+interface ProgramItem {
+  title: string;
+  subtitle?: string;
+  desc: string;
+  link: string;
+}
+
+interface ProgramCategory {
+  category: string;
+  isNew?: boolean;
+  items: ProgramItem[];
+  secondaryCategory?: string;
+  secondaryItems?: ProgramItem[];
+}
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [isMegamenuOpen, setIsMegamenuOpen] = useState(false);
   const [megamenuType, setMegamenuType] = useState<"students" | "institutions" | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+  const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0, opacity: 0 });
   const router = useRouter();
   const pathname = usePathname();
 
@@ -24,8 +42,8 @@ export default function Header() {
     { label: "Testimonial", id: "testimonial" },
     { label: "Contact Us", id: "contact" },
   ];
-
-  const studentPrograms = [
+  
+  const studentPrograms: ProgramCategory[] = [
     {
       category: "CAREER COUNSELLING PROGRAMS",
       items: [
@@ -74,7 +92,7 @@ export default function Header() {
       // ]
     }
   ];
-  const institutionPrograms = [
+  const institutionPrograms: ProgramCategory[] = [
     {
       category: "CAREER DEVELOPMENT PROGRAMS",
       items: [
@@ -146,6 +164,48 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Click outside to close contact dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowContactDropdown(false);
+      }
+    };
+    if (showContactDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showContactDropdown]);
+
+  // Update underline position
+  useEffect(() => {
+    const updateUnderline = () => {
+      // Find the active element
+      const activeId = isMegamenuOpen && megamenuType ? megamenuType : active;
+      if (!activeId) {
+        setUnderlineStyle(prev => ({ ...prev, opacity: 0 }));
+        return;
+      }
+
+      const activeEl = document.getElementById(`nav-${activeId}`);
+      if (activeEl) {
+        const { offsetLeft, offsetWidth } = activeEl as HTMLElement;
+        setUnderlineStyle({
+          left: offsetLeft,
+          width: offsetWidth,
+          opacity: 1
+        });
+      } else {
+        setUnderlineStyle(prev => ({ ...prev, opacity: 0 }));
+      }
+    };
+
+    updateUnderline();
+    // Re-run on resize or menu change
+    window.addEventListener("resize", updateUnderline);
+    return () => window.removeEventListener("resize", updateUnderline);
+  }, [active, isMegamenuOpen, megamenuType]);
+
   // Update active state based on pathname
   useEffect(() => {
     if (!pathname) return;
@@ -200,10 +260,14 @@ export default function Header() {
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-7 text-[14px] font-medium text-[#333] h-full">
+          <nav 
+            ref={navRef}
+            className="hidden md:flex items-center gap-7 text-[14px] font-medium text-[#333] h-full relative"
+          >
             {menuItems.map((item) => (
               <div
                 key={item.id}
+                ref={item.id === "contact" ? dropdownRef : null}
                 className="h-full flex items-center"
                 onMouseEnter={() => {
                   if (item.hasSubmenu) {
@@ -214,6 +278,7 @@ export default function Header() {
                 onMouseLeave={() => item.hasSubmenu && setIsMegamenuOpen(false)}
               >
                 <button
+                  id={`nav-${item.id}`}
                   onClick={() => {
                     if (item.id === "contact") {
                       setShowContactDropdown(!showContactDropdown);
@@ -221,16 +286,13 @@ export default function Header() {
                       handleScroll(item.id);
                     }
                   }}
-                  className={`relative transition flex items-center gap-1 h-full ${active === item.id || (item.hasSubmenu && isMegamenuOpen && megamenuType === item.id)
+                  className={`relative transition flex items-center gap-1 h-full flex-shrink-0 ${active === item.id || (item.hasSubmenu && isMegamenuOpen && megamenuType === item.id)
                     ? "text-[#8c5a31]"
                     : "hover:text-gray-500"
                     }`}
                 >
                   {item.label}
                   {item.hasSubmenu && <FiChevronDown className={`transition-transform ${isMegamenuOpen && megamenuType === item.id ? "rotate-180" : ""}`} />}
-                  {(active === item.id || (item.hasSubmenu && isMegamenuOpen && megamenuType === item.id)) && (
-                    <span className="absolute bottom-5 left-0 w-full h-[2.5px] bg-[#8c5a31]" />
-                  )}
                 </button>
                 {item.id === "contact" && showContactDropdown && (
                   <div className="absolute top-full mt-2 w-52 bg-white  shadow-lg overflow-hidden z-50">
@@ -239,6 +301,7 @@ export default function Header() {
                       href="https://wa.me/919468643369"
                       target="_blank"
                       className="block px-4 py-3 text-sm hover:bg-gray-100"
+                      onClick={() => setShowContactDropdown(false)}
                     >
                       WhatsApp
                     </a>
@@ -247,6 +310,7 @@ export default function Header() {
                       href="https://www.instagram.com/penchantlearnings/"
                       target="_blank"
                       className="block px-4 py-3 text-sm hover:bg-gray-100"
+                      onClick={() => setShowContactDropdown(false)}
                     >
                       Instagram
                     </a>
@@ -256,7 +320,17 @@ export default function Header() {
               </div>
             ))}
 
-            <a href="https://penchantlearnings.idreamcareer.com" target="_blank">Start Assessment Now</a>
+            {/* Sliding Underline Indicator */}
+            <div
+              className="absolute bottom-5 h-[2.5px] bg-[#8c5a31] transition-all duration-300 pointer-events-none"
+              style={{
+                left: underlineStyle.left,
+                width: underlineStyle.width,
+                opacity: underlineStyle.opacity
+              }}
+            />
+
+            <a href="https://penchantlearnings.idreamcareer.com" target="_blank" className="hover:text-[#8c5a31] transition-colors ml-4">Start Assessment Now</a>
           </nav>
 
           {/* Right Section */}
@@ -309,8 +383,8 @@ export default function Header() {
                       <div key={idx} className="group/item">
                         <Link href={prog.link} onClick={() => setIsMegamenuOpen(false)}>
                           <h4 className="font-bold text-[#1a1a1a] text-[15px] mb-0.5 group-hover/item:text-[#8c5a31] transition-colors">
-                            {prog.title} {"subtitle" in prog && (prog as any).subtitle && (
-                              <span className="font-normal text-gray-400 text-xs ml-1">{(prog as any).subtitle}</span>
+                            {prog.title} {prog.subtitle && (
+                              <span className="font-normal text-gray-400 text-xs ml-1">{prog.subtitle}</span>
                             )}
                           </h4>
                         </Link>

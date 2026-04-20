@@ -214,17 +214,17 @@ const liberalArtsData: AdmissionsPageData = {
         {
             text: "Penchant Learning stepped in and cleared the mental chaos and brought my daughter's mind on the right track. The guidance for application forms, interview and GD preparations, and SOP was very impressive. They helped her realise her strengths and enabled her to work on her weaknesses.",
             author: "Rashmi",
-            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
+            image: "/images/testimonials/mother1.png",
         },
         {
             text: "Working with Penchant Learning was an amazing experience. It helped me explore and discover new avenues keeping in mind my interests and hobbies. They helped me with my admissions and enabled me to get into my dream university.",
             author: "Pratham",
-            image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=150&h=150",
+            image: "/images/testimonials/male2.png",
         },
         {
             text: "Penchant Learning has helped me transform as an individual. It streamlined my career path and played a pivotal role in my decision making. The entire team is extremely helpful and every member has been instrumental in my success.",
             author: "Manav",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
+            image: "/images/testimonials/male1.png",
         },
     ],
 

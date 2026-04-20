@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import FooterSection from "@/Components/cards/Footer";
-
-// ─── TYPES ───────────────────────────────────────────────────────────────────
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export interface SchoolStat {
     icon: string;
@@ -93,6 +93,65 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
     const [activePartnerTab, setActivePartnerTab] = useState<"school" | "university">("school");
     const [openGuideStep, setOpenGuideStep] = useState<number>(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [formData, setFormData] = useState({
+        schoolName: "",
+        contactName: "",
+        email: "",
+        phone: "",
+        message: ""
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const router = useRouter();
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        if (!formData.email.includes("@")) {
+            toast.error("Please enter a valid email address");
+            setIsSubmitting(false);
+            return;
+        }
+
+        try {
+            const res = await fetch(`/api/leads`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: formData.contactName,
+                    email: formData.email,
+                    telephone: formData.phone,
+                    schoolName: formData.schoolName,
+                    message: formData.message,
+                    source: "Schools Partnership Form"
+                }),
+            });
+
+            if (res.status === 409) {
+                toast.error("You have already submitted an enquiry with this email.");
+                return;
+            }
+
+            if (res.ok) {
+                toast.success("Enquiry sent successfully!");
+                setIsSubmitted(true);
+            } else {
+                toast.error("Submission failed. Please try again.");
+            }
+        } catch (error) {
+            console.error(error);
+            toast.error("An error occurred. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     const filteredPartners = data.partnerLogos.filter(p => p.category === activePartnerTab);
     const activeStep = data.guideSteps[openGuideStep];
@@ -310,24 +369,89 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-[#8c5a31] mb-3">{data.contactTitle}</h2>
                     <p className="text-gray-500 text-sm mb-10">{data.contactSubtitle}</p>
-                    <form className="text-left space-y-4 bg-[#f7f9fc] p-8 rounded-2xl border border-gray-100">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="text" placeholder="School / Institution Name" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white" />
-                            <input type="text" placeholder="Contact Person Name" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white" />
-                            <input type="email" placeholder="Email Address" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white" />
-                            <input type="tel" placeholder="Contact Number" className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white" />
-                        </div>
-                        <textarea rows={4} placeholder="Your message..." className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white resize-none" />
-                        <div className="flex justify-center pt-2">
+
+                    {isSubmitted ? (
+                        <div className="bg-[#f7f9fc] p-12 rounded-2xl border border-[#a3cf5d] text-center space-y-4 shadow-sm animate-in fade-in duration-500">
+                            <div className="w-16 h-16 bg-[#a3cf5d] rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <h3 className="text-2xl font-bold text-[#8c5a31]">Thank You!</h3>
+                            <p className="text-gray-600">Your enquiry has been received. Our team will get in touch with you within 2 working days.</p>
                             <button
-                                type="submit"
-                                className="px-14 py-3.5 text-white text-sm font-semibold rounded-lg transition-all"
-                                style={{ backgroundColor: "#8c5a31" }}
+                                onClick={() => setIsSubmitted(false)}
+                                className="text-sm font-semibold text-[#8c5a31] hover:underline pt-4"
                             >
-                                Enquire Now
+                                Send another enquiry
                             </button>
                         </div>
-                    </form>
+                    ) : (
+                        <form onSubmit={handleSubmit} className="text-left space-y-4 bg-[#f7f9fc] p-8 rounded-2xl border border-gray-100 shadow-sm">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input
+                                    required
+                                    type="text"
+                                    name="schoolName"
+                                    value={formData.schoolName}
+                                    onChange={handleChange}
+                                    placeholder="School / Institution Name"
+                                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white transition-all ring-[#8c5a31]/10 focus:ring-4"
+                                />
+                                <input
+                                    required
+                                    type="text"
+                                    name="contactName"
+                                    value={formData.contactName}
+                                    onChange={handleChange}
+                                    placeholder="Contact Person Name"
+                                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white transition-all ring-[#8c5a31]/10 focus:ring-4"
+                                />
+                                <input
+                                    required
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    placeholder="Email Address"
+                                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white transition-all ring-[#8c5a31]/10 focus:ring-4"
+                                />
+                                <input
+                                    required
+                                    type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    placeholder="Contact Number"
+                                    className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white transition-all ring-[#8c5a31]/10 focus:ring-4"
+                                />
+                            </div>
+                            <textarea
+                                required
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                rows={4}
+                                placeholder="Your message..."
+                                className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#8c5a31] bg-white resize-none transition-all ring-[#8c5a31]/10 focus:ring-4"
+                            />
+                            <div className="flex justify-center pt-2">
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="px-14 py-3.5 text-white text-sm font-semibold rounded-lg transition-all hover:brightness-110 active:scale-95 shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2 mx-auto"
+                                    style={{ backgroundColor: "#8c5a31" }}
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                            Sending...
+                                        </>
+                                    ) : (
+                                        "Enquire Now"
+                                    )}
+                                </button>
+                            </div>
+                        </form>
+                    )}
                 </div>
             </section>
 

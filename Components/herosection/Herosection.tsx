@@ -12,6 +12,7 @@ export default function HeroSection() {
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
   const [location, setLocation] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   // const [agree, setAgree] = useState(false);
   // -------- VALIDATION -------- //
   const validateForm = () => {
@@ -42,12 +43,13 @@ export default function HeroSection() {
   // -------- SUBMIT -------- //
   const handleSubmit = async () => {
     if (!validateForm()) return;
+    setIsSubmitting(true);
 
     try {
       const res = await fetch(`/api/leads`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, telephone, location }),
+        body: JSON.stringify({ name, email, telephone, location, source: "Hero Section Form" }),
       });
 
       if (res.status === 409) {
@@ -73,6 +75,8 @@ export default function HeroSection() {
     } catch (error) {
       console.error(error);
       toast.error("Server error. Try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -166,9 +170,17 @@ export default function HeroSection() {
               {/* Submit Button */}
               <button
                 onClick={handleSubmit}
-                className="w-full mt-4 py-2 rounded-full bg-[#8c5a31] text-white font-semibold text-base hover:brightness-110 transition-all"
+                disabled={isSubmitting}
+                className="w-full mt-4 py-2 rounded-full bg-[#8c5a31] text-white font-semibold text-base hover:brightness-110 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </div>
           </div>

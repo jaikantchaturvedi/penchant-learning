@@ -1,10 +1,9 @@
-"use client";
-
-import React from "react";
+import React, { useState } from "react";
 import FooterSection from "@/Components/cards/Footer";
 import Link from "next/link";
 import { FiArrowRight, FiPhone, FiBookOpen, FiBriefcase, FiUser, FiInfo, FiCompass, FiEye, FiLock } from "react-icons/fi";
 import Image from "next/image";
+import { toast } from "react-hot-toast";
 
 // --- Types ---
 
@@ -152,6 +151,59 @@ interface CounsellingPageTemplateProps {
 }
 
 export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = ({ data }) => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        queryType: "",
+        message: ""
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        try {
+            const res = await fetch(`/api/leads`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    telephone: formData.phone,
+                    location: formData.queryType, // mapping queryType to location for consistency or just pass generic
+                    message: formData.message,
+                    source: "Counselling Page Form"
+                }),
+            });
+
+            if (res.status === 409) {
+                toast.error("You have already submitted an enquiry with this email.");
+                return;
+            }
+
+            if (res.ok) {
+                toast.success("Enquiry sent successfully!");
+                setIsSubmitted(true);
+                setFormData({ name: "", email: "", phone: "", queryType: "", message: "" });
+            } else {
+                toast.error("Submission failed. Please try again.");
+            }
+        } catch (error) {
+            console.error(error);
+            toast.error("An error occurred. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-white font-sans text-gray-800">
 
@@ -463,18 +515,26 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {data.testimonials.map((item, index) => {
                                 if (item.type === 'video') {
+                                    // Render video data as a standard quote card
                                     return (
-                                        <div key={index} className="relative w-full aspect-video rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
-                                            <iframe
-                                                width="100%"
-                                                height="100%"
-                                                src={`https://www.youtube.com/embed/${item.youtubeId}`}
-                                                title="YouTube video player"
-                                                frameBorder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                allowFullScreen
-                                                className="absolute inset-0"
-                                            ></iframe>
+                                        <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-100 p-8 flex flex-col justify-between hover:shadow-lg transition-all relative overflow-hidden h-full">
+                                            <div className="relative z-10 flex flex-col h-full justify-between">
+                                                <p className="text-gray-600 text-[15px] leading-relaxed mb-6 font-medium italic">
+                                                    "{item.title}"
+                                                </p>
+                                                <div className="flex items-center gap-4 mt-auto">
+                                                    <div className="w-12 h-12 rounded-full bg-[#8c5a31]/10 overflow-hidden border-2 border-white shadow-sm flex-shrink-0 flex items-center justify-center text-[#8c5a31] font-bold text-lg">
+                                                        {item.author?.charAt(0)}
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-bold text-[#333] text-sm leading-tight">{item.author},</h4>
+                                                        <p className="text-xs text-gray-500 mt-0.5">Student</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="absolute bottom-6 right-6 text-[#8c5a31]/5 transform rotate-180">
+                                                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9H17.017C16.4647 9 16.017 8.55228 16.017 8V3H21.017V15C21.017 18.3137 18.3307 21 15.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9H8.0166C7.46432 9 7.0166 8.55228 7.0166 8V3H12.0166V15C12.0166 18.3137 9.33031 21 6.0166 21H5.0166Z" /></svg>
+                                            </div>
                                         </div>
                                     );
                                 } else if (item.type === 'quote') {
@@ -590,45 +650,88 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                 <h2 className="text-2xl font-bold text-gray-800 mb-1">{data.contact.title}</h2>
                                 <p className="text-gray-500 text-sm mb-8">{data.contact.subtitle}</p>
 
-                                <form className="space-y-4">
-                                    <input
-                                        type="text"
-                                        placeholder="Name"
-                                        className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400"
-                                    />
-                                    <input
-                                        type="email"
-                                        placeholder="Email"
-                                        className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400"
-                                    />
-                                    <input
-                                        type="tel"
-                                        placeholder="Contact Number"
-                                        className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400"
-                                    />
-                                    <select
-                                        defaultValue=""
-                                        className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-400 focus:outline-none focus:border-[#8c5a31] bg-white"
-                                    >
-                                        <option value="" disabled>What is the nature of your query?</option>
-                                        {data.contact.queryOptions.map((option, i) => (
-                                            <option key={i} value={option}>{option}</option>
-                                        ))}
-                                    </select>
-                                    <textarea
-                                        placeholder="Query/Comment"
-                                        rows={4}
-                                        className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400 resize-none"
-                                    />
-                                    <div className="flex justify-center pt-2">
+                                {isSubmitted ? (
+                                    <div className="text-center py-10 space-y-4 animate-in fade-in duration-500">
+                                        <div className="w-16 h-16 bg-[#a3cf5d] rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <h3 className="text-xl font-bold text-[#8c5a31]">Thank You!</h3>
+                                        <p className="text-gray-600 text-sm">Our team will get in touch with you shortly.</p>
                                         <button
-                                            type="submit"
-                                            className="px-10 py-2.5 bg-[#8c5a31] hover:brightness-110 text-white text-sm font-semibold rounded transition-colors"
+                                            onClick={() => setIsSubmitted(false)}
+                                            className="text-xs font-semibold text-[#8c5a31] hover:underline pt-2"
                                         >
-                                            {data.contact.buttonText}
+                                            Send another query
                                         </button>
                                     </div>
-                                </form>
+                                ) : (
+                                    <form onSubmit={handleSubmit} className="space-y-4">
+                                        <input
+                                            required
+                                            type="text"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            placeholder="Name"
+                                            className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400"
+                                        />
+                                        <input
+                                            required
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            placeholder="Email"
+                                            className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400"
+                                        />
+                                        <input
+                                            required
+                                            type="tel"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            placeholder="Contact Number"
+                                            className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400"
+                                        />
+                                        <select
+                                            required
+                                            name="queryType"
+                                            value={formData.queryType}
+                                            onChange={handleChange}
+                                            className={`w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-[#8c5a31] bg-white ${formData.queryType ? 'text-gray-700' : 'text-gray-400'}`}
+                                        >
+                                            <option value="" disabled>What is the nature of your query?</option>
+                                            {data.contact.queryOptions.map((option, i) => (
+                                                <option key={i} value={option} className="text-gray-700">{option}</option>
+                                            ))}
+                                        </select>
+                                        <textarea
+                                            required
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            placeholder="Query/Comment"
+                                            rows={4}
+                                            className="w-full border border-gray-200 rounded px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-[#8c5a31] placeholder-gray-400 resize-none"
+                                        />
+                                        <div className="flex justify-center pt-2">
+                                            <button
+                                                type="submit"
+                                                disabled={isSubmitting}
+                                                className="px-10 py-2.5 bg-[#8c5a31] hover:brightness-110 text-white text-sm font-semibold rounded transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2"
+                                            >
+                                                {isSubmitting ? (
+                                                    <>
+                                                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                                        Sending...
+                                                    </>
+                                                ) : (
+                                                    data.contact.buttonText
+                                                )}
+                                            </button>
+                                        </div>
+                                    </form>
+                                )}
                             </div>
 
                             {/* Right: Image */}

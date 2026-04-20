@@ -299,28 +299,28 @@ const schoolsData: SchoolsPageData = {
             text: "All the things the assessment told me about myself and my interests were so true.",
             name: "Sneha",
             school: "DPS RK Puram",
-            image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
+            image: "/images/testimonials/female1.png",
         },
         {
             type: "quote",
             text: "Panchant Learning provided a mentored framework for my son's ambitions to achieve and succeed.",
             name: "Kavita",
             school: "Parent",
-            image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=150&h=150",
+            image: "/images/testimonials/mother1.png",
         },
         {
             type: "quote",
             text: "Signing up for Panchant Learning, and meeting and interacting with their experienced team was one of the best decisions I made.",
             name: "Shaurya",
             school: "Aga Khan Academy",
-            image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150&h=150",
+            image: "/images/testimonials/male2.png",
         },
         {
             type: "story",
             text: "How Nitya overcame her inhibitions and biases to choose the stream best aligned to her career goals.",
             name: "Nitya",
             school: "",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
+            image: "/images/testimonials/female2.png",
             storyLink: "/success-stories/confused-class-10-student-found-her-perfect-stream",
         },
     ],
@@ -363,7 +363,7 @@ const schoolsData: SchoolsPageData = {
     ],
 
     // ── CONTACT ──────────────────────────────────────────────────────────────
-    contactTitle: "Partner With Panchant Learning",
+    contactTitle: "Partner With Penchant Learning",
     contactSubtitle: "Leave your details below and our schools team will get in touch within 2 working days.",
 };
 
