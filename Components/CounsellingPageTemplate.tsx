@@ -299,13 +299,25 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                         {step.description}
                                     </p>
                                     <div className="pt-4">
-                                        <Link
-                                            href={step.ctaLink}
-                                            className="inline-block px-8 py-2.5 border-2 text-[#8c5a31] font-bold rounded shadow-sm hover:bg-[#8c5a31] hover:text-white transition-all"
-                                            style={{ borderColor: "#8c5a31" }}
-                                        >
-                                            {step.ctaText}
-                                        </Link>
+                                        {step.ctaLink.startsWith("http") ? (
+                                            <a
+                                                href={step.ctaLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-block px-8 py-2.5 border-2 text-[#8c5a31] font-bold rounded shadow-sm hover:bg-[#8c5a31] hover:text-white transition-all"
+                                                style={{ borderColor: "#8c5a31" }}
+                                            >
+                                                {step.ctaText}
+                                            </a>
+                                        ) : (
+                                            <Link
+                                                href={step.ctaLink}
+                                                className="inline-block px-8 py-2.5 border-2 text-[#8c5a31] font-bold rounded shadow-sm hover:bg-[#8c5a31] hover:text-white transition-all"
+                                                style={{ borderColor: "#8c5a31" }}
+                                            >
+                                                {step.ctaText}
+                                            </Link>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -342,7 +354,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             )}
 
             {/* Plans and Pricing Section */}
-            {data.plans && (
+            {/* {data.plans && (
                 <section className="py-24 px-6 md:px-12 bg-white">
                     <div className="max-w-7xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-semibold text-[#092a51] text-center mb-16 underline-offset-8">Plans and Pricing</h2>
@@ -416,7 +428,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                         </div>
                     </div>
                 </section>
-            )}
+            )} */}
 
             {/* Comparison/Why Mindler Section */}
             {data.comparison && (
@@ -569,7 +581,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             )}
             {/* Contact Section */}
             {data.contact && (
-                <section className="bg-[#f0f0f0] py-16 px-6 md:px-12">
+                <section id="contact" className="bg-[#f0f0f0] py-16 px-6 md:px-12">
                     <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-sm p-10 md:p-14">
                         <div className="flex flex-col md:flex-row gap-12 items-start">
 

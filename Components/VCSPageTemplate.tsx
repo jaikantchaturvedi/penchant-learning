@@ -370,7 +370,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                     <h2 className="text-3xl font-bold text-[#092a51] text-center mb-4">{data.pricingTitle}</h2>
                     <p className="text-gray-400 text-center mb-14">Choose the plan that suits your exploration needs</p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+                    {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
                         {data.plans.map((plan, i) => (
                             <div
                                 key={i}
@@ -400,7 +400,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                                 </Link>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
 
                     {/* Pack inclusions */}
                     <div className="bg-[#092a51] rounded-2xl p-10">

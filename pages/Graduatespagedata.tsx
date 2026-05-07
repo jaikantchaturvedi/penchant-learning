@@ -72,21 +72,21 @@ const graduatesPageData: CounsellingPageData = {
                 title: "Essay/SOP Review",
                 description: "With our experts learn how to translate personal and professional experiences into impactful narratives while also connecting with the unique ethos of each university.",
                 ctaText: "Inquire Now",
-                ctaLink: "https://Panchant Learning.as.me/callback"
+                ctaLink: "https://wa.me/919468643369"
             },
             {
                 icon: "/images/masters-icon.svg",
                 title: "Comprehensive Package - Master's Degree (Overseas)",
                 description: "The comprehensive package includes all essential services from Program and University selection, CV/Resume reviews, SoP/Essay reviews, and Interview Prep with unlimited sessions.",
                 ctaText: "Inquire Now",
-                ctaLink: "https://Panchant Learning.as.me/callback"
+                ctaLink: "https://wa.me/919468643369"
             },
             {
                 icon: "/images/mba-icon.svg",
                 title: "Premium Package MiM/MBA (Overseas/India)",
                 description: "The MiM/MBA application strategy will be designed to match the applicant's profile. All essential services from Program and University selection, CV/Resume reviews, SoP/Essay reviews, and Interview Prep are included.",
                 ctaText: "Inquire Now",
-                ctaLink: "https://Panchant Learning.as.me/callback"
+                ctaLink: "https://wa.me/919468643369"
             },
         ]
     },
@@ -138,7 +138,7 @@ const graduatesPageData: CounsellingPageData = {
         story:
             "Tarun Bhardwaj, a 25-year-old student, had dropped out of Engineering because it didn't excite him. Panchant Learning career experts helped him choose the perfect career and course to utilise his skill-set, and make up for his gap years through the right opportunities. He is now on the path to achieving his new-found goals.",
         ctaText: "Read Full Story",
-        ctaLink: "https://www.Panchant Learning.com/success-stories/dropout-student-got-his-career-on-track",
+        ctaLink: "https://www.Panchant Learning.com/success-stories",
         image: "/images/tarun-bhardwaj.png",
         personName: "Tarun Bhardwaj",
     },
@@ -309,7 +309,7 @@ const graduatesPageData: CounsellingPageData = {
         description:
             "Compare all leading career counselling platforms in India, to see how Panchant Learning tops the charts across all major elements of career guidance.",
         ctaText: "View Full Report",
-        ctaLink: "https://www.Panchant Learning.com/top-career-guidance-platforms-in-india",
+        ctaLink: "#contact",
     },
 
     // ─── TESTIMONIALS ────────────────────────────────────────────────────────

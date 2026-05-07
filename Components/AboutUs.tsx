@@ -55,18 +55,11 @@ const AboutPage = () => {
                 {/* Right Column */}
                 <div className="text-gray-700 text-[15px] leading-relaxed">
                     <h1 className="text-2xl font-bold text-[#092a51] mb-4">About Scientist</h1>
-                    <p>
-                        At Penchant Learning, we are committed to helping individuals find clarity and confidence in their career journey. Choosing the right career path can be overwhelming, especially with so many options and limited guidance.
-                    </p>
-                    <p className="mt-4">
-                        We provide expert career counseling for students, graduates, and working professionals who want to make informed and confident decisions about their future.
-                    </p>
-                    <p className="mt-4">
-                        Through a combination of personalized mentoring, career assessments, and practical strategies, we help individuals understand their strengths, explore the right opportunities, and take meaningful steps toward their goals.
-                    </p>
-                    <p className="mt-4 font-medium text-[#092a51]">
-                        Our mission is simple — to eliminate confusion and empower every individual with the right direction.
-                    </p>
+                    <p>“At Penchant Learning, we started with a simple vision — to help students and professionals make career decisions with confidence and clarity. Today, in a world full of endless options and growing competition, many individuals struggle to identify the right path for themselves. Our goal has always been to provide the right guidance, personalized support, and expert mentorship that helps every individual discover their true potential.
+                        Over the years, we have had the privilege of guiding hundreds of students and working professionals in shaping successful academic and career journeys. From helping students choose the right stream, college, or course to supporting professionals in career transitions and growth, every success story inspires us to continue our mission with dedication and passion.
+                        What makes us proud is not just the number of students we have guided, but the confidence, clarity, and transformation they achieve throughout their journey with us. We believe that success is not only about securing admissions or jobs — it is about helping individuals build a future they truly believe in.
+                        At Penchant Learning, every student’s dream matters to us, and we remain committed to creating more success stories, one career at a time.”</p>
+
                 </div>
 
             </div>

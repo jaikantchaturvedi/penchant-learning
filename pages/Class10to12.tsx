@@ -56,7 +56,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             description: "Best-Fit Subject Combinations as per Education Board & Career Preferences. Interdisciplinary Career Suggestions. Introduction to Role Models for Each Career Pathway. Suggestion for Soft Skill Development",
             image: "/gifs/nexus-new.png",
             ctaText: "Schedule a callback",
-            ctaLink: "#",
+            ctaLink: "https://wa.me/919468643369",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: true
         },
@@ -66,7 +66,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             description: "Explore multiple career options through role play, simulations and experiential videos with our Virtual Internship Program.",
             image: "/gifs/Virtual-Internship.gif",
             ctaText: "Schedule Call",
-            ctaLink: "#",
+            ctaLink: "https://wa.me/919468643369",
             decorationClass: "absolute -top-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
             reverse: false
         },
@@ -76,7 +76,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             description: "Evaluate your academics, work style, aptitude and subject compatibility to identify your perfect career.",
             image: "/gifs/interactive activities.gif",
             ctaText: "View Sample Report",
-            ctaLink: "#",
+            ctaLink: "#contact",
             decorationClass: "absolute -bottom-4 -right-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: true
         },
@@ -86,7 +86,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             description: "Plan ahead for college admissions and prepare for exams and college applications in time.",
             image: "/gifs/roadmap.gif",
             ctaText: "Schedule a callback",
-            ctaLink: "#",
+            ctaLink: "https://wa.me/919468643369",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: false
         },
@@ -106,7 +106,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             description: "Get detailed information on all careers with our well-researched expert written resources.",
             image: "/gifs/resources.gif",
             ctaText: "Schedule a callback",
-            ctaLink: "#",
+            ctaLink: "https://wa.me/919468643369",
             decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: false
         },
@@ -217,7 +217,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
         title: "Why Panchant Learning is the Best Choice for Class 10-12",
         description: "See how we compare with other guidance platforms in helping you secure your ideal college and career.",
         ctaText: "View Comparison",
-        ctaLink: "#"
+        ctaLink: "https://www.instagram.com/penchantlearnings/"
     },
     testimonials: [
         {
