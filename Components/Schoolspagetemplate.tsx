@@ -142,6 +142,7 @@ export const SchoolsPageTemplate: React.FC<{ data: SchoolsPageData }> = ({ data 
             if (res.ok) {
                 toast.success("Enquiry sent successfully!");
                 setIsSubmitted(true);
+                setFormData({ schoolName: "", contactName: "", email: "", phone: "", message: "" });
             } else {
                 toast.error("Submission failed. Please try again.");
             }

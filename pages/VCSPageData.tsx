@@ -7,8 +7,8 @@ const vcsData: VCSPageData = {
 
     heroTitle: "Experience career paths from the comfort of your home",
     heroSubtitle: "Take multiple careers for a test-drive and understand the inner workings of each profession with our Virtual Career Simulator.",
-    heroCta: "Start Free Trial",
-    ctaLink: "#",
+
+    ctaLink: "#pricing",
     backgroundImage: "/images/vcs-hero.svg",
 
     highlights: [
@@ -189,7 +189,7 @@ const vcsData: VCSPageData = {
             text: "The simulations were really helpful. I did the architecture one, so it helped me to understand architecture better, the different types of architecture.",
             author: "Shania Serao",
             role: "Student",
-            image: "/images/testi-simran.jpg",
+            image: "/images/testimonials/female1.png",
         },
         {
             text: "The professional who was talking about the career, I lived his life. The experience was very good and the way he explained about the career, that was amazing.",
@@ -250,7 +250,7 @@ const vcsData: VCSPageData = {
         { icon: "/images/vcs-file.svg", text: "15 pages in-depth career report" },
         { icon: "/images/vcs-cert.svg", text: "Certificate of completion" },
         { icon: "/images/vcs-globe.svg", text: "In-depth hands-on experience from anywhere, anytime" },
-        { icon: "/images/vcs-video.svg", text: "Guided videos by industry experts with live projects" },
+        { icon: "/images/vcs-laptop.svg", text: "Guided videos by industry experts with live projects" },
     ],
 
     faqs: [

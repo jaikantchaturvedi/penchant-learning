@@ -11,7 +11,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
         backgroundImage: "/images/class10_hero_indian.png",
         subtitle: "Identify your career goals and formulate a step-by-step plan to get there with guidance from career experts",
         ctaText: "Get Started",
-        ctaLink: "#",
+        ctaLink: "#pricing",
         features: [
             "Career & subject Assessment",
             "Personalised Guidance",
@@ -55,8 +55,8 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             description: "Best-Fit Subject Combinations as per Education Board & Career Preferences. Interdisciplinary Career Suggestions. Introduction to Role Models for Each Career Pathway. Suggestion for Soft Skill Development",
             image: "/images/indian_analysis.png",
             ctaText: "Schedule a callback",
-            ctaLink: "#",
-            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
+            ctaLink: "https://wa.me/919468643369",
+            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: true
         },
         {
@@ -65,7 +65,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             description: "Explore multiple career options through role play, simulations and experiential videos with our Virtual Internship Program.",
             image: "/images/indian_internship.png",
             ctaText: "Schedule Call",
-            ctaLink: "#",
+            ctaLink: "https://wa.me/919468643369",
             decorationClass: "absolute -top-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
             reverse: false
         },
@@ -75,8 +75,8 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             description: "Evaluate your academics, work style, aptitude and subject compatibility to identify your perfect career.",
             image: "/images/indian_interactive.png",
             ctaText: "View Sample Report",
-            ctaLink: "#",
-            decorationClass: "absolute -bottom-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
+            ctaLink: "#contact",
+            decorationClass: "absolute -bottom-4 -right-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: true
         },
         {
@@ -85,8 +85,8 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             description: "Plan ahead for college admissions and prepare for exams and college applications in time.",
             image: "/images/indian_roadmap.png",
             ctaText: "Schedule a callback",
-            ctaLink: "#",
-            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
+            ctaLink: "https://wa.me/919468643369",
+            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: false
         },
         {
@@ -105,8 +105,8 @@ const CLASS_10_12_DATA: CounsellingPageData = {
             description: "Get detailed information on all careers with our well-researched expert written resources.",
             image: "/images/indian_resources.png",
             ctaText: "Schedule a callback",
-            ctaLink: "#",
-            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
+            ctaLink: "https://wa.me/919468643369",
+            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: false
         },
     ],
@@ -216,7 +216,7 @@ const CLASS_10_12_DATA: CounsellingPageData = {
         title: "Why Penchant Learning is the Best Choice for Class 10-12",
         description: "See how we compare with other guidance platforms in helping you secure your ideal college and career.",
         ctaText: "View Comparison",
-        ctaLink: "#"
+        ctaLink: "https://www.instagram.com/penchantlearnings/"
     },
     testimonials: [
         {

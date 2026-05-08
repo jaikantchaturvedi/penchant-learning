@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FiArrowRight, FiPhone, FiBookOpen, FiBriefcase, FiUser, FiInfo, FiCompass, FiEye, FiLock } from "react-icons/fi";
 import Image from "next/image";
 import { toast } from "react-hot-toast";
+import TrialModal from "@/Components/modals/TrialModal";
 
 // --- Types ---
 
@@ -160,6 +161,20 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+
+    const WHATSAPP_LINK = "https://wa.me/919468643369";
+
+    const handleButtonClick = (e: React.MouseEvent, text: string) => {
+        const lowerText = text.toLowerCase();
+        if (lowerText.includes("start free trial")) {
+            e.preventDefault();
+            setIsTrialModalOpen(true);
+        } else if (lowerText.includes("get started") || lowerText.includes("take free demo") || lowerText.includes("take a free demo")) {
+            e.preventDefault();
+            window.open(WHATSAPP_LINK, "_blank");
+        }
+    };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -228,6 +243,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                             <div className="pt-2">
                                 <Link
                                     href={data.hero.ctaLink}
+                                    onClick={(e) => handleButtonClick(e, data.hero!.ctaText)}
                                     className="inline-block px-10 py-3 text-white font-bold rounded shadow-md hover:brightness-110 transition-all"
                                     style={{ backgroundColor: "#8c5a31" }}
                                 >
@@ -278,7 +294,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                 </section>
             )}
             {/* Our Services — Interactive Selector */}
-            {data.services && (
+            {/* {data.services && (
                 <section className="py-24 px-6 md:px-12 bg-[#f9fafb]">
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-3xl font-semibold text-[#8c5a31] text-center mb-4">{data.services.title}</h2>
@@ -304,17 +320,13 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                         </div>
 
                         <div className="border-t pt-6 flex items-center justify-between">
-                            {/* <div>
-                                <p className="text-sm text-gray-500">Total Amount Payable</p>
-                                <p className="text-3xl font-bold text-[#333]">₹{total.toLocaleString()}</p>
-                            </div> */}
                             <button className="px-10 py-3 text-white font-bold rounded hover:brightness-110 transition-all" style={{ backgroundColor: "#8c5a31" }}>
                                 Buy Now
                             </button>
                         </div>
                     </div>
                 </section>
-            )}
+            )} */}
             {/* Special Services & Packages */}
             {data.specialPackages && (
                 <section className="py-24 px-6 md:px-12 bg-white">
@@ -363,13 +375,26 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                         {step.description}
                                     </p>
                                     <div className="pt-4">
-                                        <Link
-                                            href={step.ctaLink}
-                                            className="inline-block px-8 py-2.5 border-2 text-[#8c5a31] font-bold rounded shadow-sm hover:bg-[#8c5a31] hover:text-white transition-all"
-                                            style={{ borderColor: "#8c5a31" }}
-                                        >
-                                            {step.ctaText}
-                                        </Link>
+                                        {step.ctaLink.startsWith("http") ? (
+                                            <a
+                                                href={step.ctaLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-block px-8 py-2.5 border-2 text-[#8c5a31] font-bold rounded shadow-sm hover:bg-[#8c5a31] hover:text-white transition-all"
+                                                style={{ borderColor: "#8c5a31" }}
+                                            >
+                                                {step.ctaText}
+                                            </a>
+                                        ) : (
+                                            <Link
+                                                href={step.ctaLink}
+                                                onClick={(e) => handleButtonClick(e, step.ctaText)}
+                                                className="inline-block px-8 py-2.5 border-2 text-[#8c5a31] font-bold rounded shadow-sm hover:bg-[#8c5a31] hover:text-white transition-all"
+                                                style={{ borderColor: "#8c5a31" }}
+                                            >
+                                                {step.ctaText}
+                                            </Link>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -406,8 +431,8 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             )}
 
             {/* Plans and Pricing Section */}
-            {data.plans && (
-                <section className="py-24 px-6 md:px-12 bg-white">
+            {/* {data.plans && (
+                <section id="pricing" className="py-24 px-6 md:px-12 bg-white">
                     <div className="max-w-7xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-semibold text-[#8c5a31] text-center mb-16 underline-offset-8">Plans and Pricing</h2>
 
@@ -468,6 +493,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                         <button
                                             className="w-full text-white font-bold py-3 rounded text-sm hover:brightness-110 transition-all"
                                             style={{ backgroundColor: plan.accentColor }}
+                                            onClick={(e) => handleButtonClick(e, plan.buttonText)}
                                         >
                                             {plan.buttonText}
                                         </button>
@@ -480,7 +506,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                         </div>
                     </div>
                 </section>
-            )}
+            )} */}
 
             {/* Comparison/Why Mindler Section */}
             {data.comparison && (
@@ -641,7 +667,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             )}
             {/* Contact Section */}
             {data.contact && (
-                <section className="bg-[#f0f0f0] py-16 px-6 md:px-12">
+                <section id="contact" className="bg-[#f0f0f0] py-16 px-6 md:px-12">
                     <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-sm p-10 md:p-14">
                         <div className="flex flex-col md:flex-row gap-12 items-start">
 
@@ -751,6 +777,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             )}
 
             <FooterSection />
+            <TrialModal isOpen={isTrialModalOpen} onClose={() => setIsTrialModalOpen(false)} />
         </div>
     );
 };

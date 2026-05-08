@@ -11,7 +11,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
         backgroundImage: "/images/class8_hero_indian.png",
         subtitle: "Get ahead of the curve and build a solid foundation for your career with the right stream and subject choices",
         ctaText: "Get Started",
-        ctaLink: "#",
+        ctaLink: "#pricing",
         features: [
             "Career & Subject Assessment",
             "Personalised Guidance",
@@ -65,7 +65,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             description: "Evaluate your academics, work style, aptitude and subject compatibility to identify your perfect stream.",
             image: "/images/indian_interactive.png",
             ctaText: "Schedule A Call Back",
-            ctaLink: "#",
+            ctaLink: "https://wa.me/919468643369",
             decorationClass: "absolute -top-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
             reverse: false
         },
@@ -75,8 +75,8 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             description: "Explore multiple career options through role play, simulations and experiential videos with our Virtual Internship Program.",
             image: "/images/indian_internship.png",
             ctaText: "View Program Details",
-            ctaLink: "#",
-            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
+            ctaLink: "#contact",
+            decorationClass: "absolute -bottom-4 -left-4 w-24 h-24 bg-[#092a51]/5 rounded-full blur-2xl -z-10",
             reverse: true
         },
         {
@@ -85,7 +85,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
             description: "Explore career options for your chosen stream with our well-researched expert written resources.",
             image: "/images/indian_resources.png",
             ctaText: "Schedule A Call Back",
-            ctaLink: "#",
+            ctaLink: "https://wa.me/919468643369",
             decorationClass: "absolute -top-4 -right-4 w-24 h-24 bg-[#8c5a31]/5 rounded-full blur-2xl -z-10",
             reverse: false
         }
@@ -169,7 +169,7 @@ const CLASS_8_9_DATA: CounsellingPageData = {
         title: "Why Choose Penchant Learning vs. Other Platforms?",
         description: "Compare all leading career counselling platforms in India, to see how Penchant Learning tops the charts across all major elements of career guidance.",
         ctaText: "View Full Report",
-        ctaLink: "#"
+        ctaLink: "#contact"
     },
     testimonials: [
         {

@@ -42,7 +42,7 @@ export default function Header() {
     { label: "Testimonial", id: "testimonial" },
     { label: "Contact Us", id: "contact" },
   ];
-  
+
   const studentPrograms: ProgramCategory[] = [
     {
       category: "CAREER COUNSELLING PROGRAMS",
@@ -260,7 +260,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Menu */}
-          <nav 
+          <nav
             ref={navRef}
             className="hidden md:flex items-center gap-7 text-[14px] font-medium text-[#333] h-full relative"
           >
@@ -286,13 +286,16 @@ export default function Header() {
                       handleScroll(item.id);
                     }
                   }}
-                  className={`relative transition flex items-center gap-1 h-full flex-shrink-0 ${active === item.id || (item.hasSubmenu && isMegamenuOpen && megamenuType === item.id)
+                  className={`relative transition flex items-center gap-1 h-full ${active === item.id && item.id !== "contact" || (item.hasSubmenu && isMegamenuOpen && megamenuType === item.id)
                     ? "text-[#8c5a31]"
                     : "hover:text-gray-500"
                     }`}
                 >
                   {item.label}
                   {item.hasSubmenu && <FiChevronDown className={`transition-transform ${isMegamenuOpen && megamenuType === item.id ? "rotate-180" : ""}`} />}
+                  {active === item.id && !item.hasSubmenu && item.id !== "contact" && (
+                    <span className="absolute bottom-5 left-0 w-full h-[2.5px] bg-[#8c5a31]" />
+                  )}
                 </button>
                 {item.id === "contact" && showContactDropdown && (
                   <div className="absolute top-full mt-2 w-52 bg-white  shadow-lg overflow-hidden z-50">
@@ -490,6 +493,31 @@ export default function Header() {
                       </div>
                       <span>Send a Message</span>
                     </a>
+                  </div>
+                  <div className="pt-8 border-t border-gray-200/60 space-y-6">
+                    <Link
+                      href="/success-stories"
+                      className="block text-[#092a51] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link"
+                      onClick={() => setIsMegamenuOpen(false)}
+                    >
+                      Success Stories
+                      <FiArrowRight
+                        size={16}
+                        className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-[#8c5a31]"
+                      />
+                    </Link>
+
+                    <Link
+                      href="/AboutUs"   // 👈 THIS IS THE IMPORTANT CHANGE
+                      className="block text-[#092a51] font-bold text-[15px] hover:text-[#8c5a31] flex items-center justify-between group/link"
+                      onClick={() => setIsMegamenuOpen(false)}
+                    >
+                      About Us
+                      <FiArrowRight
+                        size={16}
+                        className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-[#8c5a31]"
+                      />
+                    </Link>
                   </div>
                 </div>
               </div>

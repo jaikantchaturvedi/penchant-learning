@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FiPhone, FiGlobe, FiSearch, FiFileText, FiTarget, FiUser, FiStar, FiUsers, FiAward, FiMonitor, FiArrowRight, FiBookOpen } from "react-icons/fi";
 import FooterSection from "@/Components/cards/Footer";
+import { toast } from "react-hot-toast";
 
 // Swiper styles
 import "swiper/css";
@@ -154,6 +155,59 @@ const faqs = [
 ];
 
 const MUNTraining = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        schoolName: "",
+        studentCount: "Number of Students?",
+        message: ""
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        try {
+            const res = await fetch(`/api/leads`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    telephone: formData.phone,
+                    schoolName: formData.schoolName,
+                    message: `Students: ${formData.studentCount}\n${formData.message}`,
+                    source: "MUN Training Page Form"
+                }),
+            });
+
+            if (res.status === 409) {
+                toast.error("You have already submitted an enquiry with this email.");
+                return;
+            }
+
+            if (res.ok) {
+                toast.success("Enquiry sent successfully!");
+                setIsSubmitted(true);
+                setFormData({ name: "", email: "", phone: "", schoolName: "", studentCount: "Number of Students?", message: "" });
+            } else {
+                toast.error("Submission failed. Please try again.");
+            }
+        } catch (error) {
+            console.error(error);
+            toast.error("An error occurred. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
     return (
         <div className="min-h-screen bg-white font-sans">
             <SwiperStyles />
@@ -333,55 +387,103 @@ const MUNTraining = () => {
                             </p>
                         </div>
 
-                        <form className="space-y-4">
-                            <input
-                                type="text"
-                                placeholder="Name"
-                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
-                            />
-                            <input
-                                type="email"
-                                placeholder="Email"
-                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Contact Number"
-                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
-                            />
-                            <input
-                                type="text"
-                                placeholder="School Name"
-                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
-                            />
-                            <div className="relative">
-                                <select className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-400 outline-none appearance-none">
-                                    <option>Number of Students?</option>
-                                    <option>Less than 100</option>
-                                    <option>100 - 500</option>
-                                    <option>More than 500</option>
-                                </select>
-                                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                                    </svg>
+                        {isSubmitted ? (
+                            <div className="text-center py-12 space-y-4 animate-in fade-in duration-500 bg-[#f7f9fc] rounded-xl border border-[#a3cf5d]">
+                                <div className="w-16 h-16 bg-[#a3cf5d] rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </div>
-                            </div>
-                            <textarea
-                                placeholder="Query/ Comment (Optional)"
-                                rows={4}
-                                className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none resize-none"
-                            ></textarea>
-
-                            <div className="flex justify-center pt-4">
-                                <button
-                                    type="submit"
-                                    className="bg-[#8c5a31] text-white px-12 py-2 rounded text-sm font-bold shadow-lg hover:brightness-110 transition-all"
+                                <h3 className="text-xl font-bold text-[#8c5a31]">Thank You!</h3>
+                                <p className="text-gray-600 text-sm">Our team will get in touch with you shortly.</p>
+                                <button 
+                                    onClick={() => setIsSubmitted(false)}
+                                    className="text-xs font-semibold text-[#8c5a31] hover:underline pt-2"
                                 >
-                                    Submit
+                                    Send another enquiry
                                 </button>
                             </div>
-                        </form>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                <input
+                                    required
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder="Name"
+                                    className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
+                                />
+                                <input
+                                    required
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    placeholder="Email"
+                                    className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
+                                />
+                                <input
+                                    required
+                                    type="text"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    placeholder="Contact Number"
+                                    className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
+                                />
+                                <input
+                                    required
+                                    type="text"
+                                    name="schoolName"
+                                    value={formData.schoolName}
+                                    onChange={handleChange}
+                                    placeholder="School Name"
+                                    className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none"
+                                />
+                                <div className="relative">
+                                    <select 
+                                        name="studentCount"
+                                        value={formData.studentCount}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-400 outline-none appearance-none"
+                                    >
+                                        <option>Number of Students?</option>
+                                        <option>Less than 100</option>
+                                        <option>100 - 500</option>
+                                        <option>More than 500</option>
+                                    </select>
+                                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    placeholder="Query/ Comment (Optional)"
+                                    rows={4}
+                                    className="w-full px-4 py-3 bg-white border border-gray-100 rounded focus:border-[#8c5a31] transition-colors text-sm text-gray-700 outline-none resize-none"
+                                ></textarea>
+
+                                <div className="flex justify-center pt-4">
+                                    <button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className="bg-[#8c5a31] text-white px-12 py-2 rounded text-sm font-bold shadow-lg hover:brightness-110 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2"
+                                    >
+                                        {isSubmitting ? (
+                                            <>
+                                                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                                Submitting...
+                                            </>
+                                        ) : (
+                                            "Submit"
+                                        )}
+                                    </button>
+                                </div>
+                            </form>
+                        )}
                     </div>
 
                     {/* Right Side - Info & Illustration */}

@@ -5,6 +5,7 @@ import FooterSection from "@/Components/cards/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import { FiStar, FiClock, FiChevronDown, FiChevronUp, FiArrowRight } from "react-icons/fi";
+import TrialModal from "@/Components/modals/TrialModal";
 
 // ─── TYPES ───────────────────────────────────────────────────────────────────
 
@@ -65,7 +66,6 @@ export interface VCSFaq {
 export interface VCSPageData {
     heroTitle: string;
     heroSubtitle: string;
-    heroCta: string;
     backgroundImage: string;
     // heroImage?: string;      
     // heroImageAlt?: string;
@@ -91,7 +91,21 @@ export interface VCSPageData {
 export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const [activeReason, setActiveReason] = useState(0);
+    const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
     const testimonialRef = useRef<HTMLDivElement>(null);
+
+    const WHATSAPP_LINK = "https://wa.me/919468643369";
+
+    const handleButtonClick = (e: React.MouseEvent, text: string, defaultLink: string) => {
+        const lowerText = text.toLowerCase();
+        if (lowerText.includes("start free trial")) {
+            e.preventDefault();
+            setIsTrialModalOpen(true);
+        } else if (lowerText.includes("get started") || lowerText.includes("take free demo") || lowerText.includes("take a free demo")) {
+            e.preventDefault();
+            window.open(WHATSAPP_LINK, "_blank");
+        }
+    };
 
     // Auto scroll testimonials
     useEffect(() => {
@@ -110,27 +124,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
         <div className="min-h-screen bg-white font-sans text-gray-800">
 
             {/* ── NAV ──────────────────────────────────────────────────────── */}
-            {/* <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-                <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
-                    <div className="font-black text-2xl text-[#8c5a31] tracking-tight">
-                        Penchant<span className="text-[#8c5a31]">Immrse</span>
-                    </div>
-                    <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
-                        <a href="#program" className="hover:text-[#8c5a31] transition-colors">About the Program</a>
-                        <a href="#careers" className="hover:text-[#8c5a31] transition-colors">Internships</a>
-                        <a href="#testimonials" className="hover:text-[#8c5a31] transition-colors">Testimonials</a>
-                        <a href="#pricing" className="hover:text-[#8c5a31] transition-colors">Pricing</a>
-                        <a href="#faqs" className="hover:text-[#8c5a31] transition-colors">FAQs</a>
-                    </div>
-                    <Link
-                        href={data.ctaLink}
-                        className="px-6 py-2.5 text-white text-sm font-bold rounded-lg shadow hover:brightness-110 transition-all"
-                        style={{ backgroundColor: "#8c5a31" }}
-                    >
-                        {data.heroCta}
-                    </Link>
-                </div>
-            </nav> */}
+
 
             {/* ── HERO ─────────────────────────────────────────────────────── */}
             <section
@@ -166,14 +160,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                             <p className="text-[#092a51] text-xl leading-relaxed mb-10 max-w-xl">
                                 {data.heroSubtitle}
                             </p>
-                            <Link
-                                href={data.ctaLink}
-                                className="inline-flex items-center gap-3 px-10 py-4 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 transition-all text-base"
-                                style={{ backgroundColor: "#8c5a31" }}
-                            >
-                                {data.heroCta}
-                                <FiArrowRight size={18} />
-                            </Link>
+
                         </div>
                     </div>
 
@@ -245,14 +232,14 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                         ))}
                     </div>
 
-                    <div className="text-center mt-12">
+                    {/* <div className="text-center mt-12">
                         <Link
                             href={data.viewAllLink}
                             className="inline-flex items-center gap-2 px-8 py-3 border-2 border-[#8c5a31] text-[#8c5a31] font-bold rounded-xl hover:bg-[#8c5a31] hover:text-white transition-all text-sm"
                         >
                             View All Careers <FiArrowRight size={16} />
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
@@ -278,7 +265,8 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                     <div className="flex justify-center">
                         <Link
                             href={data.ctaLink}
-                            className="inline-flex items-center gap-2 px-10 py-4 bg-[#8c5a31] text-white font-bold rounded-xl hover:brightness-110 transition-all"
+                            onClick={(e) => handleButtonClick(e, "Start Free Trial", data.ctaLink)}
+                            className="inline-flex items-center gap-2 px-10 py-4 bg-[#8c5a31] text-white font-bold rounded-xl border-2 border-white hover:brightness-110 transition-all"
                         >
                             Start Free Trial <FiArrowRight size={16} />
                         </Link>
@@ -365,44 +353,11 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
             </section>
 
             {/* ── PRICING ──────────────────────────────────────────────────── */}
-            <section id="pricing" className="py-24 px-6 md:px-12 bg-white">
+            {/* <section id="pricing" className="py-24 px-6 md:px-12 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-3xl font-bold text-[#8c5a31] text-center mb-4">{data.pricingTitle}</h2>
                     <p className="text-gray-400 text-center mb-14">Choose the plan that suits your exploration needs</p>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
-                        {data.plans.map((plan, i) => (
-                            <div
-                                key={i}
-                                className={`relative rounded-2xl p-8 border-2 flex flex-col items-center text-center transition-all hover:shadow-xl ${plan.highlight
-                                    ? "border-[#8c5a31] bg-[#fdf3ea] scale-105 shadow-lg"
-                                    : "border-gray-100 bg-white hover:border-[#8c5a31]"
-                                    }`}
-                            >
-                                {plan.highlight && (
-                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#8c5a31] text-white text-[10px] font-bold px-4 py-1 rounded-full tracking-widest">
-                                        POPULAR
-                                    </div>
-                                )}
-                                <p className="text-xs font-bold text-[#8c5a31] uppercase tracking-widest mb-2">{plan.tier}</p>
-                                <h3 className="text-2xl font-black text-[#8c5a31] mb-1">{plan.name}</h3>
-                                <p className="text-sm text-gray-500 mb-1">{plan.pack}</p>
-                                <p className="text-xs text-gray-400 mb-6">{plan.duration}</p>
-                                <div className="text-4xl font-black text-[#8c5a31] mb-8">{plan.price}</div>
-                                <Link
-                                    href={data.ctaLink}
-                                    className={`w-full py-3 rounded-xl font-bold text-sm transition-all ${plan.highlight
-                                        ? "bg-[#8c5a31] text-white hover:brightness-110"
-                                        : "border-2 border-[#8c5a31] text-[#8c5a31] hover:bg-[#8c5a31] hover:text-white"
-                                        }`}
-                                >
-                                    Get Started
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Pack inclusions */}
+                    
                     <div className="bg-[#8c5a31] rounded-2xl p-10">
                         <h3 className="text-white font-bold text-center mb-8 text-lg">All Plans Include</h3>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -416,14 +371,15 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
                         <div className="flex justify-center mt-10">
                             <Link
                                 href={data.ctaLink}
-                                className="px-10 py-3 bg-[#8c5a31] text-white font-bold rounded-xl hover:brightness-110 transition-all"
+                                onClick={(e) => handleButtonClick(e, "Start Free Trial", data.ctaLink)}
+                                className="px-10 py-3 bg-[#8c5a31] text-white font-bold rounded-xl border-2 border-white hover:brightness-110 transition-all"
                             >
                                 Start Free Trial
                             </Link>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* ── FAQs ─────────────────────────────────────────────────────── */}
             <section id="faqs" className="py-24 px-6 md:px-12 bg-[#fdfaf7]">
@@ -461,6 +417,7 @@ export const VCSPageTemplate: React.FC<{ data: VCSPageData }> = ({ data }) => {
             </section>
 
             <FooterSection />
+            <TrialModal isOpen={isTrialModalOpen} onClose={() => setIsTrialModalOpen(false)} />
         </div>
     );
 };
