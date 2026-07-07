@@ -147,8 +147,10 @@ export default function Header() {
     }
   };
 
-  // Active section on scroll
+  // Active section on scroll — only on homepage where section IDs match nav items
   useEffect(() => {
+    if (pathname !== "/") return;
+
     const onScroll = () => {
       menuItems.forEach((item) => {
         const section = document.getElementById(item.id);
@@ -162,7 +164,7 @@ export default function Header() {
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
 
   // Click outside to close contact dropdown
   useEffect(() => {

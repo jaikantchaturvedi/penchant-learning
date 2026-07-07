@@ -508,30 +508,6 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                 </section>
             )} */}
 
-            {/* Comparison/Why Mindler Section */}
-            {data.comparison && (
-                <section className="bg-[#8c5a31] overflow-hidden">
-                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center px-6 md:px-12">
-                        <div className="md:w-[55rem] py-8 space-y-2 flex flex-col items-center justify-center text-center">
-                            <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight ">
-                                {data.comparison.title}
-                            </h2>
-                            <p className="text-white text-[16px] leading-relaxed max-w-lg">
-                                {data.comparison.description}
-                            </p>
-                            <div className="pt-2">
-                                <Link
-                                    href={data.comparison.ctaLink}
-                                    className="inline-block px-5 py-3 text-white text-xs font-semibold border border-white rounded hover:bg-white hover:text-[#8c5a31] transition-all"
-                                >
-                                    {data.comparison.ctaText}
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            )}
-
             {/* Testimonials Section */}
             {data.testimonials && (
                 <section className="py-24 px-6 md:px-12 bg-[#f9fafb]">
@@ -624,6 +600,30 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                 }
                                 return null;
                             })}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Comparison/Why Mindler Section */}
+            {data.comparison && (
+                <section className="bg-[#8c5a31] overflow-hidden">
+                    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center px-6 md:px-12">
+                        <div className="md:w-[55rem] py-8 space-y-2 flex flex-col items-center justify-center text-center">
+                            <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight ">
+                                {data.comparison.title}
+                            </h2>
+                            <p className="text-white text-[16px] leading-relaxed max-w-lg">
+                                {data.comparison.description}
+                            </p>
+                            <div className="pt-2">
+                                <Link
+                                    href={data.comparison.ctaLink}
+                                    className="inline-block px-5 py-3 text-white text-xs font-semibold border border-white rounded hover:bg-white hover:text-[#8c5a31] transition-all"
+                                >
+                                    {data.comparison.ctaText}
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </section>
