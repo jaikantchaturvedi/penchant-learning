@@ -407,7 +407,7 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
             {data.successStory && (
                 <section className="bg-[#8c5a31] overflow-hidden">
                     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12">
-                        <div className="md:w-2/3 py-8 space-y-2">
+                        <div className="w-full py-8 space-y-2">
                             <span className=" text-2xl md:text-3xl font-bold  text-white  tracking-widest uppercase">
                                 {data.successStory.category}
                             </span>
@@ -422,9 +422,6 @@ export const CounsellingPageTemplate: React.FC<CounsellingPageTemplateProps> = (
                                     {data.successStory.ctaText}
                                 </Link>
                             </div>
-                        </div>
-                        <div className="md:w-1/3 flex justify-end items-end h-[240px]">
-                            <Image src={data.successStory.image} alt={data.successStory.personName} width={240} height={240} className="object-contain object-bottom h-full w-auto" />
                         </div>
                     </div>
                 </section>

@@ -20,16 +20,6 @@ const StoryCard = ({ story }: { story: Story }) => {
     const [expanded, setExpanded] = useState(false);
     return (
         <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
-            {/* image — contain so full photo is visible */}
-            <div className="relative w-full h-64 bg-gray-50 flex-shrink-0">
-                <Image
-                    src={story.image}
-                    alt={story.name}
-                    fill
-                    className="object-contain"
-                />
-            </div>
-
             {/* body */}
             <div className="p-5 flex flex-col flex-1">
                 {/* stars */}
